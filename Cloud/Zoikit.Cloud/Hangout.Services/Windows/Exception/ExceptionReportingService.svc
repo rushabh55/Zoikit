@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Hangout.Services.Windows.Exception.ExceptionReportingService" CodeBehind="ExceptionReportingService.svc.cs" %>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PushNotifications" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" />
+      <xsd:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.WindowsAzure.Storage.Table" />
+      <xsd:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPushNotifications_Subscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribe" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_Subscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_Unsubscribe_InputMessage">
+    <wsdl:part name="parameters" element="tns:Unsubscribe" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_Unsubscribe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_GetPushNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPushNotification" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_GetPushNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPushNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_Exists_InputMessage">
+    <wsdl:part name="parameters" element="tns:Exists" />
+  </wsdl:message>
+  <wsdl:message name="IPushNotifications_Exists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExistsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPushNotifications">
+    <wsdl:operation name="Subscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushNotifications/Subscribe" message="tns:IPushNotifications_Subscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushNotifications/SubscribeResponse" message="tns:IPushNotifications_Subscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushNotifications/Unsubscribe" message="tns:IPushNotifications_Unsubscribe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushNotifications/UnsubscribeResponse" message="tns:IPushNotifications_Unsubscribe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPushNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushNotifications/GetPushNotification" message="tns:IPushNotifications_GetPushNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushNotifications/GetPushNotificationResponse" message="tns:IPushNotifications_GetPushNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Exists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPushNotifications/Exists" message="tns:IPushNotifications_Exists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPushNotifications/ExistsResponse" message="tns:IPushNotifications_Exists_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPushNotifications" type="tns:IPushNotifications">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Subscribe">
+      <soap:operation soapAction="http://tempuri.org/IPushNotifications/Subscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unsubscribe">
+      <soap:operation soapAction="http://tempuri.org/IPushNotifications/Unsubscribe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPushNotification">
+      <soap:operation soapAction="http://tempuri.org/IPushNotifications/GetPushNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Exists">
+      <soap:operation soapAction="http://tempuri.org/IPushNotifications/Exists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PushNotifications">
+    <wsdl:port name="BasicHttpBinding_IPushNotifications" binding="tns:BasicHttpBinding_IPushNotifications">
+      <soap:address location="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

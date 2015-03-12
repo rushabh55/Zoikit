@@ -1,0 +1,161 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IFoursquareService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IExceptionReportingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserLocationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IMeetupService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_INotificationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IPushNotificationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserScoreService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITextService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IGeocodeService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ISearchService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITrophyService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IFacebookService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IAppAuthentication" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ICategoryService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IVenueService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IBuzzService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITokenService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IAccountService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITwitterService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_IGeocodeService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+      <client>
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/FoursquareService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFoursquareService"
+          contract="FoursquareService.IFoursquareService" name="BasicHttpBinding_IFoursquareService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Exception/ExceptionReportingService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IExceptionReportingService"
+          contract="ExceptionReportingService.IExceptionReportingService"
+          name="BasicHttpBinding_IExceptionReportingService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Location/UserLocationService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserLocationService"
+          contract="UserLocationService.IUserLocationService" name="BasicHttpBinding_IUserLocationService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Meetup/MeetupService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IMeetupService"
+          contract="MeetupService.IMeetupService" name="BasicHttpBinding_IMeetupService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Notification/NotificationService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INotificationService"
+          contract="NotificationService.INotificationService" name="BasicHttpBinding_INotificationService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/PushNotification/PushNotificationService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPushNotificationService"
+          contract="PushNotificationService.IPushNotificationService"
+          name="BasicHttpBinding_IPushNotificationService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Score/UserScoreService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserScoreService"
+          contract="UserScoreService.IUserScoreService" name="BasicHttpBinding_IUserScoreService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Text/TextService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITextService"
+          contract="TextService.ITextService" name="BasicHttpBinding_ITextService" />
+        <endpoint address="http://dev.virtualearth.net/webservices/v1/geocodeservice/GeocodeService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IGeocodeService"
+          contract="GeocodeService.IGeocodeService" name="BasicHttpBinding_IGeocodeService" />
+        <endpoint address="http://dev.virtualearth.net/webservices/v1/geocodeservice/GeocodeService.svc/binaryHttp"
+          binding="customBinding" bindingConfiguration="CustomBinding_IGeocodeService"
+          contract="GeocodeService.IGeocodeService" name="CustomBinding_IGeocodeService" />
+        <endpoint address="http://dev.virtualearth.net/webservices/v1/searchservice/searchservice.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ISearchService"
+          contract="GeoLocationSearchService.ISearchService" name="BasicHttpBinding_ISearchService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Trophy/TrophyService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITrophyService"
+          contract="TrophyService.ITrophyService" name="BasicHttpBinding_ITrophyService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/FacebookService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFacebookService"
+          contract="FacebookService.IFacebookService" name="BasicHttpBinding_IFacebookService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/AppAuthentication.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAppAuthentication"
+          contract="AppAuthenticationService.IAppAuthentication" name="BasicHttpBinding_IAppAuthentication" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Category/CategoryService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICategoryService"
+          contract="CategoryService.ICategoryService" name="BasicHttpBinding_ICategoryService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Location/VenueService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IVenueService"
+          contract="VenueService.IVenueService" name="BasicHttpBinding_IVenueService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/User/UserService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserService"
+          contract="UserService.IUserService" name="BasicHttpBinding_IUserService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Buzz/BuzzService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IBuzzService"
+          contract="BuzzService.IBuzzService" name="BasicHttpBinding_IBuzzService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Token/TokenService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITokenService"
+          contract="TokenService.ITokenService" name="BasicHttpBinding_ITokenService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/AccountService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAccountService"
+          contract="AccountService.IAccountService" name="BasicHttpBinding_IAccountService" />
+        <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/TwitterService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITwitterService"
+          contract="TwitterService.ITwitterService" name="BasicHttpBinding_ITwitterService" />
+      </client>
+    </system.serviceModel>
+</configuration>

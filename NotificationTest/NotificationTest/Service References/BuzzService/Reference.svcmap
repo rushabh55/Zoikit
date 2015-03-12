@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1e55f1ad-f8b7-4b47-be81-e46c4518a407" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Buzz/BuzzService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BuzzService.xsd" MetadataType="Schema" ID="08e7d67c-7dc9-4f30-8ef9-88a2f3839428" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BuzzService1.xsd" MetadataType="Schema" ID="3c12c1f7-db37-4961-9f06-6109b98aa5a7" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd9" />
+    <MetadataFile FileName="BuzzService2.xsd" MetadataType="Schema" ID="2ac056c0-254b-4c36-8510-a07e143e3879" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BuzzService3.xsd" MetadataType="Schema" ID="4e9b1b02-a6a9-4175-88b8-2daaefff6992" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd6" />
+    <MetadataFile FileName="BuzzService4.xsd" MetadataType="Schema" ID="7704a43e-4289-4f20-93fb-49aa004d4916" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd11" />
+    <MetadataFile FileName="BuzzService5.xsd" MetadataType="Schema" ID="ec8127cd-9a99-47d5-9c2c-f0cb61aeb93c" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BuzzService6.xsd" MetadataType="Schema" ID="9145e412-9b3c-4825-866c-076fb3469499" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd7" />
+    <MetadataFile FileName="BuzzService.disco" MetadataType="Disco" ID="5e3c3840-90ff-4eb8-9eab-cde9db65ca17" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?disco" />
+    <MetadataFile FileName="BuzzService7.xsd" MetadataType="Schema" ID="cd5f9b1f-6bac-4550-b142-5eb3898fcbdd" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BuzzService8.xsd" MetadataType="Schema" ID="0aa0454f-a831-41ca-90e4-082b066ad9f2" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd4" />
+    <MetadataFile FileName="BuzzService9.xsd" MetadataType="Schema" ID="374585b7-4810-479d-b05b-a05da91c914b" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd8" />
+    <MetadataFile FileName="BuzzService.wsdl" MetadataType="Wsdl" ID="c7fcba34-f0e4-4273-9043-acf18d38f671" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?wsdl" />
+    <MetadataFile FileName="BuzzService10.xsd" MetadataType="Schema" ID="06e4f7cb-2c03-4056-83e8-4da52580f98b" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd10" />
+    <MetadataFile FileName="BuzzService11.xsd" MetadataType="Schema" ID="9d38f0c8-160e-4acf-ac03-de13a7f30865" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

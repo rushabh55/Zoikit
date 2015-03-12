@@ -1,0 +1,8 @@
+<MarketplaceDetails>
+  <SmallAppTile>AppLogo.png</SmallAppTile>
+  <LargeAppTile>Background.png</LargeAppTile>
+  <PCAppTile>Logo 200.png</PCAppTile>
+  <ScreenShots>1.png;2.png;3.png;4.png;5.png;6.png;7.png;;</ScreenShots>
+  <ScreenShotsWXGA>fdsdh.png;fgdfga.png;fgfdsh.png;gfdsa.png;dfhf.png;agsgf.png;;;</ScreenShotsWXGA>
+  <ScreenShots720P>;;;;;;;;</ScreenShots720P>
+</MarketplaceDetails>

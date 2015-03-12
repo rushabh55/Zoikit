@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Hangout.Client.Controls.Buzz.BuzzNormalList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:local="clr-namespace:Hangout.Client.Controls.Buzz"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="ListItemTemplate">
+            <StackPanel>
+                <local:Buzz x:Name="BuzzItem" BuzzData="{Binding}" Loaded="BuzzItem_Loaded"/>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        
+            <ListBox x:Name="BuzzLB" HorizontalAlignment="Left"  VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemTemplate="{StaticResource ListItemTemplate}">
+                <!--<telerikPrimitives:RadDataBoundListBox.PullToRefreshIndicatorStyle>
+                    <Style TargetType="telerikListBox:PullToRefreshIndicatorControl">
+                        <Setter Property="RefreshTimeLabelFormat" Value="last refresh time: {0:H:mm}"/>
+                    </Style>
+                </telerikPrimitives:RadDataBoundListBox.PullToRefreshIndicatorStyle>-->
+            </ListBox>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Notification" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Notification" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Notification/NotificationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+  <xs:complexType name="ArrayOfNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Notification" nillable="true" type="tns:Notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotification" nillable="true" type="tns:ArrayOfNotification" />
+  <xs:complexType name="Notification">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatetimePosted" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarkAsRead" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Param1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Param2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" minOccurs="0" name="UserList" nillable="true" type="q1:ArrayOfCompactUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+  <xs:complexType name="NotificationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Notification" nillable="true" type="tns:Notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotificationData" nillable="true" type="tns:NotificationData" />
+</xs:schema>

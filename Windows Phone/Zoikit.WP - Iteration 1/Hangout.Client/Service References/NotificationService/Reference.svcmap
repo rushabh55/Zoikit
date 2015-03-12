@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb4f0966-b662-472c-b394-800779344cbb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="NotificationService.wsdl" MetadataType="Wsdl" ID="ab37c802-073c-4615-a224-645433e4ded6" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?wsdl" />
+    <MetadataFile FileName="NotificationService.xsd" MetadataType="Schema" ID="5c562977-37f5-4845-b748-b74e61510c34" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="NotificationService1.xsd" MetadataType="Schema" ID="08b002da-9b5a-4ec2-add0-c69f85810821" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="NotificationService2.xsd" MetadataType="Schema" ID="4db1ab5b-6578-40f1-9b0a-b5c5bf5628f3" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="NotificationService3.xsd" MetadataType="Schema" ID="6a8dda13-5fdd-474a-a63e-7445bfd53ffa" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="NotificationService4.xsd" MetadataType="Schema" ID="ad485cef-157f-4b83-a32a-7078605a861c" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="NotificationService5.xsd" MetadataType="Schema" ID="2f3248b3-d149-4e77-a71c-8971f7eec297" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="NotificationService.disco" MetadataType="Disco" ID="711c931a-e019-4dd6-ac54-33e35f0a6023" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Notification/NotificationService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="CheckInStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CheckedIn" />
+      <xs:enumeration value="AlreadyCheckedIn" />
+      <xs:enumeration value="CheckedOut" />
+      <xs:enumeration value="FarAway" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CheckInStatus" nillable="true" type="tns:CheckInStatus" />
+</xs:schema>

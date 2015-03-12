@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CategoryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Category" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICategoryService_GetCategoriesFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesFollowed" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoriesFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoryIDFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryIDFollowed" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoryIDFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryIDFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_FollowCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowCategory" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_FollowCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_UnfollowCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowCategory" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_UnfollowCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoriesFollowedByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesFollowedByUser" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoriesFollowedByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesFollowedByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoyrByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoyrByID" />
+  </wsdl:message>
+  <wsdl:message name="ICategoryService_GetCategoyrByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoyrByIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICategoryService">
+    <wsdl:operation name="GetCategoriesFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetCategoriesFollowed" message="tns:ICategoryService_GetCategoriesFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetCategoriesFollowedResponse" message="tns:ICategoryService_GetCategoriesFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryIDFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetCategoryIDFollowed" message="tns:ICategoryService_GetCategoryIDFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetCategoryIDFollowedResponse" message="tns:ICategoryService_GetCategoryIDFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/FollowCategory" message="tns:ICategoryService_FollowCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/FollowCategoryResponse" message="tns:ICategoryService_FollowCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/UnfollowCategory" message="tns:ICategoryService_UnfollowCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/UnfollowCategoryResponse" message="tns:ICategoryService_UnfollowCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetAllCategories" message="tns:ICategoryService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetAllCategoriesResponse" message="tns:ICategoryService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesFollowedByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetCategoriesFollowedByUser" message="tns:ICategoryService_GetCategoriesFollowedByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetCategoriesFollowedByUserResponse" message="tns:ICategoryService_GetCategoriesFollowedByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoyrByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICategoryService/GetCategoyrByID" message="tns:ICategoryService_GetCategoyrByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICategoryService/GetCategoyrByIDResponse" message="tns:ICategoryService_GetCategoyrByID_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICategoryService" type="tns:ICategoryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCategoriesFollowed">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetCategoriesFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryIDFollowed">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetCategoryIDFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowCategory">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/FollowCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowCategory">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/UnfollowCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesFollowedByUser">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetCategoriesFollowedByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoyrByID">
+      <soap:operation soapAction="http://tempuri.org/ICategoryService/GetCategoyrByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CategoryService">
+    <wsdl:port name="BasicHttpBinding_ICategoryService" binding="tns:BasicHttpBinding_ICategoryService">
+      <soap:address location="http://127.0.0.1:81/Core/Category/CategoryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

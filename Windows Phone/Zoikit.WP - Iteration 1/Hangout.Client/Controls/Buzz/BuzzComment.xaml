@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Hangout.Client.Controls.Buzz.BuzzComment"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot" Tap="LayoutRoot_Tap_1" Margin="0,7,0,0" >
+    	<Image x:Name="ProfilePicImage" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Source="" Margin="3,1,0,0">
+    		<Image.Clip>
+    			<EllipseGeometry Center="30,30" RadiusX="30" RadiusY="30" />
+    		</Image.Clip>
+    	</Image>
+    	<TextBlock x:Name="NameLBL" HorizontalAlignment="Left" Height="26" Margin="75,6,0,0" TextWrapping="Wrap" Text="Nawaz Dhandala" VerticalAlignment="Top" Width="317" Foreground="#FFEE7B44" FontFamily="/Hangout.Client;component/Fonts/Fonts.zip#Signika" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.471,0.538" Tap="NameLBL_Tap"/>
+    	<TextBlock x:Name="PostedLBL" HorizontalAlignment="Right" Height="17" Margin="0,12,14,0" TextWrapping="Wrap" Text="17 min ago" VerticalAlignment="Top" Width="204" Foreground="#FF717171" FontFamily="/Hangout.Client;component/Fonts/Fonts.zip#Signika" FontSize="13.333" TextAlignment="Right" Tap="PostedLBL_Tap"/>
+    	<TextBlock x:Name="CommentLBL" HorizontalAlignment="Left" Margin="75,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF252525" FontFamily="Segoe UI" FontSize="14.667" Tap="CommentLBL_Tap" Text="This is a sample text" Width="390">
+    		
+    	</TextBlock>
+    </Grid>
+</UserControl>

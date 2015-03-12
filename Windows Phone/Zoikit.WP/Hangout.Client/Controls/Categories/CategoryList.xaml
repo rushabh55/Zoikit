@@ -1,0 +1,243 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:Client="clr-namespace:Hangout.Client" x:Class="Hangout.Client.Controls.Categories.CategoryList"
+    mc:Ignorable="d" Width="470" Loaded="UserControl_Loaded_1">
+	<UserControl.Resources>
+        
+
+
+		<Style x:Key="FollowRoundBtn" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<Setter Property="Padding" Value="10,3,10,5"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid Background="Transparent" Margin="0,0,-3,0">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="ButtonBackground" BorderBrush="{StaticResource YellowBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="30" Margin="0,0,1,-2" Width="32" Height="32">
+								<Image Margin="-3" Source="/Images/AppbarYellow/appbar.add.Yellow.png" Stretch="Fill"/>
+							</Border>
+
+							
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="UnfollowBtn" TargetType="Button">
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
+			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMediumLarge}"/>
+			<Setter Property="Padding" Value="10,3,10,5"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="Button">
+						<Grid Background="Transparent" Margin="0,0,-3,0">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver"/>
+									<VisualState x:Name="Pressed"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Border x:Name="ButtonBackground" BorderBrush="{StaticResource YellowBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="30" Margin="0,0,1,-2" Width="32" Height="32">
+								<Image Margin="-3" Source="/Images/AppbarYellow/appbar.minus.Yellow.png" Stretch="Fill"/>
+							</Border>
+
+							
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<DataTemplate x:Key="CategoryItemTemplate">
+			
+			<Grid Width="200" Height="200" Margin="5">
+				<Grid.Resources>
+					<Storyboard x:Name="HideUpBar">
+						<DoubleAnimation Duration="0:0:0.5" To="-0.345" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Upbar" d:IsOptimized="True">
+							<DoubleAnimation.EasingFunction>
+								<BounceEase Bounces="-1" EasingMode="EaseIn"/>
+							</DoubleAnimation.EasingFunction>
+						</DoubleAnimation>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="FollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="UnfollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+					<Storyboard x:Name="ShowUnFollowUpbar">
+						<DoubleAnimation Duration="0:0:0.3" To="-200.01" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Upbar" d:IsOptimized="True">
+							<DoubleAnimation.EasingFunction>
+								<CubicEase EasingMode="EaseInOut"/>
+							</DoubleAnimation.EasingFunction>
+						</DoubleAnimation>
+						<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowBtn" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="UnfollowBtn" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="FollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="UnfollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+					<Storyboard x:Name="ShowFollowUp">
+						<DoubleAnimation Duration="0:0:0.3" To="-66.642" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="Upbar" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowBtn" d:IsOptimized="True"/>
+						<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="UnfollowBtn" d:IsOptimized="True"/>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="FollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="UnfollowBtn">
+							<DiscreteObjectKeyFrame KeyTime="0:0:0.3">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+					<Storyboard x:Name="ItemSelected">
+						<ColorAnimation Duration="0:0:0.2" To="#FFC78800" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Background" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0:0:0.2" To="#FFC78800" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="NameLBL" d:IsOptimized="True"/>
+					</Storyboard>
+					<Storyboard x:Name="ItemUnselected">
+						<ColorAnimation Duration="0:0:0.2" To="#FFFFAF04" Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="NameLBL" d:IsOptimized="True"/>
+						<ColorAnimation Duration="0:0:0.2" To="#FFFFAF04" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Background" d:IsOptimized="True"/>
+					</Storyboard>
+				</Grid.Resources>
+				<i:Interaction.Triggers>
+					
+					<i:EventTrigger EventName="Tap">
+						<i:Interaction.Behaviors>
+							<ec:ConditionBehavior>
+								<ec:ConditionalExpression>
+									<ec:ComparisonCondition LeftOperand="{Binding Following}" RightOperand="True"/>
+								</ec:ConditionalExpression>
+							</ec:ConditionBehavior>
+						</i:Interaction.Behaviors>
+						<eim:ControlStoryboardAction Storyboard="{StaticResource ShowUnFollowUpbar}"/>
+					</i:EventTrigger>
+					<i:EventTrigger EventName="Tap">
+						<i:Interaction.Behaviors>
+							<ec:ConditionBehavior>
+								<ec:ConditionalExpression>
+									<ec:ComparisonCondition LeftOperand="{Binding Following}" RightOperand="False"/>
+								</ec:ConditionalExpression>
+							</ec:ConditionBehavior>
+						</i:Interaction.Behaviors>
+						<eim:ControlStoryboardAction Storyboard="{StaticResource ShowFollowUp}"/>
+					</i:EventTrigger>
+					<i:EventTrigger>
+						<i:Interaction.Behaviors>
+							<ec:ConditionBehavior>
+								<ec:ConditionalExpression>
+									<ec:ComparisonCondition RightOperand="True" LeftOperand="{Binding Following}"/>
+								</ec:ConditionalExpression>
+							</ec:ConditionBehavior>
+						</i:Interaction.Behaviors>
+						<eim:ControlStoryboardAction Storyboard="{StaticResource ShowUnFollowUpbar}"/>
+					</i:EventTrigger>
+					<i:EventTrigger>
+						<i:Interaction.Behaviors>
+							<ec:ConditionBehavior>
+								<ec:ConditionalExpression>
+									<ec:ComparisonCondition RightOperand="False" LeftOperand="{Binding Following}"/>
+								</ec:ConditionalExpression>
+							</ec:ConditionBehavior>
+						</i:Interaction.Behaviors>
+						<eim:ControlStoryboardAction Storyboard="{StaticResource ShowFollowUp}"/>
+					</i:EventTrigger>
+					
+				</i:Interaction.Triggers>
+				<Rectangle x:Name="Background" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200"/>
+				<Canvas x:Name="Downbar" Margin="0,150,0,0">
+					<Rectangle Fill="{StaticResource BlueBrush}" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="200"/>
+					<TextBlock x:Name="NameLBL" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding Category.Name}" VerticalAlignment="Center" FontSize="21.333" Width="200" TextAlignment="Center" FontFamily="Segoe UI" Foreground="#FFFFAF04" FontWeight="Bold" Height="32" Canvas.Top="8"/>
+				</Canvas>
+				<Image x:Name="Img" Margin="30,35,30,51" Source="{Binding Category.PicURL}" Stretch="Fill" Width="115" Height="115"/>
+				<Canvas x:Name="Upbar" Margin="211,4,-201,165" RenderTransformOrigin="0.5,0.5">
+					<Canvas.RenderTransform>
+						<CompositeTransform/>
+					</Canvas.RenderTransform>
+					<Path Data="M200.008,9.12314 L37.1006,9.12314 L28.0502,21.7473 L37.1004,34.3715 L200.008,34.3715 z" Fill="{StaticResource BlueBrush}" HorizontalAlignment="Left" Height="30" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="190" Canvas.Top="1"/>
+					<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Width="119.993" Height="25.156" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Text="FOLLOWING" Foreground="{StaticResource YellowBrush}" Canvas.Left="70" Canvas.Top="5.844">
+						<TextBlock.RenderTransform>
+							<CompositeTransform Rotation="0.223"/>
+						</TextBlock.RenderTransform>
+					</TextBlock>
+                    <Button x:Name="UnfollowBtn" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Style="{StaticResource UnfollowBtn}" Canvas.Left="15"   ClickMode="Press" Tap="UnfollowBtn_Tap_1"/>
+                    <Button x:Name="FollowBtn" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="30" Style="{StaticResource FollowRoundBtn}" Canvas.Left="15"  ClickMode="Press" Tap="FollowBtn_Tap_1"/>
+				</Canvas>
+				<Rectangle Fill="{StaticResource BlueBrush}" HorizontalAlignment="Left" Height="47" Margin="211,0,-225,0" VerticalAlignment="Top" Width="214"/>
+			</Grid>
+		</DataTemplate>
+		<Style x:Key="WrapPanelStyle1" TargetType="toolkit:WrapPanel"/>
+		<Storyboard x:Name="ShowPage">
+			<DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CategoriesLB" d:IsOptimized="True"/>
+		</Storyboard>
+	</UserControl.Resources>
+    
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+    
+    <Grid x:Name="LayoutRoot">
+
+   
+    	<ListBox x:Name="CategoriesLB" HorizontalAlignment="Left" ItemTemplate="{StaticResource CategoryItemTemplate}" SelectionChanged="CategoriesLB_SelectionChanged_1" Width="450" Opacity="0" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+    		<ListBox.ItemsPanel>
+    			<ItemsPanelTemplate>
+					<toolkit:WrapPanel/>
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+    	</ListBox>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,1465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{736D4FEC-58E7-44E7-9345-AB964CC2853E}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hangout.Client</RootNamespace>
+    <AssemblyName>Hangout.Client</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Hangout.Client_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Hangout.Client.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>12.0.41212.0</ExpressionBlendVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CCNET|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CCNET|x86'">
+    <OutputPath>bin\x86\CCNET\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Debug|x86'">
+    <OutputPath>bin\x86\Mono-Debug\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Release|x86'">
+    <OutputPath>bin\x86\Mono-Release\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CCNET|ARM'">
+    <OutputPath>bin\ARM\CCNET\</OutputPath>
+    <PlatformTarget>ARM</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Debug|ARM'">
+    <OutputPath>bin\ARM\Mono-Debug\</OutputPath>
+    <PlatformTarget>ARM</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mono-Release|ARM'">
+    <OutputPath>bin\ARM\Mono-Release\</OutputPath>
+    <PlatformTarget>ARM</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Audio">
+      <HintPath>Libraries\Coding4Fun.Phone.Audio.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Controls, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Controls.Toolkit, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Net">
+      <HintPath>Libraries\Coding4Fun.Phone.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Site.Controls">
+      <HintPath>Libraries\Coding4Fun.Phone.Site.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Phone.Storage">
+      <HintPath>Libraries\Coding4Fun.Phone.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.1.2\lib\wp71\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.WindowsPhone.Mango">
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\sl4-wp71\Hammock.WindowsPhone.Mango.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib.WindowsPhone">
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\sl4-wp71\ICSharpCode.SharpZipLib.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="JeffWilcox.PhoneThemeManager">
+      <HintPath>..\packages\PhoneThemeManager.2.0\lib\windowsphone8\JeffWilcox.PhoneThemeManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Controls, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Drawing, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\sl4-wp71\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PhoneToolkit.Extensions.Behaviors">
+      <HintPath>..\..\..\Libraries\PhoneToolkit.Extensions.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2013.3.1016.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Core, Version=2013.3.1016.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="TweetSharp.WindowsPhone.Mango">
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\sl4-wp71\TweetSharp.WindowsPhone.Mango.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsPhoneWatermarkTextBoxControl">
+      <HintPath>C:\Users\Nawaz\SkyDrive\Documents\Projects\Hang-out\Client\Hangout.Client\Hangout.Client\Libraries\WindowsPhoneWatermarkTextBoxControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\ConfirmEmail.xaml.cs">
+      <DependentUpon>ConfirmEmail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Facebook.xaml.cs">
+      <DependentUpon>Facebook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\ProfilePicture.xaml.cs">
+      <DependentUpon>ProfilePicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\Twitter.xaml.cs">
+      <DependentUpon>Twitter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Accounts\ZoikIt.xaml.cs">
+      <DependentUpon>ZoikIt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buzz\AddBuzz.xaml.cs">
+      <DependentUpon>AddBuzz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buzz\Buzz.xaml.cs">
+      <DependentUpon>Buzz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Buzz\BuzzComments.xaml.cs">
+      <DependentUpon>BuzzComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buzz\Buzz.xaml.cs">
+      <DependentUpon>Buzz.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buzz\BuzzComment.xaml.cs">
+      <DependentUpon>BuzzComment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buzz\BuzzCommentList.xaml.cs">
+      <DependentUpon>BuzzCommentList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buzz\BuzzList.xaml.cs">
+      <DependentUpon>BuzzList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Buzz\BuzzNormalList.xaml.cs">
+      <DependentUpon>BuzzNormalList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Discover\DiscoverItem.xaml.cs">
+      <DependentUpon>DiscoverItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Discover\DiscoverList.xaml.cs">
+      <DependentUpon>DiscoverList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Location\LocationItem.xaml.cs">
+      <DependentUpon>LocationItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Location\LocationList.xaml.cs">
+      <DependentUpon>LocationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Misc\BuzzHeaderPanel.xaml.cs">
+      <DependentUpon>BuzzHeaderPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Misc\FadingText.xaml.cs">
+      <DependentUpon>FadingText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Misc\LocationPanel.xaml.cs">
+      <DependentUpon>LocationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Notificaitons\NotificationList.xaml.cs">
+      <DependentUpon>NotificationList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Notificaitons\NotificationListItem.xaml.cs">
+      <DependentUpon>NotificationListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tag\TagItem.xaml.cs">
+      <DependentUpon>TagItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Text\TextList.xaml.cs">
+      <DependentUpon>TextList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Text\TextListItem.xaml.cs">
+      <DependentUpon>TextListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserHeader.xaml.cs">
+      <DependentUpon>UserHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserList.xaml.cs">
+      <DependentUpon>UserList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserListItem.xaml.cs">
+      <DependentUpon>UserListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserShortDisplay.xaml.cs">
+      <DependentUpon>UserShortDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\User\UserShortList.xaml.cs">
+      <DependentUpon>UserShortList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Authentication\Accounts.cs" />
+    <Compile Include="Core\Authentication\FacebookURI.cs" />
+    <Compile Include="Core\Authentication\Twitter\AuthConstants.cs" />
+    <Compile Include="Core\Authentication\Twitter\OAuthClient.cs" />
+    <Compile Include="Core\Authentication\Twitter\StringHelper.cs" />
+    <Compile Include="Core\Authentication\Twitter\UrlConstants.cs" />
+    <Compile Include="Core\BackgroundTask\UserLocationUpdateAgent.cs" />
+    <Compile Include="Core\Buzz\NewBuzz.cs" />
+    <Compile Include="Core\Converters\AccountTypeConverter.cs" />
+    <Compile Include="Core\Converters\ByAdderConverter.cs" />
+    <Compile Include="Core\Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="Core\Converters\PinImageSourceConverter.cs" />
+    <Compile Include="Core\Converters\PostedAdder.cs" />
+    <Compile Include="Core\Exceptions\ExceptionReporting.cs" />
+    <Compile Include="Core\Exceptions\ExitException.cs" />
+    <Compile Include="Core\Location\CurrentLocation.cs" />
+    <Compile Include="Core\Location\Distance.cs" />
+    <Compile Include="Core\Location\DistanceConverter.cs" />
+    <Compile Include="Core\Location\Location.cs" />
+    <Compile Include="Core\Network\NetworkStatus.cs" />
+    <Compile Include="Core\PushNotification\PushNotification.cs" />
+    <Compile Include="Core\PushNotification\Tiles.cs" />
+    <Compile Include="Core\Social\SocialPost.cs" />
+    <Compile Include="Core\Startup\Launch.cs" />
+    <Compile Include="Core\Twitter\TwitterPost.cs" />
+    <Compile Include="Core\User\User.cs" />
+    <Compile Include="Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorText.resx</DependentUpon>
+    </Compile>
+    <Compile Include="AppID.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppID.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Extras\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extras\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FreshInstall.xaml.cs">
+      <DependentUpon>FreshInstall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Location\LocationPicker.xaml.cs">
+      <DependentUpon>LocationPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Navigation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Navigation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.xaml.cs">
+      <DependentUpon>Search.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AccountService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\AppAuthenticationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BuzzService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DiscoverService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExceptionReportingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\FacebookService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\NotificationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PushNotificationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TagService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TextService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TwitterService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserLocationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Settings\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Start.xaml.cs">
+      <DependentUpon>Start.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tag\Tag.xaml.cs">
+      <DependentUpon>Tag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Texts\ChatBubbleAlignmentConverter.cs" />
+    <Compile Include="Texts\ChatBubbleDirectionConverter.cs" />
+    <Compile Include="Texts\UserText.xaml.cs">
+      <DependentUpon>UserText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\PeopleList.xaml.cs">
+      <DependentUpon>PeopleList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Accounts\ChangePassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\ConfirmEmail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\Facebook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\ProfilePicture.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\Twitter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Accounts\ZoikIt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buzz\AddBuzz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buzz\Buzz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Buzz\BuzzComments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buzz\Buzz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buzz\BuzzComment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buzz\BuzzCommentList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buzz\BuzzList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Buzz\BuzzNormalList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Discover\DiscoverItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Discover\DiscoverList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Location\LocationItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Location\LocationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Misc\BuzzHeaderPanel.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Misc\FadingText.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Misc\LocationPanel.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Notificaitons\NotificationList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Notificaitons\NotificationListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Tag\TagItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Text\TextList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Text\TextListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\UserHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\UserList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\UserListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\UserShortDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\User\UserShortList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Extras\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Extras\Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FreshInstall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Location\LocationPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings\Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Start.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tag\Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Texts\UserText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\PeopleList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User\UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AppBar\add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\appbar.feature.settings.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\check.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\feature.camera.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\feature.search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\feature.settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SampleWallpaper.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\SmallTile.png" />
+    <Content Include="Assets\TileLogo.png" />
+    <Content Include="icons\appbar.cancel.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.check.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AppbarBlue\add.png" />
+    <Content Include="Images\AppbarBlue\minus.png" />
+    <Content Include="Images\AppbarYellow\appbar.add.Yellow.png" />
+    <Content Include="Images\AppbarYellow\appbar.minus.Yellow.png" />
+    <Content Include="Images\Appbar\appbar.add.rest.png" />
+    <Content Include="Images\Appbar\appbar.back.rest.png" />
+    <Content Include="Images\Appbar\appbar.basecircle.rest.png" />
+    <Content Include="Images\Appbar\appbar.cancel.rest.png" />
+    <Content Include="Images\Appbar\appbar.check.rest.png" />
+    <Content Include="Images\Appbar\appbar.close.rest.png" />
+    <Content Include="Images\Appbar\appbar.delete.rest.png" />
+    <Content Include="Images\Appbar\appbar.download.rest.png" />
+    <Content Include="Images\Appbar\appbar.edit.rest.png" />
+    <Content Include="Images\Appbar\appbar.favs.addto.rest.png" />
+    <Content Include="Images\Appbar\appbar.favs.rest.png" />
+    <Content Include="Images\Appbar\appbar.feature.camera.rest.png" />
+    <Content Include="Images\Appbar\appbar.feature.email.rest.png" />
+    <Content Include="Images\Appbar\appbar.feature.search.rest.png" />
+    <Content Include="Images\Appbar\appbar.feature.settings.rest.png" />
+    <Content Include="Images\Appbar\appbar.feature.video.rest.png" />
+    <Content Include="Images\Appbar\appbar.folder.rest.png" />
+    <Content Include="Images\Appbar\appbar.minus.rest.png" />
+    <Content Include="Images\Appbar\appbar.new.rest.png" />
+    <Content Include="Images\Appbar\appbar.next.rest.png" />
+    <Content Include="Images\Appbar\appbar.overflowdots.png" />
+    <Content Include="Images\Appbar\appbar.questionmark.rest.png" />
+    <Content Include="Images\Appbar\appbar.refresh.rest.png" />
+    <Content Include="Images\Appbar\appbar.save.rest.png" />
+    <Content Include="Images\Appbar\appbar.share.rest.png" />
+    <Content Include="Images\Appbar\appbar.stop.rest.png" />
+    <Content Include="Images\Appbar\appbar.sync.rest.png" />
+    <Content Include="Images\Appbar\appbar.transport.ff.rest.png" />
+    <Content Include="Images\Appbar\appbar.transport.pause.rest.png" />
+    <Content Include="Images\Appbar\appbar.transport.play.rest.png" />
+    <Content Include="Images\Appbar\appbar.transport.rew.rest.png" />
+    <Content Include="Images\Appbar\appbar.upload.rest.png" />
+    <Content Include="Images\Appbar\BadgeBlue.png" />
+    <Content Include="Images\Appbar\BigLock.png" />
+    <Content Include="Images\Appbar\Car.png" />
+    <Content Include="Images\Appbar\CheckIn.png" />
+    <Content Include="Images\Appbar\HeartBlue.png" />
+    <Content Include="Images\Appbar\HeartWhite.png" />
+    <Content Include="Images\Appbar\Lock.png" />
+    <Content Include="Images\Appbar\Profile.png" />
+    <Content Include="Images\Appbar\TrophyBlue.png" />
+    <Content Include="Images\Appbar\Venue.png" />
+    <Content Include="Images\Appbar\VenueAppbar.png" />
+    <Content Include="Images\Appbar\VenueBlue.png" />
+    <Content Include="Images\Appbar\VenueYellow.png" />
+    <Content Include="Images\Buzz.png" />
+    <Content Include="Images\ClockPic.png" />
+    <Content Include="Images\HatSmallTileIcon.png" />
+    <Content Include="Images\HatTileIcon.png" />
+    <Content Include="Images\LogoGrey.png" />
+    <Content Include="Images\Logos\FacebookLogo.png" />
+    <Content Include="Images\Logos\FoursquareLogo.png" />
+    <Content Include="Images\Logos\TwitterLogo.png" />
+    <Content Include="Images\Logos\ZoikIt.png" />
+    <Content Include="Images\MedHat.png" />
+    <Content Include="Images\Notifications\NotificationBlue.png" />
+    <Content Include="Images\Notifications\NotificationWhite.png" />
+    <Content Include="Images\Notifications\NotificationYellow.png" />
+    <Content Include="Images\Post.png" />
+    <Content Include="Images\shoeprint3.png" />
+    <Content Include="Images\SmallHat.png" />
+    <Content Include="Images\SmileysGrey\1.png" />
+    <Content Include="Images\SmileysGrey\S10.png" />
+    <Content Include="Images\SmileysGrey\S3.png" />
+    <Content Include="Images\SmileysGrey\S4.png" />
+    <Content Include="Images\SmileysGrey\S5.png" />
+    <Content Include="Images\SmileysGrey\S7.png" />
+    <Content Include="Images\SmileysGrey\S8.png" />
+    <Content Include="Images\SmileysGrey\S9.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite1.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite10.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite12.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite13.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite2.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite3.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite4.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite5.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite6.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite7.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite8.png" />
+    <Content Include="Images\SmileysGrey\SmileysWhite9.png" />
+    <Content Include="Images\Smileys\1.png" />
+    <Content Include="Images\Smileys\S10.png" />
+    <Content Include="Images\Smileys\S3.png" />
+    <Content Include="Images\Smileys\S4.png" />
+    <Content Include="Images\Smileys\S5.png" />
+    <Content Include="Images\Smileys\S7.png" />
+    <Content Include="Images\Smileys\S8.png" />
+    <Content Include="Images\Smileys\S9.png" />
+    <Content Include="Images\Smileys\SmileysWhite1.png" />
+    <Content Include="Images\Smileys\SmileysWhite10.png" />
+    <Content Include="Images\Smileys\SmileysWhite12.png" />
+    <Content Include="Images\Smileys\SmileysWhite13.png" />
+    <Content Include="Images\Smileys\SmileysWhite2.png" />
+    <Content Include="Images\Smileys\SmileysWhite3.png" />
+    <Content Include="Images\Smileys\SmileysWhite4.png" />
+    <Content Include="Images\Smileys\SmileysWhite5.png" />
+    <Content Include="Images\Smileys\SmileysWhite6.png" />
+    <Content Include="Images\Smileys\SmileysWhite7.png" />
+    <Content Include="Images\Smileys\SmileysWhite8.png" />
+    <Content Include="Images\Smileys\SmileysWhite9.png" />
+    <Content Include="Images\SplashScreenImage.jpg" />
+    <Content Include="Images\Star.png" />
+    <Content Include="Images\Top75Jpg.jpg" />
+    <Content Include="Images\TopJpg.jpg" />
+    <None Include="app.config" />
+    <None Include="Hangout.Client_2014_04_11_01_02_34.sap" />
+    <None Include="Images\Top75Jpg.psd" />
+    <Content Include="icons\CheckIn.png" />
+    <Content Include="Assets\AppBar\Lock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\Dashbord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Service References\AccountService\AccountService.wsdl" />
+    <None Include="Service References\AccountService\AccountService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AccountService\AccountService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AccountService\AccountService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AccountService\AccountService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AccountService\AccountService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppAuthenticationService\AppAuthentication.wsdl" />
+    <None Include="Service References\AppAuthenticationService\AppAuthentication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppAuthenticationService\AppAuthentication1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppAuthenticationService\AppAuthentication2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppAuthenticationService\AppAuthentication3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppAuthenticationService\Hangout.Client.AppAuthenticationService.AppAuthenticationTag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService.wsdl" />
+    <None Include="Service References\BuzzService\BuzzService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BuzzService\BuzzService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService.wsdl" />
+    <None Include="Service References\DiscoverService\DiscoverService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExceptionReportingService\ExceptionReportingService.wsdl" />
+    <None Include="Service References\ExceptionReportingService\ExceptionReportingService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExceptionReportingService\ExceptionReportingService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FacebookService\FacebookService1.wsdl" />
+    <None Include="Service References\FacebookService\FacebookService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FacebookService\FacebookService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FacebookService\FacebookService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FacebookService\FacebookService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\FacebookService\Hangout.Client.FacebookService.AccountStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FacebookService\Hangout.Client.FacebookService.FacebookData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\FacebookService\Hangout.Client.FacebookService.UserData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService.wsdl" />
+    <None Include="Service References\NotificationService\NotificationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\NotificationService\NotificationService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications.wsdl" />
+    <None Include="Service References\PushNotificationService\PushNotifications.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TagService\Hangout.Client.TagService.FollowResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TagService\Hangout.Client.TagService.UserTag.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TagService\TagService.wsdl" />
+    <None Include="Service References\TagService\TagService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TagService\TagService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TagService\TagService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TagService\TagService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService.wsdl" />
+    <None Include="Service References\TextService\TextService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TextService\TextService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TwitterService\Hangout.Client.TwitterService.AccountStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TwitterService\Hangout.Client.TwitterService.TwitterData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TwitterService\Hangout.Client.TwitterService.UserData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TwitterService\TwitterService.wsdl" />
+    <None Include="Service References\TwitterService\TwitterService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TwitterService\TwitterService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TwitterService\TwitterService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TwitterService\TwitterService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserLocationService\Hangout.Client.BuzzService.Buzz1.datasource">
+      <DependentUpon>Reference.cs</DependentUpon>
+    </None>
+    <None Include="Service References\UserLocationService\Hangout.Client.UserLocationService.City.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserLocationService\Hangout.Client.UserLocationService.Location.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserLocationService\UserLocationService.wsdl" />
+    <None Include="Service References\UserLocationService\UserLocationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserLocationService\UserLocationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserLocationService\UserLocationService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService1.wsdl" />
+    <None Include="Service References\UserService\UserService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService71.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService72.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService73.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService74.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService75.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserService\UserService76.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Accounts\BigLock.png" />
+    <Resource Include="Accounts\Buzz.png" />
+    <Resource Include="Accounts\Empty.png" />
+    <Resource Include="Accounts\Female Icon.png" />
+    <Resource Include="Accounts\FoursquareLogo.png" />
+    <Resource Include="Accounts\HeartWhite.png" />
+    <Resource Include="Accounts\Profile.png" />
+    <Resource Include="Accounts\ProfileWhite.png" />
+    <Resource Include="Accounts\SmileysWhite1.png" />
+    <Resource Include="Accounts\SmileysWhite13.png" />
+    <Resource Include="Accounts\SmileysWhite2.png" />
+    <Resource Include="Accounts\SmileysWhite3.png" />
+    <Resource Include="Accounts\SmileysWhite5.png" />
+    <Resource Include="Accounts\SmileysWhite7.png" />
+    <Resource Include="Accounts\SmileysWhite9.png" />
+    <Resource Include="Accounts\TrophyWhite.png" />
+    <Resource Include="Accounts\TwitterLogo.png" />
+    <Content Include="Assets\AppBar\appbar.save.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Accounts\YellowRect.png" />
+    <Content Include="Assets\AppBar\Car.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\VenueAppbar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\Venue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\appbar.edit.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\MessageWhiteSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Assets\295512_4827668181659_1497006748_n.jpg" />
+    <Resource Include="Assets\accountsGrey.png" />
+    <Resource Include="Assets\accountsWhite.png" />
+    <Content Include="Assets\AppBar\ComposeWhiteAppBar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\AppBar\appbarhome.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Assets\ChatIcon.png" />
+    <Resource Include="Assets\ChatIconGrey.png" />
+    <Resource Include="Assets\ComposeWhite.png" />
+    <Resource Include="Assets\ComposeWhiteAppBar.png" />
+    <Resource Include="Assets\editImg.png" />
+    <Resource Include="Assets\EmailChat.png" />
+    <Resource Include="Assets\facebook.png" />
+    <Resource Include="Assets\FacebookIcon.png" />
+    <Resource Include="Assets\iconbell.png" />
+    <Resource Include="Assets\LifeImg1.jpg" />
+    <Resource Include="Assets\ProfilePic.jpg" />
+    <Resource Include="Assets\ProfilePic.png" />
+    <Resource Include="Assets\shoutout.png" />
+    <Resource Include="Assets\shoutoutBlue.png" />
+    <Resource Include="Assets\shoutoutGrey.png" />
+    <Resource Include="Assets\shoutoutRed.png" />
+    <Resource Include="Assets\topbar.png" />
+    <Resource Include="Assets\Twitter.png" />
+    <Resource Include="Assets\twitter_logo.png" />
+    <Resource Include="Assets\UserProfileICon.png" />
+    <Resource Include="Assets\Zoikit.png" />
+    <Resource Include="Assets\ZoikitBorder.png" />
+    <Resource Include="Assets\ZoikitLogoHeadTop.png" />
+    <Content Include="icons\appbar.feature.search.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.download.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TopJpg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Appbar\Send.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Tutorial\1.jpg" />
+    <Content Include="Images\Tutorial\2.jpg" />
+    <Content Include="Images\Tutorial\3.jpg" />
+    <Content Include="Images\Tutorial\4.jpg" />
+    <Content Include="Images\Tutorial\5.jpg" />
+    <Content Include="Images\Tutorial\6.jpg" />
+    <Content Include="Images\YellowRect.png" />
+    <None Include="Service References\FacebookService\configuration91.svcinfo" />
+    <None Include="Service References\FacebookService\configuration.svcinfo" />
+    <None Include="Service References\FacebookService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TwitterService\TwitterService.disco" />
+    <None Include="Service References\TwitterService\configuration91.svcinfo" />
+    <None Include="Service References\TwitterService\configuration.svcinfo" />
+    <None Include="Service References\TwitterService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ExceptionReportingService\ExceptionReportingService.disco" />
+    <None Include="Service References\ExceptionReportingService\configuration91.svcinfo" />
+    <None Include="Service References\ExceptionReportingService\configuration.svcinfo" />
+    <None Include="Service References\ExceptionReportingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserLocationService\UserLocationService.disco" />
+    <None Include="Service References\UserLocationService\configuration91.svcinfo" />
+    <None Include="Service References\UserLocationService\configuration.svcinfo" />
+    <None Include="Service References\UserLocationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AppAuthenticationService\AppAuthentication.disco" />
+    <None Include="Service References\AppAuthenticationService\configuration91.svcinfo" />
+    <None Include="Service References\AppAuthenticationService\configuration.svcinfo" />
+    <None Include="Service References\AppAuthenticationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\FacebookService\FacebookService1.disco" />
+    <None Include="Service References\TagService\TagService.disco" />
+    <None Include="Service References\TagService\configuration91.svcinfo" />
+    <None Include="Service References\TagService\configuration.svcinfo" />
+    <None Include="Service References\TagService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\TextService\TextService.disco" />
+    <None Include="Service References\TextService\configuration91.svcinfo" />
+    <None Include="Service References\TextService\configuration.svcinfo" />
+    <None Include="Service References\TextService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DiscoverService\DiscoverService.disco" />
+    <None Include="Service References\DiscoverService\configuration91.svcinfo" />
+    <None Include="Service References\DiscoverService\configuration.svcinfo" />
+    <None Include="Service References\DiscoverService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\PushNotificationService\PushNotifications.disco" />
+    <None Include="Service References\PushNotificationService\configuration91.svcinfo" />
+    <None Include="Service References\PushNotificationService\configuration.svcinfo" />
+    <None Include="Service References\PushNotificationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="MeduimAppIcon.png" />
+    <None Include="Service References\BuzzService\BuzzService.disco" />
+    <None Include="Service References\BuzzService\configuration91.svcinfo" />
+    <None Include="Service References\BuzzService\configuration.svcinfo" />
+    <None Include="Service References\BuzzService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AccountService\AccountService.disco" />
+    <None Include="Service References\AccountService\configuration91.svcinfo" />
+    <None Include="Service References\AccountService\configuration.svcinfo" />
+    <None Include="Service References\AccountService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserService\configuration91.svcinfo" />
+    <None Include="Service References\UserService\configuration.svcinfo" />
+    <None Include="Service References\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\UserService\UserService1.disco" />
+    <None Include="Service References\NotificationService\NotificationService.disco" />
+    <None Include="Service References\NotificationService\configuration91.svcinfo" />
+    <None Include="Service References\NotificationService\configuration.svcinfo" />
+    <None Include="Service References\NotificationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="icons\appbar.back.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.favs.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.save.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\GunCircleCancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <BlendEmbeddedFont Include="Fonts\ROCKEB.TTF">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\segoeuil.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\seguili.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\LoveYaLikeASister.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+      <Uppercase>True</Uppercase>
+      <Lowercase>True</Lowercase>
+      <Numbers>True</Numbers>
+      <Punctuation>True</Punctuation>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\SketchFlow Print.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Signika-Bold.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Signika-Light.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Signika-Regular.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\Signika-Semibold.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <BlendEmbeddedFont Include="Fonts\PrimeScript_PERSONAL_USE.ttf">
+      <IsSystemFont>True</IsSystemFont>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </BlendEmbeddedFont>
+    <Resource Include="icons\Help\+Circle.PNG" />
+    <Resource Include="icons\Help\-Circle.PNG" />
+    <Resource Include="icons\Help\pCircle.PNG" />
+    <Resource Include="icons\Help\sCircle.PNG" />
+    <Resource Include="icons\Help\Target Circle.PNG" />
+    <Resource Include="icons\Help\tt Circle.PNG" />
+    <Resource Include="icons\Help\W Circle.PNG" />
+    <Content Include="icons\Meetup.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\MeetupCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Pin Circle Cross.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Pin Circle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Pin Cross.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Pin.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Profile +.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Profile -.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Notification.PNG">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\NotificationCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Settings.png" />
+    <Resource Include="Images\Status\Divorced.PNG" />
+    <Resource Include="Images\Status\Enagaged.PNG" />
+    <Resource Include="Images\Status\Married.PNG" />
+    <Resource Include="Images\Status\Relationship.PNG" />
+    <Resource Include="Images\Status\SingleFemale.PNG" />
+    <Resource Include="Images\Status\SingleMale.PNG" />
+    <Content Include="Images\Female Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Male Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Guid White.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Guid Yellow.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="icons\Yellow Profile.png" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Dashboard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Dashbord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Lock.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Profile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Trophy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\GunCircle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\Shout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Top75Jpg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\TopPng.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icons\appbar.add.rest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Appbar\Dashbord.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorText.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppID.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppID.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Navigation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Navigation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Controls\" />
+    <Folder Include="Images\Trophies\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\WindowsPhone\v8.0\Microsoft.Expression.Blend.WindowsPhone.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

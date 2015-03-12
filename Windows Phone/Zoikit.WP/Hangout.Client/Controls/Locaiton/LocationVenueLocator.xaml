@@ -1,0 +1,50 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=WindowsPhoneWatermarkTextBoxControl" xmlns:Search="clr-namespace:Hangout.Client.Search" xmlns:Client="clr-namespace:Hangout.Client" xmlns:Locaiton="clr-namespace:Hangout.Client.Controls.Locaiton" x:Class="Hangout.Client.Controls.LocationVenueLocator"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480" Width="Auto" Height="Auto" Loaded="UserControl_Loaded_1">
+    
+    <Grid x:Name="LayoutRoot">
+    	<StackPanel>
+    		<StackPanel Orientation="Vertical">
+    			<StackPanel Margin="0" Orientation="Horizontal">
+    				<Controls:WatermarkTextBox x:Name="SearchTB" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="356" WatermarkText="Search for cities and places." Margin="1,0,0,0"/>
+    				<Client:SearchButton x:Name="SearchBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-15,0,0,0" Tap="SearchBtn_Tap_1"/>
+    			</StackPanel>
+    			<ProgressBar x:Name="SearchPG" Height="10" IsIndeterminate="True" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" Opacity="0"/>
+    		</StackPanel>
+    		<StackPanel x:Name="CitySP" Margin="0,0,10,0" Orientation="Vertical" Width="472" Visibility="Collapsed">
+    			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="CITIES" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    			<Locaiton:CityList x:Name="CityList" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+    		</StackPanel>
+    		<StackPanel x:Name="VenuesSP" Margin="0,0,10,0" Orientation="Vertical">
+    			<StackPanel x:Name="SearchPlaceSP" Orientation="Vertical" Visibility="Collapsed">
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="PLACES" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    				<Client:VenueList x:Name="SearchVenueList"/>
+    			</StackPanel>
+    			<StackPanel x:Name="NearbyVenues" Orientation="Vertical" Visibility="Collapsed">
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="NEARBY" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    				<Client:VenueList x:Name="NearbyVenuesList"/>
+    			</StackPanel>
+    			<StackPanel x:Name="RecommendedVenues" Orientation="Vertical" Visibility="Collapsed">
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="RECOMMENDED" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    				<Client:VenueList x:Name="RecommendedVenueList"/>
+    			</StackPanel>
+    			<StackPanel x:Name="PlacesFollowingSP" Orientation="Vertical" Visibility="Collapsed">
+    				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="PLACES YOU FOLLOW" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    				<Client:VenueList x:Name="PlacesFollowingList"/>
+    			</StackPanel>
+    		</StackPanel>
+    		<StackPanel x:Name="MyCitySP" Margin="0,0,8,0" Orientation="Vertical" Width="472" Visibility="Collapsed">
+    			<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontWeight="Bold" Text="YOUR CITY" Width="436" FontSize="37.333" Margin="9,0,0,0"/>
+    			<Locaiton:CityList x:Name="MyCityList" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top"/>
+    		</StackPanel>
+    	</StackPanel>
+    </Grid>
+</UserControl>

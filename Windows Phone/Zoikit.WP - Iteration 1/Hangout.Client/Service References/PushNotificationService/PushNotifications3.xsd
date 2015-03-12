@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/PushNotifications/PushNotifications.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.WindowsAzure.Storage.Table" />
+  <xs:complexType name="PushNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.WindowsAzure.Storage.Table" base="q1:TableEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PushNotificationID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserID" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushNotification" nillable="true" type="tns:PushNotification" />
+</xs:schema>

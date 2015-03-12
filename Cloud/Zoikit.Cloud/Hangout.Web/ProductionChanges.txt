@@ -1,0 +1,2 @@
+﻿Change the string in Settings Resource File 
+Change the Connection String of Windows Azure storage

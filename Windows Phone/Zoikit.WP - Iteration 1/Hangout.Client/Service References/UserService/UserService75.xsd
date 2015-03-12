@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="FollowResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Following" />
+      <xs:enumeration value="Unfollowed" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="AlreadyFollowing" />
+      <xs:enumeration value="AlreadyUnfollowing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FollowResult" nillable="true" type="tns:FollowResult" />
+</xs:schema>

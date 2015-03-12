@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="574005d0-1190-4b97-81ba-4c87e00228b6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Account/AppAuthentication.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AppAuthentication.disco" MetadataType="Disco" ID="faac0ee8-53d6-4202-a0d7-c86893a0a984" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?disco" />
+    <MetadataFile FileName="AppAuthentication.wsdl" MetadataType="Wsdl" ID="6221672a-bee7-44d7-aa71-4168f336c287" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?wsdl" />
+    <MetadataFile FileName="AppAuthentication2.xsd" MetadataType="Schema" ID="91711e07-b97b-4dc0-9b90-747268a2e9f8" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd1" />
+    <MetadataFile FileName="AppAuthentication.xsd" MetadataType="Schema" ID="68933f11-fb04-4e64-a07a-b667f471338d" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd2" />
+    <MetadataFile FileName="AppAuthentication1.xsd" MetadataType="Schema" ID="6d4c5c94-ba5e-4c99-aef5-37197e61f281" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd0" />
+    <MetadataFile FileName="AppAuthentication3.xsd" MetadataType="Schema" ID="de2228c7-2f3c-481c-ad61-9ffec6d45db3" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

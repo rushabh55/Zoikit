@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserProfile">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Age" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Bio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DefaultLengthUnits" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LargeProfilePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationshipStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Timezone" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q1:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserProfile" nillable="true" type="tns:UserProfile" />
+  <xs:complexType name="User">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountBlockedByFailedLogin" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Activated" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Blocked" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Compatibilities" nillable="true" type="tns:ArrayOfCompatibility" />
+          <xs:element minOccurs="0" name="Compatibilities1" nillable="true" type="tns:ArrayOfCompatibility" />
+          <xs:element minOccurs="0" name="DateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailConfirmationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailConfirmed" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Exceptions" nillable="true" type="tns:ArrayOfException" />
+          <xs:element minOccurs="0" name="Expires" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FacebookData" nillable="true" type="tns:FacebookData" />
+          <xs:element minOccurs="0" name="FacebookDataReference" nillable="true" type="q2:EntityReferenceOfFacebookData9O5Tle4q" />
+          <xs:element minOccurs="0" name="FailedLoginCounts" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Favourites" nillable="true" type="tns:ArrayOfFavourite" />
+          <xs:element minOccurs="0" name="Favourites1" nillable="true" type="tns:ArrayOfFavourite" />
+          <xs:element minOccurs="0" name="FoursquareData" nillable="true" type="tns:FoursquareData" />
+          <xs:element minOccurs="0" name="FoursquareDataReference" nillable="true" type="q2:EntityReferenceOfFoursquareData9O5Tle4q" />
+          <xs:element minOccurs="0" name="HangoutCheckIns" nillable="true" type="tns:ArrayOfHangoutCheckIn" />
+          <xs:element minOccurs="0" name="HangoutComments" nillable="true" type="tns:ArrayOfHangoutComment" />
+          <xs:element minOccurs="0" name="HangoutPinneds" nillable="true" type="tns:ArrayOfHangoutPinned" />
+          <xs:element minOccurs="0" name="Hangouts" nillable="true" type="tns:ArrayOfHangouts" />
+          <xs:element minOccurs="0" name="HangoutsFollows" nillable="true" type="tns:ArrayOfHangoutsFollow" />
+          <xs:element minOccurs="0" name="Locale" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationUsers" nillable="true" type="tns:ArrayOfNotificationUser" />
+          <xs:element minOccurs="0" name="Notifications" nillable="true" type="tns:ArrayOfNotification" />
+          <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PushNotification" nillable="true" type="tns:PushNotification" />
+          <xs:element minOccurs="0" name="PushNotificationReference" nillable="true" type="q2:EntityReferenceOfPushNotification9O5Tle4q" />
+          <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReview" />
+          <xs:element minOccurs="0" name="Reviews1" nillable="true" type="tns:ArrayOfReview" />
+          <xs:element minOccurs="0" name="Role" nillable="true" type="tns:Role" />
+          <xs:element minOccurs="0" name="RoleID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="RoleReference" nillable="true" type="q2:EntityReferenceOfRole9O5Tle4q" />
+          <xs:element minOccurs="0" name="ScreenshotLocations" nillable="true" type="tns:ArrayOfScreenshotLocation" />
+          <xs:element minOccurs="0" name="SessionKey" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Texts" nillable="true" type="tns:ArrayOfText" />
+          <xs:element minOccurs="0" name="Texts1" nillable="true" type="tns:ArrayOfText" />
+          <xs:element minOccurs="0" name="TwitterData" nillable="true" type="tns:TwitterData" />
+          <xs:element minOccurs="0" name="TwitterDataReference" nillable="true" type="q2:EntityReferenceOfTwitterData9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserBackgroundData" nillable="true" type="tns:UserBackgroundData" />
+          <xs:element minOccurs="0" name="UserBackgroundDataReference" nillable="true" type="q2:EntityReferenceOfUserBackgroundData9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserBadges" nillable="true" type="tns:ArrayOfUserBadge" />
+          <xs:element minOccurs="0" name="UserCheckins" nillable="true" type="tns:ArrayOfUserCheckin" />
+          <xs:element minOccurs="0" name="UserFollows" nillable="true" type="tns:ArrayOfUserFollow" />
+          <xs:element minOccurs="0" name="UserFollows1" nillable="true" type="tns:ArrayOfUserFollow" />
+          <xs:element minOccurs="0" name="UserHangouts" nillable="true" type="tns:ArrayOfUserHangout" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserInterestGroupFollows" nillable="true" type="tns:ArrayOfUserInterestGroupFollow" />
+          <xs:element minOccurs="0" name="UserLocations" nillable="true" type="tns:ArrayOfUserLocation" />
+          <xs:element minOccurs="0" name="UserProfile" nillable="true" type="tns:UserProfile" />
+          <xs:element minOccurs="0" name="UserProfileReference" nillable="true" type="q2:EntityReferenceOfUserProfile9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserScores" nillable="true" type="tns:ArrayOfUserScore" />
+          <xs:element minOccurs="0" name="UserStatus" nillable="true" type="tns:ArrayOfUserStatu" />
+          <xs:element minOccurs="0" name="UserTokenFollows" nillable="true" type="tns:ArrayOfUserTokenFollow" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VenueFollows" nillable="true" type="tns:ArrayOfVenueFollow" />
+          <xs:element minOccurs="0" name="ZAT" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfCompatibility">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Compatibility" nillable="true" type="tns:Compatibility" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompatibility" nillable="true" type="tns:ArrayOfCompatibility" />
+  <xs:complexType name="Compatibility">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompatibilityId" type="xs:int" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Score" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1ID" type="xs:int" />
+          <xs:element minOccurs="0" name="User1Reference" nillable="true" type="q3:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="User2ID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q3:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Compatibility" nillable="true" type="tns:Compatibility" />
+  <xs:complexType name="ArrayOfException">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Exception" nillable="true" type="tns:Exception" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfException" nillable="true" type="tns:ArrayOfException" />
+  <xs:complexType name="Exception">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Exception1" nillable="true" type="tns:Exception" />
+          <xs:element minOccurs="0" name="Exception1Reference" nillable="true" type="q4:EntityReferenceOfException9O5Tle4q" />
+          <xs:element minOccurs="0" name="ExceptionID" type="xs:int" />
+          <xs:element minOccurs="0" name="ExceptionMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Exceptions1" nillable="true" type="tns:ArrayOfException" />
+          <xs:element minOccurs="0" name="InnerException" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q4:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Exception" nillable="true" type="tns:Exception" />
+  <xs:complexType name="FacebookData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q5:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AboutMe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Age" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Birthday" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FacebookID" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LargeProfilePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RelationshipStatus" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q5:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FacebookData" nillable="true" type="tns:FacebookData" />
+  <xs:complexType name="ArrayOfFavourite">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Favourite" nillable="true" type="tns:Favourite" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFavourite" nillable="true" type="tns:ArrayOfFavourite" />
+  <xs:complexType name="Favourite">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q6:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FavUserID" type="xs:int" />
+          <xs:element minOccurs="0" name="FavouriteID" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1Reference" nillable="true" type="q6:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q6:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Favourite" nillable="true" type="tns:Favourite" />
+  <xs:complexType name="FoursquareData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q7:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Bio" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeAdded" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Facebook" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FoursquareID" type="xs:long" />
+          <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HomeCity" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhotoPrefix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhotoSuffix" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Twitter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q7:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FoursquareData" nillable="true" type="tns:FoursquareData" />
+  <xs:complexType name="ArrayOfHangoutCheckIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HangoutCheckIn" nillable="true" type="tns:HangoutCheckIn" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangoutCheckIn" nillable="true" type="tns:ArrayOfHangoutCheckIn" />
+  <xs:complexType name="HangoutCheckIn">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q8:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientDateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutCheckInID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q8:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q8:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HangoutCheckIn" nillable="true" type="tns:HangoutCheckIn" />
+  <xs:complexType name="Hangouts">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q9="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q9:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CityReference" nillable="true" type="q9:EntityReferenceOfCity9O5Tle4q" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout1" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="Hangout1Reference" nillable="true" type="q9:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="HangoutCheckIns" nillable="true" type="tns:ArrayOfHangoutCheckIn" />
+          <xs:element minOccurs="0" name="HangoutComments" nillable="true" type="tns:ArrayOfHangoutComment" />
+          <xs:element minOccurs="0" name="HangoutDateTime" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutInInterestGroups" nillable="true" type="tns:ArrayOfHangoutInInterestGroup" />
+          <xs:element minOccurs="0" name="HangoutPinneds" nillable="true" type="tns:ArrayOfHangoutPinned" />
+          <xs:element minOccurs="0" name="Hangouts1" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="Hangouts1Reference" nillable="true" type="q9:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="HangoutsFollows" nillable="true" type="tns:ArrayOfHangoutsFollow" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+          <xs:element minOccurs="0" name="LocationReference" nillable="true" type="q9:EntityReferenceOfLocation9O5Tle4q" />
+          <xs:element minOccurs="0" name="ScreenshotLocationID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="StatusText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokensInHangouts" nillable="true" type="tns:ArrayOfTokensInHangout" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserHangouts" nillable="true" type="tns:ArrayOfUserHangout" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q9:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="tns:Venue" />
+          <xs:element minOccurs="0" name="VenueID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueReference" nillable="true" type="q9:EntityReferenceOfVenue9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Hangouts" nillable="true" type="tns:Hangouts" />
+  <xs:complexType name="City">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q10="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q10:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CityID" type="xs:int" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="tns:Country" />
+          <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryReference" nillable="true" type="q10:EntityReferenceOfCountry9O5Tle4q" />
+          <xs:element minOccurs="0" name="Hangouts" nillable="true" type="tns:ArrayOfHangouts" />
+          <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfLocation" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="City" nillable="true" type="tns:City" />
+  <xs:complexType name="Country">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q11="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q11:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cities" nillable="true" type="tns:ArrayOfCity" />
+          <xs:element minOccurs="0" name="CountryID" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfLocation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Country" nillable="true" type="tns:Country" />
+  <xs:complexType name="ArrayOfCity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="City" nillable="true" type="tns:City" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCity" nillable="true" type="tns:ArrayOfCity" />
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation" />
+  <xs:complexType name="Location">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q12="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q12:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AddressLine" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AdminDistrict" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Altitude" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="tns:City" />
+          <xs:element minOccurs="0" name="CityID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CityReference" nillable="true" type="q12:EntityReferenceOfCity9O5Tle4q" />
+          <xs:element minOccurs="0" name="ClientDateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="tns:Country" />
+          <xs:element minOccurs="0" name="CountryID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="CountryReference" nillable="true" type="q12:EntityReferenceOfCountry9O5Tle4q" />
+          <xs:element minOccurs="0" name="Course" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="District" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FormattedAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hangouts" nillable="true" type="tns:ArrayOfHangouts" />
+          <xs:element minOccurs="0" name="HorizontalAccuracy" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+          <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+          <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostalTown" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScreenshotLocations" nillable="true" type="tns:ArrayOfScreenshotLocation" />
+          <xs:element minOccurs="0" name="Speed" nillable="true" type="xs:double" />
+          <xs:element minOccurs="0" name="UserLocations" nillable="true" type="tns:ArrayOfUserLocation" />
+          <xs:element minOccurs="0" name="Venues" nillable="true" type="tns:ArrayOfVenue" />
+          <xs:element minOccurs="0" name="VerticalAccuracy" nillable="true" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location" />
+  <xs:complexType name="ArrayOfHangouts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hangouts" nillable="true" type="tns:Hangouts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangouts" nillable="true" type="tns:ArrayOfHangouts" />
+  <xs:complexType name="ArrayOfScreenshotLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScreenshotLocation" nillable="true" type="tns:ScreenshotLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScreenshotLocation" nillable="true" type="tns:ArrayOfScreenshotLocation" />
+  <xs:complexType name="ScreenshotLocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q13:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+          <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationReference" nillable="true" type="q13:EntityReferenceOfLocation9O5Tle4q" />
+          <xs:element minOccurs="0" name="ScreenshotLocationId" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q13:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScreenshotLocation" nillable="true" type="tns:ScreenshotLocation" />
+  <xs:complexType name="ArrayOfUserLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserLocation" nillable="true" type="tns:UserLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserLocation" nillable="true" type="tns:ArrayOfUserLocation" />
+  <xs:complexType name="UserLocation">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q14="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q14:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+          <xs:element minOccurs="0" name="LocationId" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationReference" nillable="true" type="q14:EntityReferenceOfLocation9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserLocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q14:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserLocation" nillable="true" type="tns:UserLocation" />
+  <xs:complexType name="ArrayOfVenue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Venue" nillable="true" type="tns:Venue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenue" nillable="true" type="tns:ArrayOfVenue" />
+  <xs:complexType name="Venue">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q15:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="FoursquareCanonicalUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FoursquareVenueID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Hangouts" nillable="true" type="tns:ArrayOfHangouts" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="tns:Location" />
+          <xs:element minOccurs="0" name="LocationID" type="xs:int" />
+          <xs:element minOccurs="0" name="LocationReference" nillable="true" type="q15:EntityReferenceOfLocation9O5Tle4q" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Twitter" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserCheckins" nillable="true" type="tns:ArrayOfUserCheckin" />
+          <xs:element minOccurs="0" name="VenueFollows" nillable="true" type="tns:ArrayOfVenueFollow" />
+          <xs:element minOccurs="0" name="VenueID" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueTokens" nillable="true" type="tns:ArrayOfVenueToken" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Venue" nillable="true" type="tns:Venue" />
+  <xs:complexType name="ArrayOfUserCheckin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserCheckin" nillable="true" type="tns:UserCheckin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserCheckin" nillable="true" type="tns:ArrayOfUserCheckin" />
+  <xs:complexType name="UserCheckin">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q16="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q16:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CheckedIn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserCheckinId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserId" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q16:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="tns:Venue" />
+          <xs:element minOccurs="0" name="VenueId" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueReference" nillable="true" type="q16:EntityReferenceOfVenue9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserCheckin" nillable="true" type="tns:UserCheckin" />
+  <xs:complexType name="ArrayOfVenueFollow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VenueFollow" nillable="true" type="tns:VenueFollow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenueFollow" nillable="true" type="tns:ArrayOfVenueFollow" />
+  <xs:complexType name="VenueFollow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q17="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q17:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q17:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="tns:Venue" />
+          <xs:element minOccurs="0" name="VenueFollowID" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueID" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueReference" nillable="true" type="q17:EntityReferenceOfVenue9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VenueFollow" nillable="true" type="tns:VenueFollow" />
+  <xs:complexType name="ArrayOfVenueToken">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VenueToken" nillable="true" type="tns:VenueToken" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVenueToken" nillable="true" type="tns:ArrayOfVenueToken" />
+  <xs:complexType name="VenueToken">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q18="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q18:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Token" />
+          <xs:element minOccurs="0" name="TokenID" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenReference" nillable="true" type="q18:EntityReferenceOfToken9O5Tle4q" />
+          <xs:element minOccurs="0" name="Venue" nillable="true" type="tns:Venue" />
+          <xs:element minOccurs="0" name="VenueID" type="xs:int" />
+          <xs:element minOccurs="0" name="VenueReference" nillable="true" type="q18:EntityReferenceOfVenue9O5Tle4q" />
+          <xs:element minOccurs="0" name="VenueTokenID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VenueToken" nillable="true" type="tns:VenueToken" />
+  <xs:complexType name="Token">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q19="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q19:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TokenDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokenId" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenInInterestGroups" nillable="true" type="tns:ArrayOfTokenInInterestGroup" />
+          <xs:element minOccurs="0" name="TokenName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokensInHangouts" nillable="true" type="tns:ArrayOfTokensInHangout" />
+          <xs:element minOccurs="0" name="UserTokenFollows" nillable="true" type="tns:ArrayOfUserTokenFollow" />
+          <xs:element minOccurs="0" name="VenueTokens" nillable="true" type="tns:ArrayOfVenueToken" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Token" nillable="true" type="tns:Token" />
+  <xs:complexType name="ArrayOfTokenInInterestGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokenInInterestGroup" nillable="true" type="tns:TokenInInterestGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTokenInInterestGroup" nillable="true" type="tns:ArrayOfTokenInInterestGroup" />
+  <xs:complexType name="TokenInInterestGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q20="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q20:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="InterestGroup" nillable="true" type="tns:InterestGroup" />
+          <xs:element minOccurs="0" name="InterestGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="InterestGroupReference" nillable="true" type="q20:EntityReferenceOfInterestGroup9O5Tle4q" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Token" />
+          <xs:element minOccurs="0" name="TokenID" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenInInterestGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenReference" nillable="true" type="q20:EntityReferenceOfToken9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TokenInInterestGroup" nillable="true" type="tns:TokenInInterestGroup" />
+  <xs:complexType name="InterestGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q21="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q21:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HangoutInInterestGroups" nillable="true" type="tns:ArrayOfHangoutInInterestGroup" />
+          <xs:element minOccurs="0" name="InterestGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="LargePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MedPicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SmallPicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TokenInInterestGroups" nillable="true" type="tns:ArrayOfTokenInInterestGroup" />
+          <xs:element minOccurs="0" name="UserInterestGroupFollows" nillable="true" type="tns:ArrayOfUserInterestGroupFollow" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InterestGroup" nillable="true" type="tns:InterestGroup" />
+  <xs:complexType name="ArrayOfHangoutInInterestGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HangoutInInterestGroup" nillable="true" type="tns:HangoutInInterestGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangoutInInterestGroup" nillable="true" type="tns:ArrayOfHangoutInInterestGroup" />
+  <xs:complexType name="HangoutInInterestGroup">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q22="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q22:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutInInterestGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q22:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="InterestGroup" nillable="true" type="tns:InterestGroup" />
+          <xs:element minOccurs="0" name="InterestGroupID" type="xs:int" />
+          <xs:element minOccurs="0" name="InterestGroupReference" nillable="true" type="q22:EntityReferenceOfInterestGroup9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HangoutInInterestGroup" nillable="true" type="tns:HangoutInInterestGroup" />
+  <xs:complexType name="ArrayOfUserInterestGroupFollow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInterestGroupFollow" nillable="true" type="tns:UserInterestGroupFollow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInterestGroupFollow" nillable="true" type="tns:ArrayOfUserInterestGroupFollow" />
+  <xs:complexType name="UserInterestGroupFollow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q23="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q23:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InterestGroup" nillable="true" type="tns:InterestGroup" />
+          <xs:element minOccurs="0" name="InterestGroupID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="InterestGroupReference" nillable="true" type="q23:EntityReferenceOfInterestGroup9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserInterestGroupFollowID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q23:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserInterestGroupFollow" nillable="true" type="tns:UserInterestGroupFollow" />
+  <xs:complexType name="ArrayOfTokensInHangout">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TokensInHangout" nillable="true" type="tns:TokensInHangout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTokensInHangout" nillable="true" type="tns:ArrayOfTokensInHangout" />
+  <xs:complexType name="TokensInHangout">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q24="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q24:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q24:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Token" />
+          <xs:element minOccurs="0" name="TokenID" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenReference" nillable="true" type="q24:EntityReferenceOfToken9O5Tle4q" />
+          <xs:element minOccurs="0" name="TokensInHangoutID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TokensInHangout" nillable="true" type="tns:TokensInHangout" />
+  <xs:complexType name="ArrayOfUserTokenFollow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserTokenFollow" nillable="true" type="tns:UserTokenFollow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserTokenFollow" nillable="true" type="tns:ArrayOfUserTokenFollow" />
+  <xs:complexType name="UserTokenFollow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q25:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Token" nillable="true" type="tns:Token" />
+          <xs:element minOccurs="0" name="TokenID" type="xs:int" />
+          <xs:element minOccurs="0" name="TokenReference" nillable="true" type="q25:EntityReferenceOfToken9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q25:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserTokenFollowID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserTokenFollow" nillable="true" type="tns:UserTokenFollow" />
+  <xs:complexType name="ArrayOfHangoutComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HangoutComment" nillable="true" type="tns:HangoutComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangoutComment" nillable="true" type="tns:ArrayOfHangoutComment" />
+  <xs:complexType name="HangoutComment">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q26="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q26:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ClientDateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="CommentText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutCommentID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q26:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q26:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HangoutComment" nillable="true" type="tns:HangoutComment" />
+  <xs:complexType name="ArrayOfHangoutPinned">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HangoutPinned" nillable="true" type="tns:HangoutPinned" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangoutPinned" nillable="true" type="tns:ArrayOfHangoutPinned" />
+  <xs:complexType name="HangoutPinned">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q27:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutPinnedID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q27:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q27:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HangoutPinned" nillable="true" type="tns:HangoutPinned" />
+  <xs:complexType name="ArrayOfHangoutsFollow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HangoutsFollow" nillable="true" type="tns:HangoutsFollow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHangoutsFollow" nillable="true" type="tns:ArrayOfHangoutsFollow" />
+  <xs:complexType name="HangoutsFollow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q28="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q28:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutFollowID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q28:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q28:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HangoutsFollow" nillable="true" type="tns:HangoutsFollow" />
+  <xs:complexType name="ArrayOfUserHangout">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserHangout" nillable="true" type="tns:UserHangout" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserHangout" nillable="true" type="tns:ArrayOfUserHangout" />
+  <xs:complexType name="UserHangout">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q29="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q29:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Hangout" nillable="true" type="tns:Hangouts" />
+          <xs:element minOccurs="0" name="HangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="HangoutReference" nillable="true" type="q29:EntityReferenceOfHangouts9O5Tle4q" />
+          <xs:element minOccurs="0" name="HangoutRequestAccepted" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserHangoutID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q29:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserHangout" nillable="true" type="tns:UserHangout" />
+  <xs:complexType name="ArrayOfNotificationUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotificationUser" nillable="true" type="tns:NotificationUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotificationUser" nillable="true" type="tns:ArrayOfNotificationUser" />
+  <xs:complexType name="NotificationUser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q30="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q30:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Notification" nillable="true" type="tns:Notification" />
+          <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificationReference" nillable="true" type="q30:EntityReferenceOfNotification9O5Tle4q" />
+          <xs:element minOccurs="0" name="NotificationUserID" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q30:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NotificationUser" nillable="true" type="tns:NotificationUser" />
+  <xs:complexType name="Notification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q31:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MarkAsRead" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MetaData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NotificationID" type="xs:int" />
+          <xs:element minOccurs="0" name="NotificationUsers" nillable="true" type="tns:ArrayOfNotificationUser" />
+          <xs:element minOccurs="0" name="Param1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Param2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q31:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Notification" nillable="true" type="tns:Notification" />
+  <xs:complexType name="ArrayOfNotification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Notification" nillable="true" type="tns:Notification" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotification" nillable="true" type="tns:ArrayOfNotification" />
+  <xs:complexType name="PushNotification">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q32="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q32:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ChannelURI" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q32:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PushNotification" nillable="true" type="tns:PushNotification" />
+  <xs:complexType name="ArrayOfReview">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Review" nillable="true" type="tns:Review" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReview" nillable="true" type="tns:ArrayOfReview" />
+  <xs:complexType name="Review">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q33:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Review1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ReviewID" type="xs:int" />
+          <xs:element minOccurs="0" name="ReviewedUser" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1Reference" nillable="true" type="q33:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q33:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Review" nillable="true" type="tns:Review" />
+  <xs:complexType name="Role">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q34="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q34:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+          <xs:element minOccurs="0" name="RoleName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Users" nillable="true" type="tns:ArrayOfUser" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Role" nillable="true" type="tns:Role" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="ArrayOfText">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Text" nillable="true" type="tns:Text" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfText" nillable="true" type="tns:ArrayOfText" />
+  <xs:complexType name="Text">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q35="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q35:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Text1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TextID" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1Reference" nillable="true" type="q35:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserFrom" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q35:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserTo" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Text" nillable="true" type="tns:Text" />
+  <xs:complexType name="TwitterData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q36="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q36:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="AccessTokenSecret" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateTimeAdded" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateTimeUpdated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FollowersCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="FollowingCount" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ProfileImageURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScreenName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TimeZone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TwitterID" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q36:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TwitterData" nillable="true" type="tns:TwitterData" />
+  <xs:complexType name="UserBackgroundData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q37="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q37:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompatibilityCheckDateTimeStamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RefreshFacebookTokenDateTimestamp" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q37:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserBackgroundData" nillable="true" type="tns:UserBackgroundData" />
+  <xs:complexType name="ArrayOfUserBadge">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserBadge" nillable="true" type="tns:UserBadge" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserBadge" nillable="true" type="tns:ArrayOfUserBadge" />
+  <xs:complexType name="UserBadge">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q38="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q38:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Badge" nillable="true" type="tns:Badge" />
+          <xs:element minOccurs="0" name="BadgeID" type="xs:int" />
+          <xs:element minOccurs="0" name="BadgeReference" nillable="true" type="q38:EntityReferenceOfBadge9O5Tle4q" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserBadgeID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q38:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserBadge" nillable="true" type="tns:UserBadge" />
+  <xs:complexType name="Badge">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q39="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q39:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BadgeDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BadgeID" type="xs:int" />
+          <xs:element minOccurs="0" name="BadgeName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BadgePic" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BadgeType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UserBadges" nillable="true" type="tns:ArrayOfUserBadge" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Badge" nillable="true" type="tns:Badge" />
+  <xs:complexType name="ArrayOfUserFollow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserFollow" nillable="true" type="tns:UserFollow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserFollow" nillable="true" type="tns:ArrayOfUserFollow" />
+  <xs:complexType name="UserFollow">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q40="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q40:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FollowUserID" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="User1Reference" nillable="true" type="q40:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserFollowID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q40:EntityReferenceOfUser9O5Tle4q" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserFollow" nillable="true" type="tns:UserFollow" />
+  <xs:complexType name="ArrayOfUserScore">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserScore" nillable="true" type="tns:UserScore" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserScore" nillable="true" type="tns:ArrayOfUserScore" />
+  <xs:complexType name="UserScore">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q41="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q41:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentScore" type="xs:int" />
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ScoreChange" type="xs:int" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q41:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserScoreID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserScore" nillable="true" type="tns:UserScore" />
+  <xs:complexType name="ArrayOfUserStatu">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserStatu" nillable="true" type="tns:UserStatu" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserStatu" nillable="true" type="tns:ArrayOfUserStatu" />
+  <xs:complexType name="UserStatu">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q42:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTimeStamp" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Param1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StatusText" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+          <xs:element minOccurs="0" name="UserID" type="xs:int" />
+          <xs:element minOccurs="0" name="UserReference" nillable="true" type="q42:EntityReferenceOfUser9O5Tle4q" />
+          <xs:element minOccurs="0" name="UserStatusID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UserStatu" nillable="true" type="tns:UserStatu" />
+</xs:schema>

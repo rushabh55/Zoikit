@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Accounts" />
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" />
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfUserLocationData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserLocationData" type="tns:UserLocationData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserLocationData" nillable="true" type="tns:ArrayOfUserLocationData" />
+  <xs:complexType name="UserLocationData">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Distance" type="xs:double" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Accounts" minOccurs="0" name="UserData" type="q1:UserData" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" minOccurs="0" name="location" nillable="true" type="q2:Location" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserLocationData" nillable="true" type="tns:UserLocationData" />
+</xs:schema>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Buzz" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Buzz" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/Buzz/BuzzService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/Buzz/BuzzService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" />
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/Buzz/BuzzService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+  <xs:complexType name="ArrayOfBuzz">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Buzz" nillable="true" type="tns:Buzz" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuzz" nillable="true" type="tns:ArrayOfBuzz" />
+  <xs:complexType name="Buzz">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amplified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AmplifyCount" type="xs:int" />
+      <xs:element minOccurs="0" name="BuzzComments" nillable="true" type="tns:ArrayOfBuzzComment" />
+      <xs:element minOccurs="0" name="BuzzID" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" minOccurs="0" name="City" nillable="true" type="q1:City" />
+      <xs:element minOccurs="0" name="CommentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Deamplified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Distance" type="xs:double" />
+      <xs:element minOccurs="0" name="ImageURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LikeCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Liked" type="xs:boolean" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" minOccurs="0" name="Location" nillable="true" type="q2:Location" />
+      <xs:element minOccurs="0" name="Posted" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" minOccurs="0" name="User" nillable="true" type="q3:CompactUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Buzz" nillable="true" type="tns:Buzz" />
+  <xs:complexType name="ArrayOfBuzzComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuzzComment" nillable="true" type="tns:BuzzComment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuzzComment" nillable="true" type="tns:ArrayOfBuzzComment" />
+  <xs:complexType name="BuzzComment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommentID" type="ser:guid" />
+      <xs:element minOccurs="0" name="DatePosted" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" minOccurs="0" name="User" nillable="true" type="q4:CompactUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BuzzComment" nillable="true" type="tns:BuzzComment" />
+</xs:schema>

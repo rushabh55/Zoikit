@@ -1,0 +1,115 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IFacebookService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITwitterService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IAccountService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IExceptionReportingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserLocationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IAppAuthentication" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IBuzzService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IBuzzService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITagService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ITextService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IDiscoverService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_INotificationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IPushNotifications" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_INotificationService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+      <client>
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Account/TwitterService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITwitterService"
+          contract="TwitterService.ITwitterService" name="BasicHttpBinding_ITwitterService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Account/AccountService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAccountService"
+          contract="AccountService.IAccountService" name="BasicHttpBinding_IAccountService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Exception/ExceptionReportingService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IExceptionReportingService"
+          contract="ExceptionReportingService.IExceptionReportingService"
+          name="BasicHttpBinding_IExceptionReportingService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Location/UserLocationService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserLocationService"
+          contract="UserLocationService.IUserLocationService" name="BasicHttpBinding_IUserLocationService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Account/AppAuthentication.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAppAuthentication"
+          contract="AppAuthenticationService.IAppAuthentication" name="BasicHttpBinding_IAppAuthentication" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Account/FacebookService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IFacebookService"
+          contract="FacebookService.IFacebookService" name="BasicHttpBinding_IFacebookService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/User/UserService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserService"
+          contract="UserService.IUserService" name="BasicHttpBinding_IUserService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Buzz/BuzzService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IBuzzService"
+          contract="BuzzService.IBuzzService" name="BasicHttpBinding_IBuzzService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Tag/TagService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITagService"
+          contract="TagService.ITagService" name="BasicHttpBinding_ITagService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Text/TextService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITextService"
+          contract="TextService.ITextService" name="BasicHttpBinding_ITextService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Discover/DiscoverService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IDiscoverService"
+          contract="DiscoverService.IDiscoverService" name="BasicHttpBinding_IDiscoverService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/Notification/NotificationService.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INotificationService"
+          contract="NotificationService.INotificationService" name="BasicHttpBinding_INotificationService" />
+        <endpoint address="http://hangoutservice.cloudapp.net/Windows/PushNotifications/PushNotifications.svc"
+          binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPushNotifications"
+          contract="PushNotificationService.IPushNotifications" name="BasicHttpBinding_IPushNotifications" />
+
+      </client>
+    </system.serviceModel>
+</configuration>

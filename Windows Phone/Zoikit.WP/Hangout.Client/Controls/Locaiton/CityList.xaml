@@ -1,0 +1,54 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Client="clr-namespace:Hangout.Client" x:Class="Hangout.Client.Controls.Locaiton.CityList"
+   xmlns:Converter="clr-namespace:Hangout.Client.Controls.Locaiton"
+    mc:Ignorable="d"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+
+
+    <UserControl.Resources>
+
+        
+
+        <DataTemplate x:Key="VenueItemTemplate">
+			<StackPanel Orientation="Horizontal" Width="446">
+				<Client:AddButton Tap="AddButton_Tap_1"/>
+				<StackPanel Orientation="Vertical" Width="374" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock x:Name="VenueName" TextWrapping="Wrap" FontSize="33.333" Margin="0,3,0,0" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" Width="374"/>
+				</StackPanel>
+			</StackPanel>
+		</DataTemplate>
+	</UserControl.Resources>
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+    
+    <Grid x:Name="LayoutRoot">
+    	<StackPanel Margin="0" Orientation="Vertical">
+        
+        
+    		<TextBlock x:Name="NoLBL" HorizontalAlignment="Left" TextWrapping="Wrap" Text="We didnot find any cities." VerticalAlignment="Top" Foreground="{StaticResource YellowBrush}" Visibility="Collapsed"/>
+        
+        
+    		<ListBox x:Name="CityLB" HorizontalAlignment="Left" VerticalAlignment="Top" ItemTemplate="{StaticResource VenueItemTemplate}" SelectionChanged="CityLB_SelectionChanged_1">
+    			<ListBox.Template>
+    				<ControlTemplate>
+    					<ItemsPresenter />
+    				</ControlTemplate>
+    			</ListBox.Template>
+    		</ListBox>
+        
+        
+    	</StackPanel>
+    </Grid>
+</UserControl>

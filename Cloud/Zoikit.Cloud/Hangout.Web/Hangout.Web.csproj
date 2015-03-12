@@ -1,0 +1,663 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A14CA412-AC4C-4E39-B03D-BE57C5838F00}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hangout.Web</RootNamespace>
+    <AssemblyName>Hangout.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Facebook.6.4.2\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock">
+      <HintPath>..\packages\Hammock.1.3.1\lib\4.0\Hammock.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="MaxMind.Db">
+      <HintPath>..\packages\MaxMind.Db.0.2.2.0\lib\net40\MaxMind.Db.dll</HintPath>
+    </Reference>
+    <Reference Include="MaxMind.GeoIP2">
+      <HintPath>..\packages\MaxMind.GeoIP2.0.3.1.0\lib\net40\MaxMind.GeoIP2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyTag=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyTag=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyTag=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.3, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.3\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Android">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Apple">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Apple.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Core">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Windows">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.WindowsPhone">
+      <HintPath>..\packages\PushSharp.2.0.4.0\lib\net40\PushSharp.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\SendGrid.1.2.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.Services.Client">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.15.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.15.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyTag=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\System.Web.Providers.Core.1.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TweetSharp">
+      <HintPath>..\packages\TweetSharp.2.3.0\lib\4.0\TweetSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsPhone.Recipes.Push.Messasges, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\WindowsPhone.Recipes.Push.Messasges.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="bin\Hangout.Web.dll" />
+    <Content Include="bin\Hangout.Web.pdb" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\Avatar\1.PNG" />
+    <Content Include="Images\Avatar\10.PNG" />
+    <Content Include="Images\Avatar\2.PNG" />
+    <Content Include="Images\Avatar\3.PNG" />
+    <Content Include="Images\Avatar\4.PNG" />
+    <Content Include="Images\Avatar\5.PNG" />
+    <Content Include="Images\Avatar\6.PNG" />
+    <Content Include="Images\Avatar\7.PNG" />
+    <Content Include="Images\Avatar\8.PNG" />
+    <Content Include="Images\Avatar\9.PNG" />
+    <Content Include="Images\Category\Adventure.png" />
+    <Content Include="Images\Category\Business.png" />
+    <Content Include="Images\Category\Food.png" />
+    <Content Include="Images\Category\Lifestyle.png" />
+    <Content Include="Images\Category\Nightlife.png" />
+    <Content Include="Images\Category\Other.png" />
+    <Content Include="Images\Category\Social.png" />
+    <Content Include="Images\Category\Sports.png" />
+    <Content Include="Images\Category\Technology.png" />
+    <Content Include="Images\Category\Yellow\Adventure.png" />
+    <Content Include="Images\Category\Yellow\Business.png" />
+    <Content Include="Images\Category\Yellow\Food.png" />
+    <Content Include="Images\Category\Yellow\Lifestyle.png" />
+    <Content Include="Images\Category\Yellow\NightLife.png" />
+    <Content Include="Images\Category\Yellow\Other.png" />
+    <Content Include="Images\Category\Yellow\Social.png" />
+    <Content Include="Images\Category\Yellow\Sports.png" />
+    <Content Include="Images\Category\Yellow\Technology.png" />
+    <Content Include="Images\ProfilePic\Prof2.jpg" />
+    <Content Include="Images\ProfilePic\Prof3.jpg" />
+    <Content Include="Images\ProfilePic\profile.jpg" />
+    <Content Include="Images\Trophy\1.PNG" />
+    <Content Include="Images\Trophy\10.PNG" />
+    <Content Include="Images\Trophy\11.PNG" />
+    <Content Include="Images\Trophy\12.PNG" />
+    <Content Include="Images\Trophy\13.PNG" />
+    <Content Include="Images\Trophy\14.PNG" />
+    <Content Include="Images\Trophy\15.PNG" />
+    <Content Include="Images\Trophy\16.PNG" />
+    <Content Include="Images\Trophy\17.PNG" />
+    <Content Include="Images\Trophy\18.PNG" />
+    <Content Include="Images\Trophy\19.PNG" />
+    <Content Include="Images\Trophy\2.PNG" />
+    <Content Include="Images\Trophy\3.PNG" />
+    <Content Include="Images\Trophy\4.PNG" />
+    <Content Include="Images\Trophy\5.PNG" />
+    <Content Include="Images\Trophy\6.PNG" />
+    <Content Include="Images\Trophy\7.PNG" />
+    <Content Include="Images\Trophy\8.PNG" />
+    <Content Include="Images\Trophy\9.PNG" />
+    <Content Include="ProductionChanges.txt" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="ZoikitBig.png" />
+    <Content Include="ZoikItMarketing1.PNG" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Service References\GeocodeService\configuration91.svcinfo" />
+    <None Include="Service References\GeocodeService\configuration.svcinfo" />
+    <Content Include="Service References\GeocodeService\Hangout.Web.GeocodeService.GeocodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\GeocodeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Styles\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppSettings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CloudSettings\TableReference.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TableReference.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Accounts\AccountStatus.cs" />
+    <Compile Include="Core\Accounts\Crypt.cs" />
+    <Compile Include="Core\Accounts\Facebook.cs" />
+    <Compile Include="Core\Accounts\Foursquare.cs" />
+    <Compile Include="Core\Accounts\Twitter.cs" />
+    <Compile Include="Core\Accounts\User.cs" />
+    <Compile Include="Core\Accounts\UserData.cs" />
+    <Compile Include="Core\Accounts\HangoutApp.cs" />
+    <Compile Include="Core\Apps\Apps.cs" />
+    <Compile Include="Core\BackgroundData\UserBackgroundData.cs" />
+    <Compile Include="Core\Buzz\Amplify.cs" />
+    <Compile Include="Core\Buzz\AmplifyStatus.cs" />
+    <Compile Include="Core\Buzz\UserBuzzInteract.cs" />
+    <Compile Include="Core\Cloud\TableStorage.cs" />
+    <Compile Include="Core\Init\Initialize.cs" />
+    <Compile Include="Core\Users\TemUserLocationData.cs" />
+    <Compile Include="Model\AmplifyBuzzByUser.cs" />
+    <Compile Include="Model\Apps.cs" />
+    <Compile Include="Model\AmplifyBuzz.cs" />
+    <Compile Include="Model\BuzzByID.cs" />
+    <Compile Include="Model\BuzzByTag.cs" />
+    <Compile Include="Model\BuzzByUser.cs" />
+    <Compile Include="Model\BuzzFollowByUser.cs" />
+    <Compile Include="Model\LocalTagFollowCount.cs" />
+    <Compile Include="Model\UserBackgroundData.cs" />
+    <Compile Include="Core\Buzz\BuzzTag.cs" />
+    <Compile Include="Core\ClientType.cs" />
+    <Compile Include="Core\Cloud\Queue.cs" />
+    <Compile Include="Core\Compatibility\Compatibility.cs" />
+    <Compile Include="Core\Exceptions\Account\UnAuthorisedAccess.cs" />
+    <Compile Include="Core\Exceptions\ExceptionReporting.cs" />
+    <Compile Include="Core\Follow\FollowResult.cs" />
+    <Compile Include="Core\Buzz\Follow.cs" />
+    <Compile Include="Core\Buzz\Buzz.cs" />
+    <Compile Include="Core\Category\Follow.cs" />
+    <Compile Include="Core\Category\CategoryScore.cs" />
+    <Compile Include="Model\Places.cs" />
+    <Compile Include="Core\Location\PlaceFollow.cs" />
+    <Compile Include="Core\Buzz\BuzzSaveStatus.cs" />
+    <Compile Include="Core\Smart\ListAlgo.cs" />
+    <Compile Include="Core\Social\Twitter.cs" />
+    <Compile Include="Core\Tags\FacebookTags.cs" />
+    <Compile Include="Core\Tags\Follow.cs" />
+    <Compile Include="Core\Tags\Tags.cs" />
+    <Compile Include="Core\Tags\User.cs" />
+    <Compile Include="Core\Text\Text.cs" />
+    <Compile Include="Core\Text\TextData.cs" />
+    <Compile Include="Core\Text\TextSentStatus.cs" />
+    <Compile Include="Core\Text\UserDistint.cs" />
+    <Compile Include="Core\Users\Follow.cs" />
+    <Compile Include="Core\Category\Category.cs" />
+    <Compile Include="Core\Category\User.cs" />
+    <Compile Include="Core\Location\City.cs" />
+    <Compile Include="Core\Location\Country.cs" />
+    <Compile Include="Core\Location\Distance.cs" />
+    <Compile Include="Core\Location\Location.cs" />
+    <Compile Include="Core\Location\UserLocation.cs" />
+    <Compile Include="Core\Location\UserLocationData.cs" />
+    <Compile Include="Core\Location\Place.cs" />
+    <Compile Include="Core\Mail\Mail.cs" />
+    <Compile Include="Core\Location\CheckInStatus.cs" />
+    <Compile Include="Core\Buzz\BuzzCommentData.cs" />
+    <Compile Include="Core\Notifications\Notification.cs" />
+    <Compile Include="Core\PushNotifications\PushNotifications.cs" />
+    <Compile Include="Core\Reviews\Reviews.cs" />
+    <Compile Include="Core\Score\UserScore.cs" />
+    <Compile Include="Core\Social\Facebook.cs" />
+    <Compile Include="Core\Trophy\Trophy.cs" />
+    <Compile Include="Core\Users\Users.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MailTexts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailTexts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\EmailMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ActivityLog.cs" />
+    <Compile Include="Model\Avatars.cs" />
+    <Compile Include="Model\Badges.cs" />
+    <Compile Include="Model\Buzz.cs" />
+    <Compile Include="Model\BuzzComment.cs" />
+    <Compile Include="Model\BuzzFollow.cs" />
+    <Compile Include="Model\BuzzInCategory.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Notifications.cs" />
+    <Compile Include="Model\NotificationUser.cs" />
+    <Compile Include="Model\PlaceTag.cs" />
+    <Compile Include="Model\PushNotification.cs" />
+    <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\Tables.cs" />
+    <Compile Include="Model\Tag.cs" />
+    <Compile Include="Model\TagInCategory.cs" />
+    <Compile Include="Model\TagsInBuzz.cs" />
+    <Compile Include="Model\Text.cs" />
+    <Compile Include="Model\TwitterData.cs" />
+    <Compile Include="Model\TwitterRelationships.cs" />
+    <Compile Include="Model\UserBadge.cs" />
+    <Compile Include="Model\UserBuzzInteract.cs" />
+    <Compile Include="Model\UserCategoryFollow.cs" />
+    <Compile Include="Model\UserCheckins.cs" />
+    <Compile Include="Model\UserFollow.cs" />
+    <Compile Include="Model\UserLocations.cs" />
+    <Compile Include="Model\UserPlaceFollow.cs" />
+    <Compile Include="Model\UserProfile.cs" />
+    <Compile Include="Model\UserReview.cs" />
+    <Compile Include="Model\UserMeet.cs" />
+    <Compile Include="Model\City.cs" />
+    <Compile Include="Model\Compatibility.cs" />
+    <Compile Include="Model\FoursquareRelationships.cs" />
+    <Compile Include="Model\Country.cs" />
+    <Compile Include="Model\Exceptions.cs" />
+    <Compile Include="Model\FacebookData.cs" />
+    <Compile Include="Model\FacebookRelationships.cs" />
+    <Compile Include="Model\FoursquareData.cs" />
+    <Compile Include="Model\Users.cs" />
+    <Compile Include="Model\UserScore.cs" />
+    <Compile Include="Model\UserTagFollow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\GeocodeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Account\Account.cs" />
+    <Compile Include="Services\Account\Facebook.cs" />
+    <Compile Include="Services\Account\HangoutApp.cs" />
+    <Compile Include="Services\Account\Twitter.cs" />
+    <Compile Include="Services\Buzz\Buzz.cs" />
+    <Compile Include="Services\Category\Category.cs" />
+    <Compile Include="Services\Discover\Discover.cs" />
+    <Compile Include="Services\Location\Location.cs" />
+    <Compile Include="Services\Location\Venue.cs" />
+    <Compile Include="Services\Location\VenueFollow.cs" />
+    <Compile Include="Services\Objects\Accounts\AppAuthenticationToken.cs" />
+    <Compile Include="Services\Objects\Accounts\CompactUser.cs" />
+    <Compile Include="Services\Objects\Accounts\CompleteUserData.cs" />
+    <Compile Include="Services\Objects\Accounts\FacebookData.cs" />
+    <Compile Include="Services\Account\Foursquare.cs" />
+    <Compile Include="Services\Location\UserLocation.cs" />
+    <Compile Include="Services\Notification\Notification.cs" />
+    <Compile Include="Services\Objects\Accounts\FoursquareData.cs" />
+    <Compile Include="Services\Objects\Accounts\TwitterData.cs" />
+    <Compile Include="Services\Objects\Buzz\Buzz.cs" />
+    <Compile Include="Services\Objects\Category\Category.cs" />
+    <Compile Include="Services\Objects\Category\UserCategory.cs" />
+    <Compile Include="Services\Objects\Discover\DiscoverObj.cs" />
+    <Compile Include="Services\Objects\Locations\Location.cs" />
+    <Compile Include="Services\Objects\Locations\City.cs" />
+    <Compile Include="Services\Objects\Locations\Country.cs" />
+    <Compile Include="Services\Objects\Locations\Place.cs" />
+    <Compile Include="Services\Objects\Meetup.cs" />
+    <Compile Include="Services\Objects\Buzz\BuzzComment.cs" />
+    <Compile Include="Services\Objects\Buzz\BuzzData.cs" />
+    <Compile Include="Services\Objects\Notification\Notification.cs" />
+    <Compile Include="Services\Objects\Notification\NotificationData.cs" />
+    <Compile Include="Services\Objects\Service\Result.cs" />
+    <Compile Include="Services\Objects\Status\Status.cs" />
+    <Compile Include="Services\Objects\Text\Text.cs" />
+    <Compile Include="Services\Objects\Text\UserText.cs" />
+    <Compile Include="Services\Objects\Tag\Tag.cs" />
+    <Compile Include="Services\Objects\Tag\UserTag.cs" />
+    <Compile Include="Services\Objects\Trophy.cs" />
+    <Compile Include="Services\Objects\Accounts\User.cs" />
+    <Compile Include="Services\Objects\Accounts\UserData.cs" />
+    <Compile Include="Services\Objects\Accounts\UserProfile.cs" />
+    <Compile Include="Services\Objects\User\CompleteUserProfile.cs" />
+    <Compile Include="Services\Objects\User\Rep.cs" />
+    <Compile Include="Services\Objects\User\SocialNetworkType.cs" />
+    <Compile Include="Services\Objects\User\UserKnow.cs" />
+    <Compile Include="Services\PushNotification\PushNotification.cs" />
+    <Compile Include="Services\Score\Score.cs" />
+    <Compile Include="Services\Text\Text.cs" />
+    <Compile Include="Services\Tag\Tag.cs" />
+    <Compile Include="Services\Trophy\Trophy.cs" />
+    <Compile Include="Services\Users\User.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WebRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppSettings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CloudSettings\TableReference.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TableReference.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailTexts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MailTexts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages\EmailMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GeocodeService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeocodeService\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\common.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\contracts.wsdl" />
+    <None Include="Service References\GeocodeService\contracts.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\geocode.wsdl" />
+    <None Include="Service References\GeocodeService\geocode.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GeocodeService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Services\Status\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8196</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.10\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

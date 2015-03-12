@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TextService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Text" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Text" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITextService_GetUserText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserText" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetUserText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetText" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_SendText_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendText" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_SendText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_MarkAsRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAsRead" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_MarkAsRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_MarkAllAsRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAllAsRead" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_MarkAllAsRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAllAsReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetTextsAfter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextsAfter" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetTextsAfter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextsAfterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetUnreadMessagesCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessagesCount" />
+  </wsdl:message>
+  <wsdl:message name="ITextService_GetUnreadMessagesCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnreadMessagesCountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITextService">
+    <wsdl:operation name="GetUserText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/GetUserText" message="tns:ITextService_GetUserText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/GetUserTextResponse" message="tns:ITextService_GetUserText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/GetText" message="tns:ITextService_GetText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/GetTextResponse" message="tns:ITextService_GetText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/SendText" message="tns:ITextService_SendText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/SendTextResponse" message="tns:ITextService_SendText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkAsRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/MarkAsRead" message="tns:ITextService_MarkAsRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/MarkAsReadResponse" message="tns:ITextService_MarkAsRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkAllAsRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/MarkAllAsRead" message="tns:ITextService_MarkAllAsRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/MarkAllAsReadResponse" message="tns:ITextService_MarkAllAsRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextsAfter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/GetTextsAfter" message="tns:ITextService_GetTextsAfter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/GetTextsAfterResponse" message="tns:ITextService_GetTextsAfter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessagesCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITextService/GetUnreadMessagesCount" message="tns:ITextService_GetUnreadMessagesCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITextService/GetUnreadMessagesCountResponse" message="tns:ITextService_GetUnreadMessagesCount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITextService" type="tns:ITextService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserText">
+      <soap:operation soapAction="http://tempuri.org/ITextService/GetUserText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetText">
+      <soap:operation soapAction="http://tempuri.org/ITextService/GetText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendText">
+      <soap:operation soapAction="http://tempuri.org/ITextService/SendText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkAsRead">
+      <soap:operation soapAction="http://tempuri.org/ITextService/MarkAsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkAllAsRead">
+      <soap:operation soapAction="http://tempuri.org/ITextService/MarkAllAsRead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextsAfter">
+      <soap:operation soapAction="http://tempuri.org/ITextService/GetTextsAfter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnreadMessagesCount">
+      <soap:operation soapAction="http://tempuri.org/ITextService/GetUnreadMessagesCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TextService">
+    <wsdl:port name="BasicHttpBinding_ITextService" binding="tns:BasicHttpBinding_ITextService">
+      <soap:address location="http://127.0.0.1:81/Core/Text/TextService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

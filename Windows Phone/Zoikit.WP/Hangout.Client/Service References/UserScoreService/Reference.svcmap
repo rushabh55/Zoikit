@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f3490b0-0983-40b2-ac05-cdb30a4dabba" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Score/UserScoreService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserScoreService.xsd" MetadataType="Schema" ID="acc043b4-5749-4e86-a1ac-954f04ec9bf6" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserScoreService.disco" MetadataType="Disco" ID="4778e4ad-ed16-45b9-8a69-72c5d5c3effe" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?disco" />
+    <MetadataFile FileName="UserScoreService1.xsd" MetadataType="Schema" ID="652b288b-e2f8-4f0d-a1b0-33b14ab572eb" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserScoreService.wsdl" MetadataType="Wsdl" ID="516b8bec-cc4c-4fda-9e56-adb0bba241cf" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?wsdl" />
+    <MetadataFile FileName="UserScoreService2.xsd" MetadataType="Schema" ID="2485366b-877e-462c-a64a-e52613100024" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserScoreService3.xsd" MetadataType="Schema" ID="0f8a6ae2-cdc5-4da4-accb-9dc85e96b0a1" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserScoreService4.xsd" MetadataType="Schema" ID="924d178a-c945-4c7d-9de8-a43f4ef05dfa" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Score/UserScoreService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

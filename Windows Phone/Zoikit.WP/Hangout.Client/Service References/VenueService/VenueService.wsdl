@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VenueService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Token" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Status" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVenueService_GetRecommenededVenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecommenededVenues" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetRecommenededVenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecommenededVenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_SearchVenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVenues" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_SearchVenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchVenuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_FollowVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowVenue" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_FollowVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_UnfollowVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowVenue" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_UnfollowVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsFollowing" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetFollowersUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowersUserList" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetFollowersUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFollowersUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetNoOfFollowers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfFollowers" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetNoOfFollowers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNoOfFollowersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueFollowing" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueFollowingByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueFollowingByUser" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueFollowingByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueFollowingByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueByID" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetVenueByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVenueByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsCheckedIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCheckedIn" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsCheckedIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCheckedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_CanCheckedIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:CanCheckedIn" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_CanCheckedIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CanCheckedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_Checkout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Checkout" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_Checkout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsCheckedOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsCheckedOut" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_IsCheckedOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsCheckedOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_CheckIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIn" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_CheckIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetNearbyVenues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearbyVenues" />
+  </wsdl:message>
+  <wsdl:message name="IVenueService_GetNearbyVenues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearbyVenuesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVenueService">
+    <wsdl:operation name="GetRecommenededVenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetRecommenededVenues" message="tns:IVenueService_GetRecommenededVenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetRecommenededVenuesResponse" message="tns:IVenueService_GetRecommenededVenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchVenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/SearchVenues" message="tns:IVenueService_SearchVenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/SearchVenuesResponse" message="tns:IVenueService_SearchVenues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/FollowVenue" message="tns:IVenueService_FollowVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/FollowVenueResponse" message="tns:IVenueService_FollowVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/UnfollowVenue" message="tns:IVenueService_UnfollowVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/UnfollowVenueResponse" message="tns:IVenueService_UnfollowVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/IsFollowing" message="tns:IVenueService_IsFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/IsFollowingResponse" message="tns:IVenueService_IsFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowersUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetFollowersUserList" message="tns:IVenueService_GetFollowersUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetFollowersUserListResponse" message="tns:IVenueService_GetFollowersUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfFollowers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetNoOfFollowers" message="tns:IVenueService_GetNoOfFollowers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetNoOfFollowersResponse" message="tns:IVenueService_GetNoOfFollowers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetVenueFollowing" message="tns:IVenueService_GetVenueFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetVenueFollowingResponse" message="tns:IVenueService_GetVenueFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueFollowingByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetVenueFollowingByUser" message="tns:IVenueService_GetVenueFollowingByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetVenueFollowingByUserResponse" message="tns:IVenueService_GetVenueFollowingByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetVenueByID" message="tns:IVenueService_GetVenueByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetVenueByIDResponse" message="tns:IVenueService_GetVenueByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCheckedIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/IsCheckedIn" message="tns:IVenueService_IsCheckedIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/IsCheckedInResponse" message="tns:IVenueService_IsCheckedIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CanCheckedIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/CanCheckedIn" message="tns:IVenueService_CanCheckedIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/CanCheckedInResponse" message="tns:IVenueService_CanCheckedIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/Checkout" message="tns:IVenueService_Checkout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/CheckoutResponse" message="tns:IVenueService_Checkout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsCheckedOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/IsCheckedOut" message="tns:IVenueService_IsCheckedOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/IsCheckedOutResponse" message="tns:IVenueService_IsCheckedOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/CheckIn" message="tns:IVenueService_CheckIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/CheckInResponse" message="tns:IVenueService_CheckIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearbyVenues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVenueService/GetNearbyVenues" message="tns:IVenueService_GetNearbyVenues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVenueService/GetNearbyVenuesResponse" message="tns:IVenueService_GetNearbyVenues_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IVenueService" type="tns:IVenueService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRecommenededVenues">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetRecommenededVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchVenues">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/SearchVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowVenue">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/FollowVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowVenue">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/UnfollowVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFollowing">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/IsFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFollowersUserList">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetFollowersUserList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoOfFollowers">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetNoOfFollowers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueFollowing">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetVenueFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueFollowingByUser">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetVenueFollowingByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVenueByID">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetVenueByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCheckedIn">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/IsCheckedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanCheckedIn">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/CanCheckedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Checkout">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/Checkout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsCheckedOut">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/IsCheckedOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIn">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/CheckIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearbyVenues">
+      <soap:operation soapAction="http://tempuri.org/IVenueService/GetNearbyVenues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VenueService">
+    <wsdl:port name="BasicHttpBinding_IVenueService" binding="tns:BasicHttpBinding_IVenueService">
+      <soap:address location="http://127.0.0.1:81/Core/Location/VenueService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,32 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Loaded="UserControl_Loaded"
+	
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing" x:Class="Hangout.Client.Controls.Loader.CircleLoader"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" Height="50" Width="50">
+	<UserControl.Resources>
+		<Storyboard x:Name="LoadAnimation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="path" RepeatBehavior="Forever">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-0.003"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="179.722"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="359.886"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	
+
+    
+	
+    <Grid x:Name="LayoutRoot" Width="50" Height="50">
+    	<Path x:Name="path" Data="M50,25 C50,35.1116 43.9089,44.2275 34.5671,48.097 C31.4821,49.3748 28.2433,49.9974 25.0312,50.0007 C18.5163,50.0074 12.1112,47.4665 7.32233,42.6777 C0.172383,35.5277 -1.96651,24.7748 1.90301,15.4329 C5.77254,6.09106 14.8884,0 25,0 L25,25 z" Fill="{StaticResource YellowBrush}" Margin="-0.001,0,0,-0.001" Stretch="Fill" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5">
+    		<Path.RenderTransform>
+    			<CompositeTransform/>
+    		</Path.RenderTransform>
+    	</Path>
+    </Grid>
+</UserControl>

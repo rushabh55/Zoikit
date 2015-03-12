@@ -1,0 +1,131 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Hangout_Client_Controls_Notifications="clr-namespace:Hangout.Client.Controls.Notifications" 
+    x:Class="Hangout.Client.Extras.Help"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    xmlns:Hangout_Client_Controls_Tutorial="clr-namespace:Hangout.Client.Controls.Tutorial"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480">
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar BackgroundColor="{StaticResource AppbarColor}" Opacity="1">
+			<shell:ApplicationBarIconButton IconUri="/icons/Dashbord.png" IsEnabled="True" Text="dashboard" Click="ApplicationBarIconButton_Click"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid Background="{StaticResource BlueBrush}">
+        <Grid x:Name="Root" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    	<Image Height="75" Grid.Row="1" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<TextBlock HorizontalAlignment="Right" Margin="0,0,7,0" TextWrapping="Wrap" Text="help" FontFamily="Segoe WP Light" FontSize="48" Foreground="#FF002455" Grid.Row="1" VerticalAlignment="Top" Width="102" Height="72" d:LayoutOverrides="HorizontalAlignment"/>
+    	<TextBlock HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="Here are some tips which will help you connect with people simpler." VerticalAlignment="Top" Margin="8,89,0,0" FontSize="32" Foreground="#FFFFAF04" Width="464" Height="143"/>
+        <Button Tap="Button_Tap" Foreground="{StaticResource YellowBrush}" Content="Click here for a quick Tutorial" BorderBrush="Transparent" Width="451" HorizontalAlignment="Right" FontWeight="Normal" Grid.Row="1" Margin="0,207,8,434" />
+
+        <ScrollViewer Margin="21,300,8,68" Grid.Row="1">
+    		<StackPanel Orientation="Vertical" Width="451">
+              <StackPanel Height="125" Margin="0,0,4,0" Orientation="Horizontal" d:LayoutOverrides="Width">
+                    <Image Margin="0,9,0,16" Source="/icons/Dashbord.png" Stretch="Fill" Width="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="Helps you navigate to your dashboard. Hangouts and Shouts nearby are waiting for you here." FontSize="21.333" Width="309" Margin="39,0,0,0"/>
+    			</StackPanel>
+    			<StackPanel Height="100" Orientation="Horizontal" d:LayoutOverrides="Width" Margin="0,11,0,0">
+    				<Image Source="sCircle.PNG" Stretch="Fill" Width="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="Want to update people around you on what you're upto ? Shout out something here. " FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+    			</StackPanel>
+    			<StackPanel Height="173" Orientation="Horizontal" d:LayoutOverrides="Width" Margin="0,25,0,0">
+    				<Image Source="Notification circle.PNG" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="We want to keep you updated on whats happening around you. We notify you when  there's anything happening that interests you. Press this button to navigate to notifications page and see all the notifications." FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="131" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="Target Circle.PNG" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="We know sometimes you dont like We knowing where you are. That's okay. Just push this button to stop tracking" FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="135" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="pCircle.PNG" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="We recommend that you keep your profile updated. Push this button to make changes to your profile" FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="100" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="+Circle.PNG" Stretch="Fill" Width="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="If you want to join a hangout? Push this button to notify peopl around you that you're in!" FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="100" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="-Circle.PNG" Stretch="Fill" Width="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="Want to drop out of a hangout? Press this button to help others know that you're not coming" FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="144" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="Pin Circle.png" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="Liked a hangout? Want to pin that on your dashboard? Press this button to pin up and look at the hangout sometime soon." FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="100" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="Pin Circle Cross.PNG" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="PRess this to unpin a hangout from your dashboard." FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+    			<StackPanel Height="192" Orientation="Horizontal" Margin="0,25,0,0" d:LayoutOverrides="Width">
+    				<Image Source="rCircle.PNG" Stretch="Fill" Width="100" Height="100"/>
+    				<TextBlock TextWrapping="Wrap" Text="Are you meeting with other wassuper's? Check In to a hangout so that we know you're there. Please dont check-in if you're not present. We're pretty close at catching fake checkin's" FontSize="21.333" Width="309" Margin="38,0,0,0"/>
+
+    			</StackPanel>
+
+    		</StackPanel>
+
+    	</ScrollViewer>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+</Grid>       
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

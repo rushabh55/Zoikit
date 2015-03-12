@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Status" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Token" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.User" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserService_GetUsersFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserIDFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserIDFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowing" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserIDFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDFollowing" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserIDFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_FollowUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_FollowUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_UnfollowUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_UnfollowUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleAroundYou_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleAroundYou" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleAroundYou_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleAroundYouResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowingByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowingByUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowingByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowingByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowedByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowedByUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUsersFollowedByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersFollowedByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetLocalFollowersByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalFollowersByToken" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetLocalFollowersByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalFollowersByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetLocalUsersByCategoryFollowing_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalUsersByCategoryFollowing" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetLocalUsersByCategoryFollowing_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalUsersByCategoryFollowingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleWhoFollowBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoFollowBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleWhoFollowBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoFollowBuzzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleWhoFollowVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoFollowVenue" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleWhoFollowVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleWhoFollowVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_PeopleNearVenue_InputMessage">
+    <wsdl:part name="parameters" element="tns:PeopleNearVenue" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_PeopleNearVenue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PeopleNearVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleCheckedIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleCheckedIn" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetPeopleCheckedIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPeopleCheckedInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserCompleteProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserCompleteProfile" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserCompleteProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserCompleteProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserRep_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRep" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserRep_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRepResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SearchPeopleAroundYou_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPeopleAroundYou" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_SearchPeopleAroundYou_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPeopleAroundYouResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserService">
+    <wsdl:operation name="GetUsersFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowed" message="tns:IUserService_GetUsersFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowedResponse" message="tns:IUserService_GetUsersFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserIDFollowed" message="tns:IUserService_GetUserIDFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserIDFollowedResponse" message="tns:IUserService_GetUserIDFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowing" message="tns:IUserService_GetUsersFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowingResponse" message="tns:IUserService_GetUsersFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserIDFollowing" message="tns:IUserService_GetUserIDFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserIDFollowingResponse" message="tns:IUserService_GetUserIDFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/FollowUser" message="tns:IUserService_FollowUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/FollowUserResponse" message="tns:IUserService_FollowUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/UnfollowUser" message="tns:IUserService_UnfollowUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/UnfollowUserResponse" message="tns:IUserService_UnfollowUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleAroundYou">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetPeopleAroundYou" message="tns:IUserService_GetPeopleAroundYou_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetPeopleAroundYouResponse" message="tns:IUserService_GetPeopleAroundYou_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUser" message="tns:IUserService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserResponse" message="tns:IUserService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowingByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowingByUser" message="tns:IUserService_GetUsersFollowingByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowingByUserResponse" message="tns:IUserService_GetUsersFollowingByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowedByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowedByUser" message="tns:IUserService_GetUsersFollowedByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUsersFollowedByUserResponse" message="tns:IUserService_GetUsersFollowedByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalFollowersByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetLocalFollowersByToken" message="tns:IUserService_GetLocalFollowersByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetLocalFollowersByTokenResponse" message="tns:IUserService_GetLocalFollowersByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalUsersByCategoryFollowing">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetLocalUsersByCategoryFollowing" message="tns:IUserService_GetLocalUsersByCategoryFollowing_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetLocalUsersByCategoryFollowingResponse" message="tns:IUserService_GetLocalUsersByCategoryFollowing_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoFollowBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetPeopleWhoFollowBuzz" message="tns:IUserService_GetPeopleWhoFollowBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetPeopleWhoFollowBuzzResponse" message="tns:IUserService_GetPeopleWhoFollowBuzz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoFollowVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetPeopleWhoFollowVenue" message="tns:IUserService_GetPeopleWhoFollowVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetPeopleWhoFollowVenueResponse" message="tns:IUserService_GetPeopleWhoFollowVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PeopleNearVenue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/PeopleNearVenue" message="tns:IUserService_PeopleNearVenue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/PeopleNearVenueResponse" message="tns:IUserService_PeopleNearVenue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleCheckedIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetPeopleCheckedIn" message="tns:IUserService_GetPeopleCheckedIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetPeopleCheckedInResponse" message="tns:IUserService_GetPeopleCheckedIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserCompleteProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserCompleteProfile" message="tns:IUserService_GetUserCompleteProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserCompleteProfileResponse" message="tns:IUserService_GetUserCompleteProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRep">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetUserRep" message="tns:IUserService_GetUserRep_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetUserRepResponse" message="tns:IUserService_GetUserRep_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPeopleAroundYou">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/SearchPeopleAroundYou" message="tns:IUserService_SearchPeopleAroundYou_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/SearchPeopleAroundYouResponse" message="tns:IUserService_SearchPeopleAroundYou_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUsersFollowed">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDFollowed">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserIDFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowing">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDFollowing">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserIDFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/FollowUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/UnfollowUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleAroundYou">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetPeopleAroundYou" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowingByUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersFollowingByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersFollowedByUser">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUsersFollowedByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalFollowersByToken">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetLocalFollowersByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalUsersByCategoryFollowing">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetLocalUsersByCategoryFollowing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoFollowBuzz">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetPeopleWhoFollowBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleWhoFollowVenue">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetPeopleWhoFollowVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PeopleNearVenue">
+      <soap:operation soapAction="http://tempuri.org/IUserService/PeopleNearVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeopleCheckedIn">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetPeopleCheckedIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserCompleteProfile">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserCompleteProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRep">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetUserRep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPeopleAroundYou">
+      <soap:operation soapAction="http://tempuri.org/IUserService/SearchPeopleAroundYou" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserService">
+    <wsdl:port name="BasicHttpBinding_IUserService" binding="tns:BasicHttpBinding_IUserService">
+      <soap:address location="http://127.0.0.1:81/Core/User/UserService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

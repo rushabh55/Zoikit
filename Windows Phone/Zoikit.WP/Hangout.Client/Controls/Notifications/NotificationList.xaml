@@ -1,0 +1,35 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Hangout.Client.Controls.Notifications" xmlns:Client="clr-namespace:Hangout.Client" x:Class="Hangout.Client.Controls.Notifications.NotificationList"
+    mc:Ignorable="d"
+    d:DesignHeight="480" d:DesignWidth="480">
+	<UserControl.Resources>
+		<DataTemplate x:Key="DataTemplate2">
+			<Grid>
+				<local:NotificationListItem x:Name="NotificationItem" HorizontalAlignment="Left" VerticalAlignment="Top" Loaded="NotificationItem_Loaded_1" Notifi="{Binding}" Margin="0,0,0,5"/>
+			</Grid>
+		</DataTemplate>
+	</UserControl.Resources>
+    
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+    
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Left" VerticalAlignment="Top">
+    	<StackPanel>
+    		<ProgressBar x:Name="UpProgressBar" HorizontalAlignment="Left" Height="4" VerticalAlignment="Top" Width="480" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" IsIndeterminate="True" Visibility="Collapsed"/>
+    		<ListBox x:Name="NotificationsLB" HorizontalAlignment="Left" VerticalAlignment="Top" ItemTemplate="{StaticResource DataTemplate2}" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+    		<ProgressBar x:Name="DownProgressBar" HorizontalAlignment="Left" Height="4" VerticalAlignment="Top" Width="480" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" IsIndeterminate="True" Visibility="Collapsed"/>
+    		<Client:DownloadButton x:Name="MoreBtn" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Tap="MoreBtn_Tap"/>
+    	</StackPanel>
+    </Grid>
+</UserControl>

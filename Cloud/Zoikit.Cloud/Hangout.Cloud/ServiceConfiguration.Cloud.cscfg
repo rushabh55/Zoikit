@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Hangout.Cloud" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="Hangout.Services">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="Hangout.Web">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="Hangout.Cloud.Agent">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hangoutstorage;AccountKey=Zkh7b3+GW1JaEM3RXGuTHm/ZrtAhTLT6ZMquKNAwcHaBUCX0UW4RdtLQ8iM7sFdxg/VyJuiRarZpGNAVAl2LEw==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

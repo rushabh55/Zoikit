@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AppAuthentication" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Account/AppAuthentication.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Accounts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppAuthentication_Register_InputMessage">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_Register_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_RegisterByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterByID" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_RegisterByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ConfirmEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmEmail" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ConfirmEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAppAuthentication_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppAuthentication">
+    <wsdl:operation name="Register">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/Register" message="tns:IAppAuthentication_Register_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/RegisterResponse" message="tns:IAppAuthentication_Register_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/RegisterByID" message="tns:IAppAuthentication_RegisterByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/RegisterByIDResponse" message="tns:IAppAuthentication_RegisterByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/Login" message="tns:IAppAuthentication_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/LoginResponse" message="tns:IAppAuthentication_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/ConfirmEmail" message="tns:IAppAuthentication_ConfirmEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/ConfirmEmailResponse" message="tns:IAppAuthentication_ConfirmEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/ChangePassword" message="tns:IAppAuthentication_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/ChangePasswordResponse" message="tns:IAppAuthentication_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppAuthentication/ResetPassword" message="tns:IAppAuthentication_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppAuthentication/ResetPasswordResponse" message="tns:IAppAuthentication_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAppAuthentication" type="tns:IAppAuthentication">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterByID">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/RegisterByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmEmail">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/ConfirmEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IAppAuthentication/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppAuthentication">
+    <wsdl:port name="BasicHttpBinding_IAppAuthentication" binding="tns:BasicHttpBinding_IAppAuthentication">
+      <soap:address location="http://127.0.0.1:81/Core/Account/AppAuthentication.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

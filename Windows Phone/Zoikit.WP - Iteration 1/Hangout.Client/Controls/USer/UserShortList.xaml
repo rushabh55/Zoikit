@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Hangout.Client.Controls.User.UserShortList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:local="clr-namespace:Hangout.Client.Controls.User"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="UserShortListTemplate">
+            <Grid Width="90" Height="90" Margin="0,2,2,2">
+                <local:UserShortDisplay  Height="80"   Width="80" User="{Binding}"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+   
+
+    <Grid x:Name="LayoutRoot" Height="90">
+        <ListBox x:Name="UserShortDisplayLB" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="439" ItemTemplate="{StaticResource UserShortListTemplate}" SelectionChanged="UserShortDisplayLB_SelectionChanged_1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
+    </Grid>
+</UserControl>

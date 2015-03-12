@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c969d4a2-3872-4614-a44a-cde3a9b2272e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Buzz/BuzzService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BuzzService.xsd" MetadataType="Schema" ID="9b5b0d9d-00c4-4367-8459-266447d856b6" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd5" />
+    <MetadataFile FileName="BuzzService1.xsd" MetadataType="Schema" ID="72c8cbca-112b-4ec2-a89b-87fcb8720c06" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd9" />
+    <MetadataFile FileName="BuzzService2.xsd" MetadataType="Schema" ID="f1b44a0c-5da4-405d-825a-334316f71c43" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd2" />
+    <MetadataFile FileName="BuzzService3.xsd" MetadataType="Schema" ID="b9ca83a2-2592-4285-8518-dedcd5e1db8d" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd6" />
+    <MetadataFile FileName="BuzzService4.xsd" MetadataType="Schema" ID="3b6585bb-ca88-4235-947c-26d9fedc19c0" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd11" />
+    <MetadataFile FileName="BuzzService5.xsd" MetadataType="Schema" ID="e252735f-b963-435f-a63e-9666de79bdf7" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd3" />
+    <MetadataFile FileName="BuzzService6.xsd" MetadataType="Schema" ID="e7b8815d-64e3-470c-b608-7ce288f773d2" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd7" />
+    <MetadataFile FileName="BuzzService.disco" MetadataType="Disco" ID="b640d185-75bc-4f7d-aff1-380ff751ccb8" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?disco" />
+    <MetadataFile FileName="BuzzService7.xsd" MetadataType="Schema" ID="c0be4b80-82a7-4f1a-bb5b-939717f15044" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd0" />
+    <MetadataFile FileName="BuzzService8.xsd" MetadataType="Schema" ID="d0e7fc49-656a-45a5-be38-22bdcd931b70" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd4" />
+    <MetadataFile FileName="BuzzService9.xsd" MetadataType="Schema" ID="21ee3a51-8d7f-4b90-b7f8-03d6bbe0d160" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd8" />
+    <MetadataFile FileName="BuzzService.wsdl" MetadataType="Wsdl" ID="f350e1a4-355e-4228-991c-2c5100673a2a" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?wsdl" />
+    <MetadataFile FileName="BuzzService10.xsd" MetadataType="Schema" ID="8baf81fc-65b9-4d40-9ab8-3e3d1b83ff79" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd10" />
+    <MetadataFile FileName="BuzzService11.xsd" MetadataType="Schema" ID="fc43b64a-b568-43f9-8d97-d2bc4cd9c1d2" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

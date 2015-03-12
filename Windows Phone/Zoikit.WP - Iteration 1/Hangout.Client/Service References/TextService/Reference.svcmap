@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="da185d55-f7ae-4445-9f85-60e39275718b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.50:8082/Windows/Text/TextService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TextService.xsd" MetadataType="Schema" ID="311bfcdd-fb03-4d24-9625-0f00696f3b0c" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TextService1.xsd" MetadataType="Schema" ID="430c2de8-6798-4a8f-96a5-9a4c6ca0c6e2" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TextService2.xsd" MetadataType="Schema" ID="0c8b635b-74a2-4926-9c8b-270378893676" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TextService.wsdl" MetadataType="Wsdl" ID="593d8164-b680-450e-aa4a-052b5bf56535" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?wsdl" />
+    <MetadataFile FileName="TextService.disco" MetadataType="Disco" ID="73669b98-aa48-4f06-89ce-e700880594f9" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?disco" />
+    <MetadataFile FileName="TextService3.xsd" MetadataType="Schema" ID="3891c74e-7434-4017-a230-cff0b3113490" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd6" />
+    <MetadataFile FileName="TextService4.xsd" MetadataType="Schema" ID="15ce0e34-1578-44c5-95e9-f61b762b99e8" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TextService5.xsd" MetadataType="Schema" ID="0d0745de-2152-467c-b027-0d3df79b4dce" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TextService6.xsd" MetadataType="Schema" ID="6311e04c-a8e4-4b7b-b556-51c41ba7e95b" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Text/TextService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

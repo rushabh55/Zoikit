@@ -1,0 +1,152 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:converter="clr-namespace:Hangout.Client.Core.Converters"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:cc="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Client="clr-namespace:Hangout.Client"
+    xmlns:Notifications="clr-namespace:Hangout.Client.Controls.Notifications"
+    x:Class="Hangout.Client.Texts.UserText"
+    xmlns:Txt="Hangout.Client.Core"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d">
+	<phone:PhoneApplicationPage.Resources>
+        
+        <Client:ChatBubbleDirectionConverter x:Key="DirectionConverter"/>
+        <Client:ChatBubbleAlignmentConverter x:Key="BubbleConverter"/>
+		<Storyboard x:Name="ShowLBL">
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="HideLBL">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+		<converter:DateTimeToStringConverter x:Key="DateConverter"/>
+		<DataTemplate x:Key="DataTemplate2" >
+            <Grid Width="450" HorizontalAlignment="Center">
+                <cc:ChatBubble ChatBubbleDirection="{Binding Converter={StaticResource DirectionConverter}}" Foreground="LightBlue" Background="{Binding Converter={StaticResource DirectionConverter},ConverterParameter=Colour}" Margin="0,10,0,0" Width="350" HorizontalAlignment="{Binding Converter={StaticResource BubbleConverter}}" >
+                    <Grid Width="335">
+                        <Image HorizontalAlignment="Left" Width="75" Height="75" Margin="8,8,0,17" Source="{Binding User.ProfilePicURL}" VerticalAlignment="Top"/>
+                        <StackPanel Margin="88,0,0,0" Orientation="Vertical">
+                            <TextBlock Margin="0" TextWrapping="Wrap" Foreground="{StaticResource BlueBrush}" FontSize="25.333" Text="{Binding User.Name}" FontWeight="Bold" Width="242"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" FontSize="19" Text="{Binding TextMessage}" Foreground="{StaticResource BlueBrush}" RenderTransformOrigin="0.5,0.5" Width="242">
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Right" Foreground="{StaticResource BlueBrush}" Margin="0,0,4,0" Text="{Binding DateTimeStamp, Converter={StaticResource DateConverter}}" Width="242" />
+                        </StackPanel>
+                    </Grid>
+                </cc:ChatBubble>
+            </Grid>
+        </DataTemplate>
+		<Storyboard x:Name="ShowTextError">
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextErrorStatus" d:IsOptimized="True"/>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.FontFamily)" Storyboard.TargetName="TextErrorStatus">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+					<DiscreteObjectKeyFrame.Value>
+						<FontFamily>/Hangout.Client;component/Fonts/Fonts.zip#Segoe UI Light</FontFamily>
+					</DiscreteObjectKeyFrame.Value>
+				</DiscreteObjectKeyFrame>
+			</ObjectAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoMessageGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NAMELBL" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowNoText">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0.985" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoMessageGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NAMELBL" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTextLoader">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoMessageGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NAMELBL" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTextPage">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoMessageGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NAMELBL" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+
+
+	
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="1" BackgroundColor="{StaticResource AppbarColor}">
+            <shell:ApplicationBarIconButton Text="dashboard" IconUri="/icons/Dashbord.png" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BlueBrush}">
+        
+      
+            <Grid.RowDefinitions>
+            <RowDefinition Height="728"/>
+        </Grid.RowDefinitions>
+    	<TextBlock x:Name="TextErrorStatus" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Oops, We're having problems loading texts. There might be too much turbulance up there in the cloud." VerticalAlignment="Top" FontSize="32" Width="444" Margin="9,88,0,0" Foreground="{StaticResource YellowBrush}" Opacity="0" FontFamily="/Hangout.Client;component/Fonts/Fonts.zip#Segoe UI Light"/>
+        <Client:TextLoader x:Name="TextLoader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,201,0,0" Opacity="0" Width="472"/>
+    	<Image Height="75" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<Grid x:Name="NoMessageGrid" Margin="-2,201,2,116" Opacity="0">
+    		<TextBlock HorizontalAlignment="Left" Margin="0,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Width="480" FontWeight="Bold" TextAlignment="Center" Foreground="White" Height="95" Text="OOPS, ITS SILENT IN HERE"/>
+    		<Image Margin="95,15,105,140" Source="MessageWhite.png" Stretch="Fill"/>
+
+    	</Grid>
+    	<Canvas x:Name="TopLBL" Margin="245,10,8,718">
+    		<Image Source="Message.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="52.676" Width="49.976" Canvas.Left="110" Canvas.Top="3.744">
+    			<Image.RenderTransform>
+    				<CompositeTransform Rotation="-0.185"/>
+    			</Image.RenderTransform>
+    		</Image>
+    		<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="TEXT" FontFamily="Segoe UI" FontSize="26.667" Foreground="{StaticResource BlueBrush}" VerticalAlignment="Top" Width="74.904" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="48.328" FontWeight="Bold" Canvas.Left="160.002" Canvas.Top="11.162">
+    			<TextBlock.RenderTransform>
+    				<CompositeTransform SkewY="-0.377" TranslateY="-0.993" Rotation="0.234"/>
+    			</TextBlock.RenderTransform>
+    		</TextBlock>
+    	</Canvas>
+    	<TextBlock x:Name="NAMELBL" TextWrapping="Wrap" FontSize="32" FontWeight="Bold" Margin="9,81,4,609" Width="467" Height="43" Opacity="0"/>
+    	<ScrollViewer x:Name="MainSV" Height="500" VerticalAlignment="Bottom" Margin="0,0,0,90" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" >
+    		<StackPanel x:Name="stackPanel" Orientation="Vertical" Opacity="0" Width="480" >
+    			<Client:GetPreviousButton x:Name="PrevBtn" Width="240" HorizontalAlignment="Center" Margin="125,0,115,0" Visibility="Collapsed" Tap="PrevBtn_Tap_1"/>
+    			<ProgressBar x:Name="PreviousPG" Height="10" HorizontalAlignment="Center" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" IsIndeterminate="True" Width="480" Visibility="Collapsed"/>
+    			<ListBox x:Name="TextLB" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="450" ItemTemplate="{StaticResource DataTemplate2}" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+    			<ProgressBar x:Name="MorePG" Height="10" HorizontalAlignment="Center" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" IsIndeterminate="True" Width="480" Visibility="Collapsed"/>
+    		</StackPanel>
+    	</ScrollViewer>
+    	<StackPanel x:Name="stackPanel2" Orientation="Horizontal" Height="69" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2,0,-3,0" Opacity="0">
+    		<cc:ChatBubbleTextBox AcceptsReturn="True" Text="Type your text here..." Tap="CommentTB_Tap" VerticalAlignment="Center" ChatBubbleDirection="LowerRight" Width="455"  x:Name="CommentTB" TextWrapping="Wrap" InputScope="Chat" Margin="7,0,0,0"/>
+    		<Button BorderBrush="Transparent" x:Name="PostBtn" HorizontalAlignment="Left" Foreground="{StaticResource YellowBrush}" Click="PostBtn_Click" Margin="-63,0,0,0" VerticalAlignment="Top" Width="82">
+    			<Image Source="/Images/AppBar/Send.png" Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-15,-17,0,0"/>
+    		</Button>
+    	</StackPanel>
+        <Notifications:NotificationControl x:Name="Notifier" HorizontalAlignment="Left" Margin="353,0,0,0" VerticalAlignment="Top"/>
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+    </Grid>
+
+
+	
+</phone:PhoneApplicationPage>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserLocationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Location" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserLocationService_UpdateUserLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserLocation" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_UpdateUserLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetNearestUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetNearestUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNearestUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocation" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetCityByLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByLocation" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_GetCityByLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_SearchCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCities" />
+  </wsdl:message>
+  <wsdl:message name="IUserLocationService_SearchCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCitiesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserLocationService">
+    <wsdl:operation name="UpdateUserLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserLocationService/UpdateUserLocation" message="tns:IUserLocationService_UpdateUserLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserLocationService/UpdateUserLocationResponse" message="tns:IUserLocationService_UpdateUserLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserLocationService/GetNearestUsers" message="tns:IUserLocationService_GetNearestUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserLocationService/GetNearestUsersResponse" message="tns:IUserLocationService_GetNearestUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserLocationService/GetLocation" message="tns:IUserLocationService_GetLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserLocationService/GetLocationResponse" message="tns:IUserLocationService_GetLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserLocationService/GetCityByLocation" message="tns:IUserLocationService_GetCityByLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserLocationService/GetCityByLocationResponse" message="tns:IUserLocationService_GetCityByLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserLocationService/SearchCities" message="tns:IUserLocationService_SearchCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserLocationService/SearchCitiesResponse" message="tns:IUserLocationService_SearchCities_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserLocationService" type="tns:IUserLocationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateUserLocation">
+      <soap:operation soapAction="http://tempuri.org/IUserLocationService/UpdateUserLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNearestUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserLocationService/GetNearestUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocation">
+      <soap:operation soapAction="http://tempuri.org/IUserLocationService/GetLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByLocation">
+      <soap:operation soapAction="http://tempuri.org/IUserLocationService/GetCityByLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCities">
+      <soap:operation soapAction="http://tempuri.org/IUserLocationService/SearchCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserLocationService">
+    <wsdl:port name="BasicHttpBinding_IUserLocationService" binding="tns:BasicHttpBinding_IUserLocationService">
+      <soap:address location="http://127.0.0.1:81/Core/Location/UserLocationService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

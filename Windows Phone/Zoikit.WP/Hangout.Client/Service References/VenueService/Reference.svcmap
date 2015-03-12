@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d21c7165-a309-43bc-864d-b6b52a0b9f89" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Location/VenueService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VenueService.xsd" MetadataType="Schema" ID="d73f9fdd-c93e-4f10-863f-462d40a5cf5c" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd4" />
+    <MetadataFile FileName="VenueService1.xsd" MetadataType="Schema" ID="d27d481b-9680-49fc-bb42-408b00a7b225" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd0" />
+    <MetadataFile FileName="VenueService2.xsd" MetadataType="Schema" ID="82e8c79c-42b8-4fec-a286-11c69a95e26b" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd6" />
+    <MetadataFile FileName="VenueService3.xsd" MetadataType="Schema" ID="85ce0306-1ff9-486c-8a8e-18a205dcdd93" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd7" />
+    <MetadataFile FileName="VenueService.wsdl" MetadataType="Wsdl" ID="35568f9d-b0e2-4287-8a0e-5988e6db7de2" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?wsdl" />
+    <MetadataFile FileName="VenueService4.xsd" MetadataType="Schema" ID="fa38ab89-76e8-43c6-b472-07550fd1c01e" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd1" />
+    <MetadataFile FileName="VenueService5.xsd" MetadataType="Schema" ID="7d3f02ca-07bf-4a82-8f40-638364a155d2" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd2" />
+    <MetadataFile FileName="VenueService6.xsd" MetadataType="Schema" ID="a212358c-ba7f-4e45-8380-dfabe8ff3eca" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd8" />
+    <MetadataFile FileName="VenueService7.xsd" MetadataType="Schema" ID="b34d519c-c1df-4852-b504-17241cf46397" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd3" />
+    <MetadataFile FileName="VenueService8.xsd" MetadataType="Schema" ID="d48e5572-d439-4178-af0a-dfaf5055072e" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?xsd=xsd5" />
+    <MetadataFile FileName="VenueService.disco" MetadataType="Disco" ID="4723eff4-ab6e-4477-bcc3-68511618ae3a" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/VenueService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

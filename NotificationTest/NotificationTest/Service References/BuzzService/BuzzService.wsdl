@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BuzzService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Buzz" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Token" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Follow" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Model" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/Core/Buzz/BuzzService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core.Hangouts" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBuzzService_GetBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzFollowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzFollowed" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzFollowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzFollowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_FollowBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:FollowBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_FollowBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FollowBuzzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_UnfollowBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_UnfollowBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnfollowBuzzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzBefore_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzBefore" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzBefore_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzBeforeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzFollowedByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzFollowedByUser" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzFollowedByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzFollowedByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetLocalBuzzByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalBuzzByToken" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetLocalBuzzByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalBuzzByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetLocalBuzzByCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalBuzzByCategory" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetLocalBuzzByCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocalBuzzByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzByID" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzComments" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_GetBuzzComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBuzzCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_AddBuzzComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuzzComment" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_AddBuzzComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBuzzCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_InsertBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_InsertBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBuzzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_UpdateBuzz_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBuzz" />
+  </wsdl:message>
+  <wsdl:message name="IBuzzService_UpdateBuzz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBuzzResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBuzzService">
+    <wsdl:operation name="GetBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzz" message="tns:IBuzzService_GetBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzResponse" message="tns:IBuzzService_GetBuzz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzFollowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzFollowed" message="tns:IBuzzService_GetBuzzFollowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzFollowedResponse" message="tns:IBuzzService_GetBuzzFollowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FollowBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/FollowBuzz" message="tns:IBuzzService_FollowBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/FollowBuzzResponse" message="tns:IBuzzService_FollowBuzz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/UnfollowBuzz" message="tns:IBuzzService_UnfollowBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/UnfollowBuzzResponse" message="tns:IBuzzService_UnfollowBuzz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzBefore">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzBefore" message="tns:IBuzzService_GetBuzzBefore_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzBeforeResponse" message="tns:IBuzzService_GetBuzzBefore_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzFollowedByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzFollowedByUser" message="tns:IBuzzService_GetBuzzFollowedByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzFollowedByUserResponse" message="tns:IBuzzService_GetBuzzFollowedByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalBuzzByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetLocalBuzzByToken" message="tns:IBuzzService_GetLocalBuzzByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetLocalBuzzByTokenResponse" message="tns:IBuzzService_GetLocalBuzzByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalBuzzByCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetLocalBuzzByCategory" message="tns:IBuzzService_GetLocalBuzzByCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetLocalBuzzByCategoryResponse" message="tns:IBuzzService_GetLocalBuzzByCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzByID" message="tns:IBuzzService_GetBuzzByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzByIDResponse" message="tns:IBuzzService_GetBuzzByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzComments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzComments" message="tns:IBuzzService_GetBuzzComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/GetBuzzCommentsResponse" message="tns:IBuzzService_GetBuzzComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBuzzComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/AddBuzzComment" message="tns:IBuzzService_AddBuzzComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/AddBuzzCommentResponse" message="tns:IBuzzService_AddBuzzComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/InsertBuzz" message="tns:IBuzzService_InsertBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/InsertBuzzResponse" message="tns:IBuzzService_InsertBuzz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBuzz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBuzzService/UpdateBuzz" message="tns:IBuzzService_UpdateBuzz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBuzzService/UpdateBuzzResponse" message="tns:IBuzzService_UpdateBuzz_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBuzzService" type="tns:IBuzzService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBuzz">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzFollowed">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzzFollowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FollowBuzz">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/FollowBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnfollowBuzz">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/UnfollowBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzBefore">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzzBefore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzFollowedByUser">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzzFollowedByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalBuzzByToken">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetLocalBuzzByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocalBuzzByCategory">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetLocalBuzzByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzByID">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzzByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBuzzComments">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/GetBuzzComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBuzzComment">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/AddBuzzComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBuzz">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/InsertBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBuzz">
+      <soap:operation soapAction="http://tempuri.org/IBuzzService/UpdateBuzz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BuzzService">
+    <wsdl:port name="BasicHttpBinding_IBuzzService" binding="tns:BasicHttpBinding_IBuzzService">
+      <soap:address location="http://127.0.0.1:81/Core/Buzz/BuzzService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

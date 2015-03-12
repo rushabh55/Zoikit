@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>/Extras/About.xaml</value>
+  </data>
+  <data name="Accounts" xml:space="preserve">
+    <value>/Accounts/Account.xaml</value>
+  </data>
+  <data name="AddBuzz" xml:space="preserve">
+    <value>/Buzz/AddBuzz.xaml</value>
+  </data>
+  <data name="Buzz" xml:space="preserve">
+    <value>/Buzz/Buzz.xaml</value>
+  </data>
+  <data name="BuzzComments" xml:space="preserve">
+    <value>/Buzz/BuzzComments.xaml</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>/Categories/Categories.xaml</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>/Accounts/ChangePassword.xaml</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>/Dashboard.xaml</value>
+  </data>
+  <data name="FacebookConnect" xml:space="preserve">
+    <value>/Accounts/Facebook.xaml</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>/Accounts/ForgotPassword.xaml</value>
+  </data>
+  <data name="FoursquareConnect" xml:space="preserve">
+    <value>/Accounts/Foursquare.xaml</value>
+  </data>
+  <data name="FreshInstall" xml:space="preserve">
+    <value>/FreshInstall.xaml</value>
+  </data>
+  <data name="Hangout" xml:space="preserve">
+    <value>/Meetup/Hangouts.xaml</value>
+  </data>
+  <data name="HangoutPinned" xml:space="preserve">
+    <value>/Meetup/HangoutPinned.xaml</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>/Extras/Help.xaml</value>
+  </data>
+  <data name="InitiateHangout" xml:space="preserve">
+    <value>/Meetup/InitiateHangout.xaml</value>
+  </data>
+  <data name="LocationPicker" xml:space="preserve">
+    <value>/Location/LocationPicker.xaml</value>
+  </data>
+  <data name="MapPicker" xml:space="preserve">
+    <value>/Meetup/MapPicker.xaml</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>/Notifications/Notifications.xaml</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>/Notifications/Notifications.xaml</value>
+  </data>
+  <data name="PeopleList" xml:space="preserve">
+    <value>/User/PeopleList.xaml</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>/Accounts/Profile.xaml</value>
+  </data>
+  <data name="ProfilePicture" xml:space="preserve">
+    <value>/Accounts/ProfilePicture.xaml</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>/Search.xaml</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>/Extras/Settings.xaml</value>
+  </data>
+  <data name="ShowMessagesByUser" xml:space="preserve">
+    <value>/Texts/ShowMessagesByUser.xaml</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>/Start.xaml</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>/Tag/Tag.xaml</value>
+  </data>
+  <data name="Texts" xml:space="preserve">
+    <value>/Texts/Text.xaml</value>
+  </data>
+  <data name="Trophies" xml:space="preserve">
+    <value>/Trophies/Trophies.xaml</value>
+  </data>
+  <data name="TwitterConnect" xml:space="preserve">
+    <value>/Accounts/Twitter.xaml</value>
+  </data>
+  <data name="UserProfile" xml:space="preserve">
+    <value>/User/UserProfile.xaml</value>
+  </data>
+  <data name="UserTag" xml:space="preserve">
+    <value>/Tags/UserTag.xaml</value>
+  </data>
+  <data name="UserText" xml:space="preserve">
+    <value>/Texts/UserText.xaml</value>
+  </data>
+  <data name="Venue" xml:space="preserve">
+    <value>/Venue/Venue.xaml</value>
+  </data>
+  <data name="ViewProfile" xml:space="preserve">
+    <value>/Accounts/ViewProfile.xaml</value>
+  </data>
+  <data name="ZoikitConnect" xml:space="preserve">
+    <value>/Accounts/ZoikIt.xaml</value>
+  </data>
+</root>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Hangout.Client.FadingText"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="50">
+	<UserControl.Resources>
+		<Storyboard x:Name="FadeSB">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TextBlk">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9.3" Value="1"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:9.6" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,10">
+    	<TextBlock x:Name="TextBlk" HorizontalAlignment="Left" Height="37" TextWrapping="Wrap" VerticalAlignment="Top" Width="470" FontFamily="/Hangout.Client;component/Fonts/Fonts.zip#Signika" FontSize="26.667" TextAlignment="Right" Margin="0,3,0,0" Text="- rediscover local life"/>
+
+    </Grid>
+</UserControl>

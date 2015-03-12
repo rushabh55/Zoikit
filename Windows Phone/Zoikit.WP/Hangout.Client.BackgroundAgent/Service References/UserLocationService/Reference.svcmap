@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77845dfe-c581-4ed3-8471-f2cb65a7a58f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Location/UserLocationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UserLocationService.wsdl" MetadataType="Wsdl" ID="74cde716-32eb-42f8-b634-1bee139e7b8c" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?wsdl" />
+    <MetadataFile FileName="UserLocationService.xsd" MetadataType="Schema" ID="a5cfae08-a31d-4209-820c-7d83e8e74e50" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserLocationService1.xsd" MetadataType="Schema" ID="ac684012-83e0-41a9-ae25-b2ed28aa8913" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd7" />
+    <MetadataFile FileName="UserLocationService2.xsd" MetadataType="Schema" ID="1af6c6bb-fe01-4ea2-9e56-8871362bb231" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserLocationService.disco" MetadataType="Disco" ID="26ed7b97-6f74-40b1-9aac-c67cf060ff98" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?disco" />
+    <MetadataFile FileName="UserLocationService3.xsd" MetadataType="Schema" ID="9a58e829-2a56-4943-9951-1156f1e26c13" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserLocationService4.xsd" MetadataType="Schema" ID="4d96d13b-1030-4955-974b-b44309ce2069" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UserLocationService5.xsd" MetadataType="Schema" ID="8ce7a122-48cc-4fb5-8601-0c6239a5e39d" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="UserLocationService6.xsd" MetadataType="Schema" ID="e8065ca2-cab9-4ddd-8b8d-c25629d42a5a" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="UserLocationService7.xsd" MetadataType="Schema" ID="1472cab2-1e70-4523-b52b-2395889cb369" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Location/UserLocationService.svc?xsd=xsd6" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

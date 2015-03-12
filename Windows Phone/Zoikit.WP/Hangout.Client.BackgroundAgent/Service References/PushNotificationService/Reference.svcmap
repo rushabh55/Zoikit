@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7a202ddf-6d4d-4c4b-95ae-a01ab419101a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PushNotificationService.disco" MetadataType="Disco" ID="2feb17d1-827b-4e6e-a6c8-09f99f779cd4" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?disco" />
+    <MetadataFile FileName="PushNotificationService.xsd" MetadataType="Schema" ID="df5d8a46-47e3-4222-baa3-2ef19ddff8d5" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PushNotification.wsdl" MetadataType="Wsdl" ID="0c3466e5-d70a-41cc-b675-03e6bf862135" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?wsdl" />
+    <MetadataFile FileName="PushNotificationService1.xsd" MetadataType="Schema" ID="103ffc8a-eadc-4be0-853c-9d55337072fd" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PushNotificationService2.xsd" MetadataType="Schema" ID="e6c0c5aa-9f2a-423a-ac01-246fd5211eab" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PushNotificationService3.xsd" MetadataType="Schema" ID="d2b5fdd3-dccf-4ec3-8a26-d2210db42d32" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PushNotificationService4.xsd" MetadataType="Schema" ID="3e54d51e-2b66-4073-9298-94437e22e19b" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/PushNotification/PushNotificationService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

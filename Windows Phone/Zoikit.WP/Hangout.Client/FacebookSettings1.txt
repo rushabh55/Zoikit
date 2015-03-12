@@ -1,0 +1,2 @@
+﻿App ID:	445137442190899
+App Secret:	c237dc9b8f8c7eb01a4a051c36354fb9

@@ -1,0 +1,102 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:Hangout_Client_Controls_Notifications="clr-namespace:Hangout.Client.Controls.Notifications" 
+    x:Class="Hangout.Client.Meetup.InitiateHangout"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480" Loaded="PhoneApplicationPage_Loaded">
+    
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="ShowPage">
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="HidePage">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
+
+
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+ 
+    
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="{StaticResource AppbarColor}" Opacity="1">
+            <shell:ApplicationBarIconButton IconUri="/icons/Shout.png" Text="shout" Click="ApplicationBarIconButton_Click_1"/>
+            <shell:ApplicationBarIconButton IconUri="/icons/Dashbord.png" Text="dashboard" Click="ApplicationBarIconButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BlueBrush}">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="768"/>
+        </Grid.RowDefinitions>
+    	<Image Height="75" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<TextBlock HorizontalAlignment="Right" Margin="0,0,8,0" TextWrapping="Wrap" Text="shout out" FontFamily="Segoe WP Light" FontSize="48" Foreground="#FF002455" d:LayoutOverrides="HorizontalAlignment" VerticalAlignment="Top"/>
+    	<ScrollViewer x:Name="scrollViewer" Margin="0,79,0,40">
+    		<StackPanel Orientation="Vertical" Width="480">
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe WP Light" FontSize="25.333" Foreground="#FFCBD3DC" Width="474" Text="Shout out a meetup request to users around you. Tell us where you want to meet and why."/>
+    			<TextBlock HorizontalAlignment="Left" Margin="6,22,0,0" TextWrapping="Wrap" Text="Shout it out :" FontSize="24"/>
+    			<TextBox InputScope="Chat" AcceptsReturn="True" TextWrapping="Wrap" Height="150" x:Name="StatusTextTB" LostFocus="StatusTextTB_LostFocus" />
+    			<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe WP Light" FontSize="25.333" Foreground="#FFCBD3DC" Width="474" Margin="0,9,0,0"><Run Text="Use #hashtags. It helps us understand you better. "/><LineBreak/><Run Text="For Example : Anyone wanna #hangout at a #cafe near #downtown at #4:00PM #today"/></TextBlock>
+    			<StackPanel Orientation="Vertical" x:Name="AdvancedSettingsSP">
+    				<StackPanel>
+    					<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="A longer description (Optional)" Margin="6,0,0,0"/>
+    					<TextBox x:Name="DescriptionTB" TextWrapping="Wrap" Height="173"/>
+    					<TextBlock TextWrapping="Wrap" Text="When is the meetup?" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+    					<toolkit:DatePicker x:Name="DatePicker" Tap="DatePicker_Tap"/>
+    					<TextBlock TextWrapping="Wrap" Text="At What time?" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+    					<toolkit:TimePicker x:Name="TimePicker" Tap="TimePicker_Tap"/>
+    					<TextBlock TextWrapping="Wrap" Text="Where?" HorizontalAlignment="Left" Margin="8,0,0,0"/>
+                        <TextBox x:Name="WhereTB" TextWrapping="Wrap" GotFocus="WhereTB_GotFocus"/>
+                    </StackPanel>
+    			</StackPanel>
+    			<StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Facebook" FontSize="27" VerticalAlignment="Center"/>
+                    <toolkit:ToggleSwitch SwitchForeground="{StaticResource YellowBrush}" Style="{StaticResource ToggleSwitchTemplate}" x:Name="FacebookToggleSwitch" HorizontalAlignment="Right" />
+    			</StackPanel>
+            </StackPanel>
+
+    	</ScrollViewer>
+    	<ProgressBar x:Name="PG" Height="10" VerticalAlignment="Top" Background="{StaticResource BlueBrush}" Foreground="{StaticResource BlueBrush}" IsIndeterminate="True"/>
+
+<!--TitlePanel contains the name of the application and page title-->
+<!--ContentPanel - place additional content here-->
+    </Grid>
+ 
+    
+</phone:PhoneApplicationPage>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Core" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ClientType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WindowsAzure" />
+      <xs:enumeration value="WindowsPhone7" />
+      <xs:enumeration value="WindowsPhone8" />
+      <xs:enumeration value="Windows8" />
+      <xs:enumeration value="Web" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ClientType" nillable="true" type="tns:ClientType" />
+</xs:schema>

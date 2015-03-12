@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1be104b1-d1c0-4885-a6c0-2709cc24419b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://169.254.80.80:8082/Windows/Exception/ExceptionReportingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExceptionReportingService.wsdl" MetadataType="Wsdl" ID="2c884741-c701-49ae-8070-13cf11476167" SourceId="1" SourceUrl="http://169.254.80.80:8082/Windows/Exception/ExceptionReportingService.svc?wsdl" />
+    <MetadataFile FileName="ExceptionReportingService.xsd" MetadataType="Schema" ID="7b75753b-a0f4-4e49-99a9-8581809e6817" SourceId="1" SourceUrl="http://169.254.80.80:8082/Windows/Exception/ExceptionReportingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExceptionReportingService.disco" MetadataType="Disco" ID="dc100c14-6096-44d6-9cb8-f8c5a6b089d9" SourceId="1" SourceUrl="http://169.254.80.80:8082/Windows/Exception/ExceptionReportingService.svc?disco" />
+    <MetadataFile FileName="ExceptionReportingService1.xsd" MetadataType="Schema" ID="ebe39950-79d2-467f-8896-dcf5dfda3e94" SourceId="1" SourceUrl="http://169.254.80.80:8082/Windows/Exception/ExceptionReportingService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

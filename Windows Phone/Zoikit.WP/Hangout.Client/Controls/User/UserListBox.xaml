@@ -1,0 +1,32 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Hangout_Client_Core_Location="clr-namespace:Hangout.Client.Core.Location"
+	xmlns:local="clr-namespace:Hangout.Client.Controls.User"
+    xmlns:Converters="clr-namespace:Hangout.Client.Core.Converters" 
+    
+	xmlns:Client="clr-namespace:Hangout.Client"
+	mc:Ignorable="d" 
+    
+	x:Class="Hangout.Client.Controls.User.UserListBox"
+	d:DesignWidth="480" d:DesignHeight="800">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="UserLBTemplate">
+            <StackPanel>
+                <local:UserListboxItem User="{Binding}" x:Name="UserLBItem" Loaded="UserLBItem_Loaded_1"/>
+            </StackPanel>
+        </DataTemplate>
+
+    </UserControl.Resources>
+
+    <StackPanel x:Name="LayoutRoot" Background="Transparent">
+    	<StackPanel Orientation="Vertical">
+    		<ListBox x:Name="UsersLB" Margin="0" SelectionChanged="UsersLB_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemTemplate="{StaticResource UserLBTemplate}" Visibility="Visible"/>
+    		<ProgressBar x:Name="MorePG" Height="10" IsIndeterminate="True" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" Visibility="Collapsed"/>
+    		<Client:DownloadButton x:Name="MoreBtn" Width="Auto" d:LayoutOverrides="Height" Tap="MoreBtn_Tap" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+    	</StackPanel>
+    </StackPanel>
+</UserControl>

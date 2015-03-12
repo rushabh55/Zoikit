@@ -1,0 +1,34 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Client="clr-namespace:Hangout.Client" 
+    xmlns:Hangout_Client_Controls_Buzz="clr-namespace:Hangout.Client.Controls.Buzz"
+    xmlns:Hangout_Client_Controls_Loader="clr-namespace:Hangout.Client.Controls.Loader"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=WindowsPhoneWatermarkTextBoxControl" x:Class="Hangout.Client.Controls.Buzz.BuzzControl"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480" Loaded="UserControl_Loaded_1">
+    
+    <Grid x:Name="LayoutRoot">
+        <StackPanel Orientation="Vertical">
+            <ProgressBar x:Name="PG" Height="10" Background="{StaticResource YellowBrush}" Foreground="{StaticResource YellowBrush}" IsIndeterminate="True" Visibility="Collapsed"/>
+            <StackPanel x:Name="LocationSP" Margin="0,0,10,0" Orientation="Horizontal" Visibility="Collapsed">
+            	<Image Height="35" Width="35" Source="VenueYellow.png" Margin="0,-1,0,0"/>
+            	<TextBlock x:Name="LocationLBL" TextWrapping="Wrap" Tap="LocationLBL_Tap" FontSize="26" FontWeight="Bold" Width="425" TextDecorations="Underline" Foreground="{StaticResource YellowBrush}"/>
+            </StackPanel>
+            <StackPanel x:Name="SearchSP" Height="75" Orientation="Horizontal" Visibility="Collapsed">
+            	<Controls:WatermarkTextBox x:Name="SearchTB" TextWrapping="Wrap" WatermarkText="  Search..." Width="295" TextChanged="SearchTB_TextChanged" Height="75"/>
+            	<Client:SearchBtn x:Name="SearchBtn" Height="66" VerticalAlignment="Top" Margin="0,0,0,-66" Tap="SearchBtn_Tap"/>
+            	<Client:CancelBtn x:Name="SearchCancelBtn" Width="65" Margin="-16,-2,0,0" Height="Auto" Tap="SearchCancelBtn_Tap"/>
+        	
+            </StackPanel>
+            <Hangout_Client_Controls_Buzz:BuzzInputControl x:Name="BuzzInput" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="Auto" Visibility="Collapsed" />
+            <Hangout_Client_Controls_Buzz:BuzzList x:Name="BuzzLB" Margin="0,4,0,0"/>
+        	
+        </StackPanel>
+    </Grid>
+</UserControl>

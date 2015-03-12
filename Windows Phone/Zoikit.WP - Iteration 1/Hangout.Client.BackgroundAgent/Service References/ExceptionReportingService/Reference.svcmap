@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e5eb8365-776a-4c7a-843c-b2bf93c1acb1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Exception/ExceptionReportingService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExceptionReportingService.disco" MetadataType="Disco" ID="d2442e60-cb2a-403b-9b2a-efd56721cf3b" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Exception/ExceptionReportingService.svc?disco" />
+    <MetadataFile FileName="ExceptionReportingService.xsd" MetadataType="Schema" ID="c7ef8f59-3c48-42e6-a2fe-5d0cda9c7f37" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Exception/ExceptionReportingService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExceptionReportingService.wsdl" MetadataType="Wsdl" ID="a44e3b35-8439-4e8d-b0b9-34575a8cd534" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Exception/ExceptionReportingService.svc?wsdl" />
+    <MetadataFile FileName="ExceptionReportingService1.xsd" MetadataType="Schema" ID="20618f11-9828-4829-8ca6-23496d7e525d" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Exception/ExceptionReportingService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

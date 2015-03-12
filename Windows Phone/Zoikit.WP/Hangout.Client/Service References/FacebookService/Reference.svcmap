@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ab2d691a-96ab-41bb-9097-835ea43c570d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Account/FacebookService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FacebookService.xsd" MetadataType="Schema" ID="888b57ad-95f0-4be3-bb7b-5625f2a7cc5a" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FacebookService1.xsd" MetadataType="Schema" ID="fd11b2f4-3f72-410c-a86e-80cb6be54b2f" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FacebookService2.xsd" MetadataType="Schema" ID="6b47a633-de65-4a3e-9b47-4012f3e6c2cd" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FacebookService.disco" MetadataType="Disco" ID="b867ec9f-6bc8-44fa-a327-ee554924a817" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?disco" />
+    <MetadataFile FileName="FacebookService.wsdl" MetadataType="Wsdl" ID="21f3c1a8-aa36-4e5f-b544-2ec5a8633219" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?wsdl" />
+    <MetadataFile FileName="FacebookService3.xsd" MetadataType="Schema" ID="624401bf-0d77-46c5-ae23-644cfd751f4e" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?xsd=xsd4" />
+    <MetadataFile FileName="FacebookService4.xsd" MetadataType="Schema" ID="96e3c749-f32e-4136-a307-89ec03a99815" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FacebookService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

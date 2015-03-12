@@ -1,0 +1,173 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit" 
+    xmlns:Hangout_Client_Controls_Notifications="clr-namespace:Hangout.Client.Controls.Notifications" 
+    x:Class="Hangout.Client.Accounts.Account"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480" Loaded="PhoneApplicationPage_Loaded">
+	<phone:PhoneApplicationPage.Resources>
+		<DataTemplate x:Key="ToggleButtonTemplate">
+			<Grid/>
+		</DataTemplate>
+		<Style x:Key="TSTemplate" TargetType="toolkit:ToggleSwitch">
+			<Setter Property="Background" Value="{StaticResource PhoneBackgroundBrush}"/>
+			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyLight}"/>
+			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeLarge}"/>
+			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="IsTabStop" Value="False"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="SwitchForeground" Value="{StaticResource PhoneAccentBrush}"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="toolkit:ToggleSwitch">
+						<Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CacheMode="BitmapCache" Padding="{TemplateBinding Padding}" Height="50">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="Disabled"/>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Grid Margin="12,5,36,0" d:LayoutOverrides="VerticalAlignment" Width="91">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="Auto"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<toolkitPrimitives:ToggleSwitchButton x:Name="Switch" Background="{TemplateBinding Background}" Grid.Column="1" Margin="-22,-29,-24,-28" Opacity="{TemplateBinding Opacity}" Grid.RowSpan="2" VerticalAlignment="Bottom" SwitchForeground="#FFFFAF04"/>
+							</Grid>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Storyboard x:Name="HidetopLBL">
+			<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTopLBL">
+			<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
+
+	<phone:PhoneApplicationPage.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</phone:PhoneApplicationPage.FontFamily>
+	<phone:PhoneApplicationPage.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</phone:PhoneApplicationPage.FontSize>
+	<phone:PhoneApplicationPage.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</phone:PhoneApplicationPage.Foreground>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="1" BackgroundColor="{StaticResource AppbarColor}">
+            <shell:ApplicationBarIconButton Text="dashboard" IconUri="/icons/Dashbord.png" Click="ApplicationBarIconButton_Click"/>
+			<shell:ApplicationBarIconButton Text="profile" IconUri="/icons/Profile.png" Click="ApplicationBarProfileButton_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF000C1B">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    	<Image Height="75" Grid.Row="1" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<StackPanel Margin="8,87,6,0" Orientation="Vertical" Grid.RowSpan="2">
+    		<ScrollViewer Height="643">
+    			<StackPanel Orientation="Vertical">
+    				<TextBlock HorizontalAlignment="Right" Margin="0,0,2,7" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Segoe WP Light" FontSize="25.333" Foreground="{StaticResource Grey}" Width="464" Text="Please connect with anyone of these accounts and help us make the world more open and more connected. "/>
+    				<TextBlock x:Name="NameLBL_Copy3" TextWrapping="Wrap" Text="CONNECT WITH ZOIK IT!" Margin="0,0,4,0" FontSize="29.333" FontWeight="Bold" Height="36"/>
+    				<Canvas x:Name="ZoikitConnectPanel" Margin="2,6,0,0" Height="163">
+    					<toolkit:ToggleSwitch x:Name="ZoikitToggleSwitch" Header="ToggleSwitch" Canvas.Left="317" Canvas.Top="43" Style="{StaticResource TSTemplate}" Checked="ZoikitToggleSwitch_Checked" Unchecked="ZoikitToggleSwitch_Unchecked" />
+    					<Canvas x:Name="ZoikitLoggedInPanel" Height="64" Canvas.Left="2" Canvas.Top="99" Width="417" Visibility="Collapsed">
+    						<TextBlock TextWrapping="Wrap" Text="Logged In as " Width="120" Height="25"/>
+    						<TextBlock x:Name="ZoikitName" TextWrapping="Wrap" FontWeight="Bold" Height="30" Canvas.Left="121" Width="296" d:LayoutOverrides="VerticalAlignment" Text="Nawaz Dhandala"/>
+    						<TextBlock x:Name="ChangePasswordLBL" TextWrapping="Wrap" Text="Change Password" Canvas.Top="30" FontSize="24" Foreground="#FFFFAF04" TextDecorations="Underline" Tap="ChangePasswordLBL_Tap" FontWeight="Bold"/>
+    					</Canvas>
+    					<Image Height="125" Canvas.Left="-17" Source="/Images/Logos/ZoikIt.png" Stretch="Fill" Width="300" Canvas.Top="-2"/>
+    				</Canvas>
+    				<TextBlock x:Name="NameLBL_Copy" TextWrapping="Wrap" Margin="0,15,4,0" FontSize="29.333" FontWeight="Bold" Height="75">
+    					<Run Text="OR IF YOU NEED A FASTER LOG IN, TRY ANY OF THESE"/>
+    					<LineBreak/>
+    					<Run/>
+    				</TextBlock>
+    				<Canvas x:Name="FacebookConnectPanel" Margin="0,-3,2,0" Height="126" VerticalAlignment="Top">
+    					<Image Height="123" Source="/Images/Logos/FacebookLogo.png" Stretch="Fill" Canvas.Top="-7" Width="326" Canvas.Left="-34"/>
+    					<toolkit:ToggleSwitch x:Name="FacebookToggleSwitch" Header="ToggleSwitch" Canvas.Left="317" Canvas.Top="29" Style="{StaticResource TSTemplate}" Checked="FacebookToggleSwitch_Checked" Unchecked="FacebookToggleSwitch_Unchecked" />
+    					<Canvas x:Name="FacebookLoggedInPanel" Height="42" Canvas.Left="2" Canvas.Top="86" Width="417" Visibility="Collapsed">
+    						<TextBlock TextWrapping="Wrap" Text="Logged In as " Width="120" Height="42" d:LayoutOverrides="VerticalAlignment"/>
+    						<TextBlock x:Name="FacebookName" TextWrapping="Wrap" Text="" FontWeight="Bold" Height="30" Canvas.Left="121" Width="296" d:LayoutOverrides="VerticalAlignment"/>
+    					</Canvas>
+    					<Image Height="82" Source="FoursquareLogo.png" Stretch="Fill" Canvas.Top="136" Width="300" Canvas.Left="2"/>
+    					<Image Height="133" Source="TwitterLogo.png" Stretch="Fill" Canvas.Top="238" Width="355" Canvas.Left="-23"/>
+    				</Canvas>
+    				<Canvas x:Name="FouraquareConnectPanel" Margin="0,0,2,0" Height="126">
+    					<toolkit:ToggleSwitch x:Name="FoursquareToggleSwitch" Header="ToggleSwitch" Canvas.Left="317" Canvas.Top="29" Style="{StaticResource TSTemplate}" Checked="FoursquareToggleSwitch_Checked" Unchecked="FoursquareToggleSwitch_Unchecked" />
+    					<Canvas x:Name="FoursquareLoggedInPanel" Height="42" Canvas.Left="2" Canvas.Top="86" Width="417" Visibility="Collapsed">
+    						<TextBlock TextWrapping="Wrap" Text="Logged In as " Width="120" Height="42" d:LayoutOverrides="VerticalAlignment"/>
+    						<TextBlock x:Name="FoursquareName" TextWrapping="Wrap" Text="" FontWeight="Bold" Height="30" Canvas.Left="121" Width="296" d:LayoutOverrides="VerticalAlignment"/>
+    					</Canvas>
+    				</Canvas>
+    				<Canvas x:Name="TwitterConnectPanel" Margin="2,0,0,0" Height="126">
+    					<toolkit:ToggleSwitch x:Name="TwitterToggleSwitch" Header="ToggleSwitch" Canvas.Left="317" Canvas.Top="29" Style="{StaticResource TSTemplate}" Checked="TwitterToggleSwitch_Checked" Unchecked="TwitterToggleSwitch_Unchecked" />
+    					<Canvas x:Name="TwitterLoggedInPanel" Height="42" Canvas.Left="2" Canvas.Top="86" Width="417" Visibility="Collapsed">
+    						<TextBlock TextWrapping="Wrap" Text="Logged In as " Width="120" Height="42" d:LayoutOverrides="VerticalAlignment"/>
+    						<TextBlock x:Name="TwitterName" TextWrapping="Wrap" Text="" FontWeight="Bold" Height="30" Canvas.Left="121" Width="296" d:LayoutOverrides="VerticalAlignment"/>
+    					</Canvas>
+    				</Canvas>
+    			</StackPanel>
+    		</ScrollViewer>
+    	</StackPanel>
+    	<Canvas x:Name="TopLBL" Margin="245,10,8,658" Grid.RowSpan="2">
+    		<Image Source="BigLock.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="44.951" Width="46.502" Canvas.Left="48.498" Canvas.Top="5.049">
+    			<Image.RenderTransform>
+    				<CompositeTransform Rotation="-0.185"/>
+    			</Image.RenderTransform>
+    		</Image>
+    		<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="ACCOUNT" FontFamily="Segoe UI" FontSize="26.667" Foreground="{StaticResource BlueBrush}" VerticalAlignment="Top" Width="144.905" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="48.328" FontWeight="Bold" Canvas.Left="95" Canvas.Top="11.249">
+    			<TextBlock.RenderTransform>
+    				<CompositeTransform SkewY="-0.377" TranslateY="-0.993" Rotation="0.234"/>
+    			</TextBlock.RenderTransform>
+    		</TextBlock>
+    	</Canvas>
+    	<Hangout_Client_Controls_Notifications:NotificationControl x:Name="Notifier" HorizontalAlignment="Left" Margin="355,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <!--ContentPanel - place additional content here-->
+        
+        
+    </Grid>
+
+</phone:PhoneApplicationPage>

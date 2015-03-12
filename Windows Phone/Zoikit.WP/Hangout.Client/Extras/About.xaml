@@ -1,0 +1,103 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Hangout_Client_Controls_Notifications="clr-namespace:Hangout.Client.Controls.Notifications" 
+    x:Class="Hangout.Client.Extras.About"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="728" d:DesignWidth="480">
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="HideTopLBL">
+            <DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+        </Storyboard>
+        <Storyboard x:Name="ShowTopLBL">
+            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+        </Storyboard>
+    </phone:PhoneApplicationPage.Resources>
+	<phone:PhoneApplicationPage.ApplicationBar>
+		<shell:ApplicationBar BackgroundColor="{StaticResource AppbarColor}" Opacity="1">
+			<shell:ApplicationBarIconButton IconUri="/icons/Dashbord.png" IsEnabled="True" Text="dashboard" Click="ApplicationBarIconButton_Click"/>
+			<shell:ApplicationBarIconButton IconUri="/icons/appbar.favs.rest.png" IsEnabled="True" Text="review" Click="RateBtn_Clicked"/>
+			<shell:ApplicationBarIconButton IconUri="/Images/Appbar/appbar.feature.email.rest.png" IsEnabled="True" Text="contact us" Click="ApplicationBarIconButton_Click_1"/>
+		</shell:ApplicationBar>
+	</phone:PhoneApplicationPage.ApplicationBar>
+    
+    
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <ScrollViewer>
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BlueBrush}">
+     
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    	<Image Height="75" Grid.Row="1" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<StackPanel Margin="9,80,0,0" Orientation="Vertical" Grid.RowSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="530">
+    		<Image Height="125" Margin="0,9,0,0" Source="/Images/Logos/ZoikIt.png" Stretch="Fill" Width="300"/>
+    		<StackPanel Orientation="Horizontal" Margin="-1,-19,0,0">
+    			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="VERSION" VerticalAlignment="Center" FontSize="24" Foreground="{StaticResource WhiteBrush}" Width="111" Height="28" FontWeight="Bold" Margin="136,0,0,0"/>
+    			<TextBlock x:Name="VersionLBL" HorizontalAlignment="Center" TextWrapping="Wrap" Text="1.2.1023" VerticalAlignment="Center" FontSize="24" Foreground="{StaticResource Grey}" Width="110" Height="28" FontWeight="Bold"/>
+    		</StackPanel>
+    		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="29.333" Foreground="{StaticResource WhiteBrush}" Width="464" FontWeight="Bold" Margin="0,23,0,0"/>   
+    		<TextBlock Margin="0" TextWrapping="Wrap" Foreground="#FFCBD3DC" FontFamily="/Hangout.Client;component/Fonts/Fonts.zip#Segoe UI Light" FontSize="25.333" Height="328" HorizontalAlignment="Left" VerticalAlignment="Top" Width="466" Text="We're a bunch of students and recent grads who are running a company. We're small, But we dream big. We dream to make world a better and smarter place for you. We're set out to make local social networking easy for you this time. If you love what we do. We'd love if you'd drop us a mail and say &quot;hi&quot;. "/>
+    	</StackPanel>
+            <Canvas x:Name="TopLBL" Margin="245,10,8,696" Grid.RowSpan="2">
+            	<Image Source="Hat.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="44.951" Width="46.502" Canvas.Left="48.498" Canvas.Top="5.049">
+            		<Image.RenderTransform>
+            			<CompositeTransform Rotation="-0.185"/>
+            		</Image.RenderTransform>
+            	</Image>
+            	<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="ABOUT US" FontFamily="Segoe UI" FontSize="26.667" Foreground="{StaticResource BlueBrush}" VerticalAlignment="Top" Width="144.905" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="48.328" FontWeight="Bold" Canvas.Left="95" Canvas.Top="11.249">
+            		<TextBlock.RenderTransform>
+            			<CompositeTransform SkewY="-0.377" TranslateY="-0.993" Rotation="0.234"/>
+            		</TextBlock.RenderTransform>
+            	</TextBlock>
+            </Canvas>
+            <Hangout_Client_Controls_Notifications:NotificationControl x:Name="Notifier" HorizontalAlignment="Left" Margin="355,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+            <Rectangle Fill="{StaticResource YellowBrush}" HorizontalAlignment="Left" Height="58" Margin="0,670,0,0" Grid.RowSpan="2" Stroke="Black" VerticalAlignment="Top" Width="480"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="MADE WITH " VerticalAlignment="Center" FontSize="24" Foreground="{StaticResource BlueBrush}" Width="149" Height="28" FontWeight="Bold" Margin="76,686,255,14" Grid.Row="1"/>
+            <Image Margin="221,680,219,8" Grid.RowSpan="2" Source="/Hangout.Client;component/Controls/User/HeartBlue.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="FOR YOU" VerticalAlignment="Center" FontSize="24" Foreground="{StaticResource BlueBrush}" Width="149" Height="28" FontWeight="Bold" Margin="265,686,66,14" Grid.Row="1"/>
+        
+    </Grid>
+    </ScrollViewer>
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

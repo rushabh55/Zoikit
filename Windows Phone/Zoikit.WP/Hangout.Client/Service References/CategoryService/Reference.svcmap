@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50b14284-fa43-42eb-8e8b-a9c6859a640d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Category/CategoryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CategoryService.wsdl" MetadataType="Wsdl" ID="de9402e4-8ef1-44ac-91b6-bc0536b77fcc" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?wsdl" />
+    <MetadataFile FileName="CategoryService.xsd" MetadataType="Schema" ID="b2f0e931-4c7c-47e5-ad53-7f5874827abe" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CategoryService1.xsd" MetadataType="Schema" ID="b92b6ac0-c073-4bdc-ae0a-05e70fec0312" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CategoryService2.xsd" MetadataType="Schema" ID="95bbab9f-9c93-4b84-bc84-c450c52b0323" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CategoryService3.xsd" MetadataType="Schema" ID="885c1999-fbb3-4bdc-b10a-b28059124c61" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CategoryService4.xsd" MetadataType="Schema" ID="dc53cb6b-613b-4460-a5cb-5cb293448794" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd5" />
+    <MetadataFile FileName="CategoryService5.xsd" MetadataType="Schema" ID="9d2163ac-7007-44e1-8fb7-ff016cb856d5" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CategoryService.disco" MetadataType="Disco" ID="20a1ded1-8502-40db-88b1-20ebeb8f18a8" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Category/CategoryService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

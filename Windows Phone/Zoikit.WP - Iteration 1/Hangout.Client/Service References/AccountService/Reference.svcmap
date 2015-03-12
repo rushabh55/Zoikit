@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0fd32db3-4c36-4619-bf9f-d9126f2a8726" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.1.50:8082/Windows/Account/AccountService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AccountService.xsd" MetadataType="Schema" ID="5436ca19-cdf5-4a0e-9e50-6b1c4c20b5d4" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AccountService1.xsd" MetadataType="Schema" ID="7d38d381-525f-4d3a-a2ae-b9ede1d767a8" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AccountService2.xsd" MetadataType="Schema" ID="c6869c7b-8ff6-45fc-b88e-98c9d46bbd60" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AccountService.disco" MetadataType="Disco" ID="9100c160-01c5-481f-8e20-267fae6af6e7" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?disco" />
+    <MetadataFile FileName="AccountService3.xsd" MetadataType="Schema" ID="314ab9f7-816d-446c-a244-30ea08d61ae3" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AccountService4.xsd" MetadataType="Schema" ID="f3e165b9-b70e-4331-9448-c116e98bc2b7" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AccountService.wsdl" MetadataType="Wsdl" ID="9fe59b7b-5175-4d6b-a676-e943906941af" SourceId="1" SourceUrl="http://192.168.1.50:8082/Windows/Account/AccountService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

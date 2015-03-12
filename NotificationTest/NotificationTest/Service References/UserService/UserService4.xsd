@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Accounts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Category" />
+  <xs:import schemaLocation="http://127.0.0.1:81/Core/User/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Token" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element minOccurs="0" name="BuzzFollowingCount" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Category" minOccurs="0" name="CategoriesFollowing" nillable="true" type="q1:ArrayOfCategory" />
+      <xs:element minOccurs="0" name="CategoriesFollowingCount" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Following" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FollowingCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Gender" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RelationshipStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Token" minOccurs="0" name="TokenFollowing" nillable="true" type="q2:ArrayOfToken" />
+      <xs:element minOccurs="0" name="TokenFollowingCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UserFollowed" nillable="true" type="tns:ArrayOfCompactUser" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UsersFollowing" nillable="true" type="tns:ArrayOfCompactUser" />
+      <xs:element minOccurs="0" name="VenueFollowingCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfCompactUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompactUser" nillable="true" type="tns:CompactUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompactUser" nillable="true" type="tns:ArrayOfCompactUser" />
+  <xs:complexType name="CompactUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompactUser" nillable="true" type="tns:CompactUser" />
+</xs:schema>

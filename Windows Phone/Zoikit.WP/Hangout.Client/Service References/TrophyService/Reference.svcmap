@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1d0b88ef-9b9a-4a06-bc89-4557eb24ecff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Trophy/TrophyService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TrophyService.disco" MetadataType="Disco" ID="da4c89f9-084d-4aab-a0b9-20bcb144b012" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Trophy/TrophyService.svc?disco" />
+    <MetadataFile FileName="TrophyService.xsd" MetadataType="Schema" ID="d996fde6-a683-4d7f-8292-2f21bfbbb255" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Trophy/TrophyService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TrophyService1.xsd" MetadataType="Schema" ID="facd423b-eb75-4a7a-afe9-78f08c074bfd" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Trophy/TrophyService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TrophyService.wsdl" MetadataType="Wsdl" ID="f0f9612e-da19-4df1-a32d-908f0ce3916e" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Trophy/TrophyService.svc?wsdl" />
+    <MetadataFile FileName="TrophyService2.xsd" MetadataType="Schema" ID="39c45ebd-47f2-49d2-82f3-14a6f451fae7" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Trophy/TrophyService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,242 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone" Loaded="PhoneApplicationPage_Loaded_1"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Buzz="clr-namespace:Hangout.Client.Controls.Buzz" xmlns:User="clr-namespace:Hangout.Client.Controls.User" xmlns:Tags="clr-namespace:Hangout.Client.Controls.Tags" xmlns:Notifications="clr-namespace:Hangout.Client.Controls.Notifications" 
+     xmlns:Hangout_Client_Controls_Hangout="clr-namespace:Hangout.Client.Controls.Hangouts" 
+     xmlns:cc="clr-namespace:Coding4Fun.Phone.Controls;assembly=Coding4Fun.Phone.Controls"
+    xmlns:Client="clr-namespace:Hangout.Client" 
+    x:Class="Hangout.Client.Buzz.Buzz"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="ShowPeoplePage">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="UserList">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="ShowTagPage">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagList">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="HideTopLBL">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTopLBL">
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TopLBL" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowBuzzError">
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoBuzzGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowBuzzLoader">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoBuzzGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowNoBuzz">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoBuzzGrid" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowBuzz">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzErrorStatus" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="BuzzLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoBuzzGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowCommentsError">
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoCommentsGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSV" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowCommentsLoader">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoCommentsGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSV" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowNoComments">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSV" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoCommentsGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSP" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowComments">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsError" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentsLoader">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoCommentsGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSV" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel1">
+				<SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentLB" d:IsOptimized="True"/>
+	<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="stackPanel2" d:IsOptimized="True"/>
+	<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CommentSP" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowPeople">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PeopleError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PoepleLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoPeopleGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowPeopleError">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PoepleLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoPeopleGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PeopleError" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowNoPeople">
+			<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PeopleError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.3" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoPeopleGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PoepleLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowPeopleLoader">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PeopleError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoPeopleGrid" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PoepleLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTagError">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoTag" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer1" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.4" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagError" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowNoTag">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer1" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoTag" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTagLoade">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoTag" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer1" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagLoader" d:IsOptimized="True"/>
+		</Storyboard>
+		<Storyboard x:Name="ShowTag">
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagError" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="TagLoader" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NoTag" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0:0:0.5" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="scrollViewer1" d:IsOptimized="True"/>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="{StaticResource BlueBrush}">
+    	<TextBlock x:Name="BuzzErrorStatus" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Oops, We're having problems loading this buzz. There might be too much turbulance up there in the cloud." VerticalAlignment="Top" FontSize="32" Width="460" Margin="10,80,0,0" Foreground="{StaticResource YellowBrush}" Opacity="0"/>
+    	<Client:TextLoader x:Name="BuzzLoader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,298,0,0" Opacity="0"/>
+    	<Grid x:Name="NoBuzzGrid" Margin="0,190,0,127" Opacity="0">
+    		<TextBlock HorizontalAlignment="Left" Margin="0,275,0,0" TextWrapping="Wrap" Text="OOPS, BUZZ NOT FOUND" VerticalAlignment="Top" FontSize="40" Width="470" FontWeight="Bold" TextAlignment="Center" Foreground="White" Height="95"/>
+    		<Image Margin="95,29,105,126" Source="/Images/Buzz.png" Stretch="Fill"/>
+
+    	</Grid>
+    	<StackPanel x:Name="stackPanel" Margin="0,77,0,0" Orientation="Vertical" Opacity="0">
+    		<Buzz:BuzzListItem x:Name="BuzzItem" HorizontalAlignment="Left" Margin="20,7,0,0" VerticalAlignment="Top"/>
+    		<controls:Pivot x:Name="MainPivot" Title="" Foreground="{StaticResource YellowBrush}" Margin="0,-30,0,0">
+            <!--Pivot item one-->
+                <controls:PivotItem x:Name="CommentsPI" Header="comments" Margin="0">
+                    <Grid Margin="0">
+                    	<StackPanel Margin="-2,0,-1,0" Orientation="Vertical">
+                    		<Grid x:Name="CommentGrid" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    			<TextBlock x:Name="CommentsError" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Unable to load comments at this point of time. Please try again later." VerticalAlignment="Top" FontSize="32" Width="460" Margin="12,5,0,0" Foreground="{StaticResource YellowBrush}" Opacity="0"/>
+                    			<Client:TextLoader x:Name="CommentsLoader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,43,0,0" Opacity="0"/>
+                    			<Grid x:Name="NoCommentsGrid" Margin="2,10,0,-20" Width="480" Height="179" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    				<TextBlock HorizontalAlignment="Left" Margin="0,140,0,-24" TextWrapping="Wrap" Text="NO COMMENTS YET." VerticalAlignment="Top" FontSize="40" Width="470" FontWeight="Bold" TextAlignment="Center" Foreground="White" Height="83"/>
+                    				<Image Margin="155,-10,150,49" Source="BuzzOne.png" Stretch="Fill" Width="175" Height="160"/>
+
+                    			</Grid>
+                    			<StackPanel x:Name="CommentSP" Margin="2,0,0,0" Orientation="Vertical">
+                    				<ScrollViewer x:Name="CommentSV" Opacity="0">
+                    					<StackPanel x:Name="stackPanel1" Width="456">
+                    						<Hangout_Client_Controls_Hangout:HangoutComments x:Name="CommentLB"/>
+                    					</StackPanel>
+                    				</ScrollViewer>
+                    			</StackPanel>
+                    		</Grid>
+                    		<StackPanel x:Name="stackPanel2" Orientation="Horizontal" Height="69" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="2,0,0,0">
+                    			<cc:ChatBubbleTextBox AcceptsReturn="True" Text="Type your comment here.." Tap="CommentTB_Tap" VerticalAlignment="Center" ChatBubbleDirection="LowerRight" Width="455"  x:Name="CommentTB" TextWrapping="Wrap" InputScope="Chat" Height="56" Margin="7,0,0,0"/>
+                    			<Button BorderBrush="Transparent" x:Name="PostBtn" HorizontalAlignment="Left" Foreground="{StaticResource YellowBrush}" Click="PostBtn_Click" Margin="-63,0,0,0" VerticalAlignment="Top" Width="82">
+                    				<Image Source="/Images/AppBar/Send.png" Height="48" Width="48" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-15,-17,0,0"/>
+                    			</Button>
+                    		</StackPanel>
+                    	</StackPanel>
+                    </Grid>
+                </controls:PivotItem>
+
+                <!--Pivot item two-->
+    			<controls:PivotItem x:Name="PoeplePI" Header="people" Margin="0,0,0,3">
+    				<Grid>
+    					<TextBlock x:Name="PeopleError" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Unable to load people at this point of time. Please try again later." VerticalAlignment="Top" FontSize="32" Width="460" Margin="10,5,0,0" Foreground="{StaticResource YellowBrush}" Opacity="0"/>
+    					<Client:TextLoader x:Name="PoepleLoader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,73,0,0" Opacity="0"/>
+    					<Grid x:Name="NoPeopleGrid" Margin="0,10,0,0" Width="480" Height="271" HorizontalAlignment="Left" VerticalAlignment="Top">
+    						<TextBlock HorizontalAlignment="Left" Margin="0,156,0,0" TextWrapping="Wrap" Text="NO ONE'S FOLLOWING YET." VerticalAlignment="Top" FontSize="40" Width="470" FontWeight="Bold" TextAlignment="Center" Foreground="White" Height="100"/>
+    						<Image Margin="127,21,214,123" Source="BuzzOne.png" Stretch="Fill" Width="139" Height="127"/>
+    						<Ellipse Stretch="Fill" Fill="{StaticResource WhiteBrush}" StrokeThickness="2" Margin="275,3,181,241" Width="24" Height="27"/>
+    						<Path Stretch="Fill" StrokeLineJoin="Round" Fill="{StaticResource WhiteBrush}" Data="F1 M 336.353,117.604L 460.383,116.706C 460.383,116.706 501.482,116.049 502.625,160.754C 503.295,186.954 503.523,211.095 503.523,211.095L 505.021,265.031L 505.021,313.574L 505.471,326.159C 505.471,326.159 505.471,343.689 484.799,342.34C 464.127,340.992 465.844,335.342 465.476,322.563C 465.103,309.63 465.476,259.188 465.476,259.188L 465.476,197.161C 465.476,197.161 466.824,186.823 459.184,188.171C 451.545,189.52 455.14,194.015 455.14,200.757C 455.14,207.499 455.14,373.354 455.14,373.354L 456.039,559.435C 456.039,559.435 454.69,584.605 429.525,583.706C 404.36,582.807 403.461,567.975 402.562,559.884C 401.663,551.794 402.562,481.227 402.562,481.227L 403.011,368.859L 402.113,347.734L 402.562,340.542L 395.372,340.542L 394.923,478.979L 395.372,549.996L 394.024,563.031C 394.024,563.031 389.53,581.459 372.004,582.807C 354.478,584.156 344.592,570.222 342.345,563.031C 340.098,555.839 344.142,339.194 344.142,339.194L 343.693,189.82L 332.908,188.471L 331.11,325.56C 331.11,325.56 330.661,344.438 312.236,343.089C 293.811,341.741 292.014,332.302 292.463,324.661C 292.913,317.02 293.362,167.795 293.362,167.795C 293.362,167.795 295.609,125.096 336.353,117.604 Z " UseLayoutRounding="False" StrokeThickness="0" Margin="257,31,165,120" Width="58" Height="120"/>
+
+    					</Grid>
+    					<ScrollViewer x:Name="scrollViewer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="478" Opacity="0">
+    						<User:UserListBox x:Name="UserList" Width="446"/>
+    					</ScrollViewer>
+    				</Grid>
+    			</controls:PivotItem>
+    			<controls:PivotItem x:Name="TagsPI" Header="#interests" Margin="0">
+    				<Grid>
+    					<TextBlock x:Name="TagError" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Unable to load interest at this point of time. Please try again later." VerticalAlignment="Top" FontSize="32" Width="460" Margin="10,5,0,0" Foreground="{StaticResource YellowBrush}" Opacity="0"/>
+    					<Client:TextLoader x:Name="TagLoader" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-2,73,0,0" Opacity="0"/>
+    					<Grid x:Name="NoTag" Margin="0,10,0,0" Width="480" Height="226" HorizontalAlignment="Left" VerticalAlignment="Top">
+    						<TextBlock HorizontalAlignment="Left" Margin="0,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="40" Width="470" FontWeight="Bold" TextAlignment="Center" Foreground="White" Height="83" Text="NO #INTERESTS"/>
+    						<Image Margin="170,21,168,66" Source="/Hangout.Client;component/Controls/Button/HeartWhite.png" Stretch="Fill" Width="142" Height="139"/>
+
+    					</Grid>
+    					<ScrollViewer x:Name="scrollViewer1" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0">
+    						<Tags:TokenList x:Name="TagList" Width="456"/>
+    					</ScrollViewer>
+    				</Grid>
+    			</controls:PivotItem>
+    		</controls:Pivot>
+    	</StackPanel>
+    	<Image Height="75" Source="/Images/Top75Jpg.png" Stretch="Fill" VerticalAlignment="Top"/>
+    	<Canvas x:Name="TopLBL" Margin="245,10,8,658">
+    		<Image Source="BuzzBlue.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="44.951" Width="46.502" Canvas.Left="105.163" Canvas.Top="8.384">
+    			<Image.RenderTransform>
+    				<CompositeTransform Rotation="-0.185"/>
+    			</Image.RenderTransform>
+    		</Image>
+    		<TextBlock HorizontalAlignment="Right" TextWrapping="Wrap" Text="BUZZ" FontFamily="Segoe UI" FontSize="26.667" Foreground="{StaticResource BlueBrush}" VerticalAlignment="Top" Width="84.911" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Height="48.328" FontWeight="Bold" Canvas.Left="154.995" Canvas.Top="11.174">
+    			<TextBlock.RenderTransform>
+    				<CompositeTransform SkewY="-0.377" TranslateY="-0.993" Rotation="0.234"/>
+    			</TextBlock.RenderTransform>
+    		</TextBlock>
+    	</Canvas>
+    	<Notifications:NotificationControl x:Name="Notifier" HorizontalAlignment="Left" Margin="355,0,0,0" VerticalAlignment="Top"/>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="{StaticResource AppbarColor}" Opacity="1">
+            <shell:ApplicationBarIconButton x:Name="dashboardBtn" IconUri="/icons/Dashbord.png" Text="dashboard" Click="dashboardBtn_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

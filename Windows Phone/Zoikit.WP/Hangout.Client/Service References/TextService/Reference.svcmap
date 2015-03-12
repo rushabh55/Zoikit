@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="46816b19-b7a6-47c8-8305-d98875879f8b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Text/TextService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TextService.xsd" MetadataType="Schema" ID="84a067d5-6a08-4544-b6a3-847a055ebd51" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TextService1.xsd" MetadataType="Schema" ID="7f5527bc-c93a-4329-9f01-ae1090e77427" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TextService2.xsd" MetadataType="Schema" ID="a2fd8466-6de9-4eb3-a3c8-bcf5fbb45c04" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TextService3.xsd" MetadataType="Schema" ID="75cda8a3-024f-408c-956e-92ea1253b878" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TextService.disco" MetadataType="Disco" ID="21cd4cc0-3829-490b-b6f7-bd5bdab30136" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?disco" />
+    <MetadataFile FileName="TextService4.xsd" MetadataType="Schema" ID="bad39902-0a42-4598-b875-5483a3a6f904" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TextService5.xsd" MetadataType="Schema" ID="5b01d1b1-fe36-4953-aa18-883c2a6ef2b7" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TextService.wsdl" MetadataType="Wsdl" ID="1fe69163-babb-4df9-8f74-0271ba21498f" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Text/TextService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

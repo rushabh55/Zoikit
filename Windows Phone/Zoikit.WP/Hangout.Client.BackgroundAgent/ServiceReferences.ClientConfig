@@ -1,0 +1,47 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IAccountService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IUserLocationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IExceptionReportingService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_INotificationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_IPushNotificationService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://zoikit.cloudapp.net:8080/Core/Account/AccountService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAccountService"
+                contract="AccountService.IAccountService" name="BasicHttpBinding_IAccountService" />
+            <endpoint address="http://zoikit.cloudapp.net:8080/Core/Location/UserLocationService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUserLocationService"
+                contract="UserLocationService.IUserLocationService" name="BasicHttpBinding_IUserLocationService" />
+            <endpoint address="http://zoikit.cloudapp.net:8080/Core/Exception/ExceptionReportingService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IExceptionReportingService"
+                contract="ExceptionReportingService.IExceptionReportingService"
+                name="BasicHttpBinding_IExceptionReportingService" />
+            <endpoint address="http://zoikit.cloudapp.net:8080/Core/Notification/NotificationService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_INotificationService"
+                contract="NotificationService.INotificationService" name="BasicHttpBinding_INotificationService" />
+            <endpoint address="http://zoikit.cloudapp.net:8080/Core/PushNotification/PushNotificationService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IPushNotificationService"
+                contract="PushNotificationService.IPushNotificationService"
+                name="BasicHttpBinding_IPushNotificationService" />
+        </client>
+    </system.serviceModel>
+</configuration>

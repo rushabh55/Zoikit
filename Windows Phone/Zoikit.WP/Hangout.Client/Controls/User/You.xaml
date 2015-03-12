@@ -1,0 +1,112 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" x:Class="Hangout.Client.You"
+    mc:Ignorable="d" Loaded="UserControl_Loaded_1"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+	<UserControl.Resources>
+		
+		<Storyboard x:Name="ShowRank">
+			<DoubleAnimation Duration="0:0:0.4" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RepsCanvas" d:IsOptimized="True"/>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RankCanvas">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Name="ShowReps">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RepsCanvas">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimation Duration="0:0:0.3" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="RankCanvas" d:IsOptimized="True"/>
+		</Storyboard>
+		
+	</UserControl.Resources>
+	<UserControl.FontFamily>
+		<StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+	</UserControl.FontFamily>
+	<UserControl.FontSize>
+		<StaticResource ResourceKey="PhoneFontSizeNormal"/>
+	</UserControl.FontSize>
+	<UserControl.Foreground>
+		<StaticResource ResourceKey="PhoneForegroundBrush"/>
+	</UserControl.Foreground>
+    
+    <Grid x:Name="LayoutRoot" Width="450" HorizontalAlignment="Left" Margin="0">
+    	<StackPanel Margin="0" Orientation="Vertical">
+    		<Canvas x:Name="UserGrid" Margin="10,0,0,0" Height="200" Tap="UserGrid_Tap" toolkit:TiltEffect.IsTiltEnabled="True">
+    			<Grid Canvas.Left="90" Canvas.Top="10" Height="70" Width="340">
+    				<Path Data="M-16.4455,-0.001226 L-16.8755,44.3478 L379.529,44.3465 L406.404,-1.30558 z" Fill="{StaticResource YellowBrush}" HorizontalAlignment="Left" Height="70.002" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="315" Margin="0,0,0,-0.002"/>
+    				<TextBlock x:Name="NameLBL" TextWrapping="Wrap" Text="LOVELY LADY" FontSize="26.667" FontWeight="Bold" Foreground="{StaticResource BlueBrush}" Margin="115,0,55,0" Width="170" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    			</Grid>
+    			<Canvas x:Name="RankCanvas" Height="105" Canvas.Left="215" Canvas.Top="94" Width="195">
+    				<Rectangle Fill="{StaticResource YellowBrush}" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="195"/>
+    				<TextBlock x:Name="RANKLBL" TextWrapping="Wrap" Text="12" FontSize="66.667" FontWeight="Bold" Foreground="{StaticResource BlueBrush}" TextAlignment="Right" Height="70" Canvas.Left="76" Canvas.Top="-7" Width="108"/>
+    				<TextBlock x:Name="NameLBL_Copy1" TextWrapping="Wrap" Text="LOCAL RANK" FontSize="26.667" FontWeight="Bold" Foreground="{StaticResource BlueBrush}" TextAlignment="Center" Height="26" Canvas.Top="67" Width="196"/>
+    				<Image Source="/Images/Star.png" Stretch="Fill" Height="53" Canvas.Left="19" Canvas.Top="9" Width="52"/>
+
+		
+    
+    			</Canvas>
+    			<Canvas x:Name="RepsCanvas" Height="105" Canvas.Left="215" Canvas.Top="94" Width="195" Opacity="0">
+    				<Rectangle Fill="{StaticResource YellowBrush}" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="195"/>
+    				<TextBlock x:Name="REPSLBL" TextWrapping="Wrap" Text="10000" FontSize="60" FontWeight="Bold" Foreground="{StaticResource BlueBrush}" TextAlignment="Center" Height="70" Canvas.Top="-4" Width="195"/>
+    				<TextBlock x:Name="NameLBL_Copy3" TextWrapping="Wrap" Text="LOCAL REP" FontSize="26.667" FontWeight="Bold" Foreground="{StaticResource BlueBrush}" TextAlignment="Center" Height="26" Canvas.Top="60" Width="195"/>
+
+		
+    
+    			</Canvas>
+    			<Image x:Name="ProfilePic" HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="200" Source="YellowRect.png"/>
+    		</Canvas>
+    		<StackPanel Margin="0,30,0,0" Orientation="Vertical" Height="273">
+    			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130">
+		
+    				<Grid x:Name="ProfileGrid" Margin="11,0,10,0" toolkit:TiltEffect.IsTiltEnabled="True" Tap="ProfileGrid_Tap" Width="130">
+    					<Rectangle x:Name="Background" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image x:Name="Img" Stretch="Fill" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="95" Width="96" Source="Profile.png"/>
+    				</Grid>
+    				<Grid x:Name="InterestGrid" Margin="0,0,10,0" toolkit:TiltEffect.IsTiltEnabled="True" Tap="InterestGrid_Tap" Width="130">
+    					<Rectangle x:Name="Background1" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image x:Name="Img1" Stretch="Fill" Margin="27,33,26,21" HorizontalAlignment="Center" VerticalAlignment="Center" Height="76" Width="77" Source="HeartBlue.png"/>
+    				</Grid>
+    				<Grid x:Name="NotificationsGrid" Margin="0,0,10,0" toolkit:TiltEffect.IsTiltEnabled="True" Tap="NotificationsGrid_Tap" Width="130">
+    					<Rectangle x:Name="Background2" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image Margin="43,21,-5,20" Source="NotificationBlue.png" Stretch="Fill"/>
+    					<TextBlock x:Name="NotificationcountLBL" HorizontalAlignment="Left" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Margin="2,33,0,0" Foreground="{StaticResource BlueBrush}" FontSize="48" Width="59" TextAlignment="Center" FontWeight="Bold"/>
+    				</Grid>
+    			</StackPanel>
+    			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="130" Margin="1,10,0,0">
+		
+    				<Grid x:Name="HelpGrid" Margin="10,0,0,0" toolkit:TiltEffect.IsTiltEnabled="True" Tap="HelpGrid_Tap" Width="130">
+    					<Rectangle x:Name="Background5" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image Margin="-11,11,44,21" Source="/Hangout.Client;component/Texts/Message.png" Stretch="Fill"/>
+    					<TextBlock x:Name="MessageNoLBL" HorizontalAlignment="Left" TextWrapping="Wrap" Text="99" VerticalAlignment="Top" Margin="31,25,-31,0" Foreground="{StaticResource BlueBrush}" FontSize="48" Width="130" TextAlignment="Center" FontWeight="Bold"/>
+    				</Grid>
+		
+    				<Grid x:Name="AccountsGrid" Margin="11,0,10,0" toolkit:TiltEffect.IsTiltEnabled="True" Tap="AccountsGrid_Tap" Width="130">
+    					<Rectangle x:Name="Background3" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image x:Name="Img3" Stretch="Fill" Margin="17,8,17,27" HorizontalAlignment="Center" VerticalAlignment="Center" Height="95" Width="96" Source="BigLock.png"/>
+    				</Grid>
+    				<Grid x:Name="AboutUsGrid" Margin="0,0,10,0" toolkit:TiltEffect.IsTiltEnabled="True" Width="130" Tap="AboutUsGrid_Tap">
+    					<Rectangle x:Name="Background4" Fill="#FFFFAF04" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130"/>
+    					<Image x:Name="Img4" Stretch="Fill" Margin="17,11,17,24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="95" Width="96" Source="Hat.png"/>
+    				</Grid>
+    			</StackPanel>
+
+		
+    
+    		</StackPanel>
+
+		
+    
+    	</StackPanel>
+    </Grid>
+
+</UserControl>

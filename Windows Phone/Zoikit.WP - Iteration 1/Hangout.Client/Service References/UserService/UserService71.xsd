@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.User" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.User" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/User/UserService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" />
+  <xs:import schemaLocation="http://192.168.1.50:8082/Windows/User/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CompleteUserProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AboutUs" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuzzCount" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Hangout.Web.Services.Objects.Locations" minOccurs="0" name="City" nillable="true" type="q1:City" />
+      <xs:element minOccurs="0" name="FollowersCount" type="xs:int" />
+      <xs:element minOccurs="0" name="FollowingCount" type="xs:int" />
+      <xs:element minOccurs="0" name="IsFollowing" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProfilePicURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompleteUserProfile" nillable="true" type="tns:CompleteUserProfile" />
+</xs:schema>

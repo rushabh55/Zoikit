@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b5a8f01-7bc6-4d06-91fe-20b5f89d13c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1:81/Core/Account/FoursquareService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FoursquareService1.xsd" MetadataType="Schema" ID="98dc0d05-8450-4e0e-bea1-4594b9be4ada" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FoursquareService.xsd" MetadataType="Schema" ID="8e3aedd0-9084-4a85-a2ab-1279b5d9f431" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FoursquareService.wsdl" MetadataType="Wsdl" ID="d0bca2f9-c62b-437c-9fd4-fb60345c54f0" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?wsdl" />
+    <MetadataFile FileName="FoursquareService.disco" MetadataType="Disco" ID="14d0a027-7609-4535-ae4c-c0c48f026a7d" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?disco" />
+    <MetadataFile FileName="FoursquareService3.xsd" MetadataType="Schema" ID="c57356db-ef9a-4480-9a2d-954c32597205" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FoursquareService2.xsd" MetadataType="Schema" ID="12da3cdd-c308-408a-9795-d4950c2cefea" SourceId="1" SourceUrl="http://127.0.0.1:81/Core/Account/FoursquareService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
